@@ -1,0 +1,33 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@iconify-json/bi": "^1.1.1",
+    "@iconify-json/mdi": "^1.1.1",
+    "@unocss/preset-attributify": "^0.27.2",
+    "@unocss/preset-icons": "^0.27.2",
+    "@unocss/preset-uno": "^0.27.2",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.9",
+    "typescript": "^4.6.2",
+    "vite": "^2.8.6",
+    "vite-plugin-solid": "^2.2.5",
+    "vite-plugin-windicss": "^1.8.2"
+  },
+  "dependencies": {
+    "lit": "^2.2.0",
+    "popmotion": "^11.0.3",
+    "solid-app-router": "^0.3.0",
+    "solid-js": "^1.3.9",
+    "unocss": "^0.27.2"
+  }
+}
