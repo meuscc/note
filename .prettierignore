@@ -21,6 +21,7 @@ yarn-error.log
 /.idea
 /android
 /ios
+docs/
 
 .buckconfig
 .flowconfig
