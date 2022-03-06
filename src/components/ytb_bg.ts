@@ -13,7 +13,7 @@ function createYtbBg() {
   ctn.style.left = "0";
   ctn.style.top = "0";
   ctn.style.overflow = "hidden";
-  ctn.style.zIndex = "0";
+  ctn.style.zIndex = "-1";
   ctn.style.width = "100vw";
   ctn.style.height = "100vh";
 
@@ -28,7 +28,7 @@ function createYtbBg() {
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
-  let vid = "J_CFBjAyPWE";
+  let vid = "Cjc2VXfLUd0";
   if (location.search.includes("?bgv=")) {
     vid = location.search.replace("?bgv=", "");
   }

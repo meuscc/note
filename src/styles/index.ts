@@ -4,4 +4,15 @@ import { createStyle } from "../themes/create_theme";
 
 const style = document.getElementById("themes")!;
 
-style.innerText = `:root{${createStyle(themes.light)}}`;
+// @ts-ignore
+themes.light.mixins = {};
+// @ts-ignore
+themes.light.breakpoints = {};
+// @ts-ignore
+themes.dark.mixins = {};
+// @ts-ignore
+themes.dark.breakpoints = {};
+
+style.innerText = `:root{${createStyle(themes.light)}}.dark{${createStyle(
+  themes.dark
+)}}`;

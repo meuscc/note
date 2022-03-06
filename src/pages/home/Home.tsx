@@ -1,30 +1,61 @@
-import { createSignal } from "solid-js";
+import { onMount } from "solid-js";
+// @ts-ignore
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+import RustCheat from "/src/pages/home/cheats/rust/Rust";
+import CppCheat from "/src/pages/home/cheats/cpp/Cpp";
+import GoCheat from "/src/pages/home/cheats/go/Go";
 
 export default function Home() {
-  const [count, setCount] = createSignal(0);
+  let ref: HTMLDivElement | ((el: HTMLDivElement) => void) | undefined;
+
+  onMount(() => {
+    new Swiper(ref, {
+      // Optional parameters
+      direction: "horizontal",
+      hashNavigation: {
+        watchState: true,
+      },
+      keyboard: {
+        enabled: true,
+      },
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
+  });
 
   return (
-    <section class="card">
-      <h1 class="text-2xl font-bold">Home</h1>
-      <p class="mt-4">This is the home page.</p>
+    <div>
+      <div ref={ref} class="swiper">
+        <div class="swiper-wrapper">
+          <div data-hash="rust" class="swiper-slide">
+            <RustCheat />
+          </div>
+          <div data-hash="cpp" class="swiper-slide">
+            <CppCheat />
+          </div>
+          <div data-hash="go" class="swiper-slide">
+            <GoCheat />
+          </div>
+        </div>
 
-      <div class="flex items-center space-x-2">
-        <button
-          class="border rounded-lg px-2 border-gray-900"
-          onClick={() => setCount(count() - 1)}
-        >
-          -
-        </button>
-        <div class="i-mdi-alarm text-orange-400" />
-        <output class="p-10px">{count}</output>
-
-        <button
-          class="border rounded-lg px-2 border-gray-900"
-          onClick={() => setCount(count() + 1)}
-        >
-          +ddddsddsd士大夫速度发士大夫十分士大夫
-        </button>
+        <div class="swiper-pagination"></div>
       </div>
-    </section>
+    </div>
   );
 }

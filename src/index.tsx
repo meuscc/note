@@ -1,6 +1,3 @@
-/* @refresh reload */
-// import 'windi.css';
-import "uno.css";
 import "./styles/index";
 
 import { render } from "solid-js/web";

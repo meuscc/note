@@ -70,7 +70,7 @@ export default {
         disabled: "rgba(0, 0, 0, 0.38)",
       },
       divider: "rgba(0, 0, 0, 0.12)",
-      background: { paper: "#fff", default: "#fff" },
+      background: { paper: "rgba(255, 255, 255, 0.8)", default: "#fff" },
       action: {
         active: "rgba(0, 0, 0, 0.54)",
         hover: "rgba(0, 0, 0, 0.04)",
