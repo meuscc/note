@@ -1,7 +1,7 @@
 import createNavs from "./header_navs";
 
-import Menu from "./Menu";
 import { setOpen } from "../sider/sider_store";
+import Menu from "/src/components/menu/Menu";
 
 export default function MainLayout() {
   const navs = createNavs()[0].children;
@@ -12,7 +12,7 @@ export default function MainLayout() {
         <button onClick={() => setOpen((v) => !v)}>
           <span class="iconify-inline icon" data-icon="bi:list"></span>
         </button>
-        <Menu navs={navs} classPrefix={"header"} />
+        <Menu navs={navs} direction={"horizontal"} class={""} />
       </section>
       <section class="header-right">
         <button

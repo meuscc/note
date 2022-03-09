@@ -1,7 +1,7 @@
 import { onCleanup } from "solid-js";
 import createNavs from "../header/header_navs";
 
-import Menu from "../header/Menu";
+import Menu from "/src/components/menu/Menu";
 import { open, setOpen } from "./sider_store";
 
 // @ts-ignore
@@ -22,7 +22,7 @@ export default function MainLayout() {
         use:clickOutside={() => setOpen(false)}
         class={`sider${open() ? " open" : ""}`}
       >
-        <Menu direction={"vertical"} navs={navs} classPrefix={"sider"} />
+        <Menu direction={"vertical"} navs={navs} class={"sider"} />
       </aside>
       <div class={`sider-mask${open() ? " open" : ""}`}></div>
     </>

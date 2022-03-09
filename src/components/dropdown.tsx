@@ -42,6 +42,7 @@ export function Dropdown({
         setShow(true);
       }}
       onMouseLeave={() => {
+        // @ts-ignore
         timer = setTimeout(() => {
           clearTimeout(timer);
           setShow(false);

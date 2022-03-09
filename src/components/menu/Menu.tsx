@@ -4,14 +4,18 @@ import { Nav } from "./types";
 interface Props {
   navs?: Nav[];
   direction?: "vertical" | "horizontal";
+  class?: string;
 }
 
-export default function Menu({ navs = [], direction = "vertical" }: Props) {
-  console.log(navs, direction);
+export default function Menu({
+  navs = [],
+  direction = "vertical",
+  class: clazz = "",
+}: Props) {
   return (
-    <ul class="menu l1">
+    <ul class={`menu ${direction} l1 ${clazz}`}>
       {navs?.map((nav) => (
-        <MenuItem nav={nav} />
+        <MenuItem direction={direction} nav={nav} />
       ))}
     </ul>
   );
