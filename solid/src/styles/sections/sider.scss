@@ -1,0 +1,99 @@
+:root {
+  --sider-bg: rgba(255, 255, 255, 0.95);
+  --sider-menu-bg: rgba(0, 0, 0, 0.05);
+  --sider-hover-bg: rgba(255, 255, 255, 0.8);
+  --sider-width: 240px;
+  --sider-color: rgba(0, 0, 0, 0.6);
+}
+
+.dark {
+  --sider-bg: rgba(0, 0, 0, 0.25);
+  --sider-menu-bg: rgba(0, 0, 0, 0.05);
+  --sider-hover-bg: rgba(0, 0, 0, 0.4);
+  --sider-width: 240px;
+  --sider-color: rgba(255, 255, 255, 0.8);
+}
+
+.sider-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: calc(var(--zIndex-drawer) - 1);
+  transition: opacity var(--transitions-duration-shorter);
+}
+
+.sider-mask.open {
+  width: 100vw;
+  opacity: 1;
+}
+
+.sider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translate3d(-100%, 0, 0);
+  z-index: var(--zIndex-drawer);
+  width: var(--sider-width);
+  background-color: var(--sider-bg);
+  transition: transform var(--transitions-easing-easeInOut)
+    var(--transitions-duration-shorter);
+  box-shadow: var(--shadows-8);
+}
+
+.sider.open {
+  transform: translate3d(0, 0, 0);
+}
+
+.sider {
+  .menu {
+    padding: 5px 0;
+    border-radius: 4px;
+    overflow-y: hidden;
+    //background-color: var(--sider-menu-bg);
+  }
+  .menu.l1 {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .menu.l3 {
+    //background-color: var(--sider-bg);
+  }
+  .menu-item.open {
+    > .menu-navi {
+      box-shadow: 3px 0 0 0 inset red;
+    }
+    background-color: #e5e5e5;
+  }
+  .menu-navi {
+    padding: 5px;
+  }
+  .menu.l1 > .menu-item > .menu-navi {
+    padding: 0;
+  }
+  .menu-link {
+    height: 30px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    word-break: keep-all;
+    border-radius: 4px;
+    gap: 8px;
+  }
+  .menu-navi:hover > .menu-link {
+    //background-color: var(--sider-hover-bg);
+  }
+
+  .menu.l2 {
+    background-color: #ffffff;
+    overflow-y: hidden;
+  }
+  .menu.l3 {
+    background-color: #ffffff;
+  }
+}

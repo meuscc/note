@@ -1,0 +1,25 @@
+// menu
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-navi {
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu .menu {
+  position: absolute;
+}
+
+// menu vertical
+.menu.vertical .menu {
+  position: relative;
+}
+
+// menu horizontal
+.menu.horizontal {
+  display: flex;
+}
