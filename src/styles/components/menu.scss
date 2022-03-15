@@ -1,0 +1,61 @@
+// menu
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-navi {
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu .menu {
+  position: absolute;
+}
+
+// menu vertical
+.menu.vertical .menu {
+  position: relative;
+}
+
+// menu horizontal
+.menu.horizontal {
+  display: flex;
+}
+
+.menu-navi {
+  color: currentColor;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-link {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.menu-link-content {
+  display: flex;
+  gap: 8px;
+}
+
+//
+
+.expand-enter-active {
+  transition: max-height 0.2s ease-in-out;
+}
+
+.expand-enter-active:not(.expand-enter-to) {
+  max-height: 0 !important;
+}
+
+.expand-exit-active {
+  transition: max-height 0.2s ease-in-out;
+}
+
+.expand-exit-to {
+  max-height: 0 !important;
+}

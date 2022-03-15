@@ -1,0 +1,12 @@
+@import "normalize";
+@import "reboot";
+@import "components";
+@import "sections";
+
+.bg {
+  background-color: var(--palette-background-default);
+}
+
+.fg {
+  background-color: var(--palette-background-paper);
+}
