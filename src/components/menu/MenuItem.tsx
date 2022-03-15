@@ -4,7 +4,6 @@ import { computePosition, flip, offset, shift } from "@floating-ui/dom";
 import { BI_chevron_down, BI_chevron_up } from "/src/icons/bi/bi";
 import { NavLink, useLocation } from "solid-app-router";
 import { Nav } from "./types";
-import { style } from "solid-js/web";
 
 export default function MenuItem({
   nav,
@@ -123,49 +122,29 @@ export default function MenuItem({
       {hasChildren && (
         <Transition
           name={"expand"}
-          // onEnter={async (el, done) => {
-          //   await el.animate(
-          //     isVertical
-          //       ? [{ maxHeight: 0 }, { maxHeight: subMenuHeight }]
-          //       : [
-          //           { opacity: 0.2, transform: "scale(0.9)" },
-          //           { opacity: 1, transform: "scale(1)" },
-          //         ],
-          //     {
-          //       duration: 95,
-          //     }
-          //   ).finished;
-          //   done();
-          // }}
-          // onExit={async (el, done) => {
-          //   await el.animate(
-          //     isVertical
-          //       ? [{ maxHeight: subMenuHeight }, { maxHeight: 0 }]
-          //       : [
-          //           { opacity: 1, transform: "scale(1)" },
-          //           { opacity: 0.2, transform: "scale(0.9)" },
-          //         ],
-          //     {
-          //       duration: 95,
-          //     }
-          //   ).finished;
-          //   done();
-          // }}
+          onBeforeEnter={(el) => {
+            el.setAttribute("style", `max-height: 0`);
+          }}
+          onEnter={(el) => {
+            el.setAttribute("style", `max-height: ${subMenuHeight}`);
+          }}
+          onAfterEnter={(el) => {
+            el.removeAttribute("style");
+          }}
+          onBeforeExit={(el) => {
+            el.setAttribute("style", `max-height: ${subMenuHeight}`);
+          }}
+          onExit={(el) => {
+            requestAnimationFrame(() => {
+              el.setAttribute("style", `max-height: 0`);
+            });
+          }}
+          onAfterExit={(el) => {
+            el.removeAttribute("style");
+          }}
         >
           {subMenuShow() && (
-            <ul
-              style={{ "max-height": subMenuHeight }}
-              onTransitionEnd={(e) => {
-                // console.log(subMenuShow());
-                e.target.setAttribute("style", "max-height: auto");
-                // if (e.target.classList.contains("expand-exit-to")) {
-                //   console.log(subMenuShow());
-                //   e.target.removeAttribute("style");
-                // }
-              }}
-              className={`menu l${level + 1}`}
-              ref={floatingEl}
-            >
+            <ul className={`menu l${level + 1}`} ref={floatingEl}>
               <For each={nav.children}>
                 {(subNav) => (
                   <MenuItem
