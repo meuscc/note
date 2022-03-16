@@ -3,7 +3,8 @@
     "lib": ["es2021", "dom", "dom.iterable"],
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "decorators-legacy": true
   },
   "include": ["vite.config.ts", "tools/**/*"]
 }

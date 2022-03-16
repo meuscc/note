@@ -22,3 +22,6 @@
   box-shadow: var(--shadows-4);
   border-radius: 4px;
 }
+:not(:defined) {
+  visibility: hidden;
+}
