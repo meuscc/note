@@ -10,3 +10,15 @@
 .fg {
   background-color: var(--palette-background-paper);
 }
+
+// article
+.article {
+  width: 100%;
+  max-width: 768px;
+  padding: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--palette-background-paper);
+  box-shadow: var(--shadows-4);
+  border-radius: 4px;
+}

@@ -1,7 +1,14 @@
+import md from "./RustCheat.md";
+
+console.log(md);
+
 export default function RustCheat() {
   return (
     <div class="page">
-      <h1>Rust概览</h1>
+      <div class={"article heti"}>
+        <h1>Rust概览</h1>
+        <div innerHTML={md}></div>
+      </div>
     </div>
   );
 }

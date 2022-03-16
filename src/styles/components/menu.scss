@@ -51,3 +51,28 @@
 .expand-exit-active {
   transition: all 0.2s ease-in-out;
 }
+
+// horizontal
+.dropdown-enter-active {
+  opacity: 0.25;
+  transform: translate3d(0, -10px, 0);
+}
+
+.dropdown-enter-to {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.dropdown-exit-to {
+  opacity: 0.5;
+  transform: translate3d(0, 0, 0);
+}
+
+//
+.dropdown-enter-active {
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-exit-active {
+  transition: all 0.2s ease-in-out;
+}

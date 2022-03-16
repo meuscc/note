@@ -79,6 +79,31 @@ export default function MenuItem({
 
   const subMenuHeight = `${childrenLength * 40 + 10}px`;
 
+  const menuProps = isVertical
+    ? {
+        onBeforeEnter: (el: any) => {
+          el.setAttribute("style", `height: 0; padding: 0`);
+        },
+        onEnter: (el: any) => {
+          el.setAttribute("style", `height: ${subMenuHeight}`);
+        },
+        onAfterEnter: (el: any) => {
+          el.removeAttribute("style");
+        },
+        onBeforeExit: (el: any) => {
+          el.setAttribute("style", `height: ${subMenuHeight}`);
+        },
+        onExit: (el: any) => {
+          requestAnimationFrame(() => {
+            el.setAttribute("style", `height: 0; padding: 0`);
+          });
+        },
+        onAfterExit: (el: any) => {
+          el.removeAttribute("style");
+        },
+      }
+    : {};
+
   return (
     <li
       class={`menu-item${subMenuShow() && hasChildren ? " open" : ""}`}
@@ -90,6 +115,7 @@ export default function MenuItem({
         setSubMenuShow(true);
       }}
       onPointerLeave={() => {
+        console.log("leave");
         if (isVertical) return;
         timer = window.setTimeout(() => {
           clearTimeout(timer);
@@ -120,31 +146,13 @@ export default function MenuItem({
         </NavLink>
       )}
       {hasChildren && (
-        <Transition
-          name={"expand"}
-          onBeforeEnter={(el) => {
-            el.setAttribute("style", `height: 0; padding: 0`);
-          }}
-          onEnter={(el) => {
-            el.setAttribute("style", `height: ${subMenuHeight}`);
-          }}
-          onAfterEnter={(el) => {
-            el.removeAttribute("style");
-          }}
-          onBeforeExit={(el) => {
-            el.setAttribute("style", `height: ${subMenuHeight}`);
-          }}
-          onExit={(el) => {
-            requestAnimationFrame(() => {
-              el.setAttribute("style", `height: 0; padding: 0`);
-            });
-          }}
-          onAfterExit={(el) => {
-            el.removeAttribute("style");
-          }}
-        >
+        <Transition {...menuProps} name={isVertical ? "expand" : "dropdown"}>
           {subMenuShow() && (
-            <ul className={`menu l${level + 1}`} ref={floatingEl}>
+            <ul
+              className={`menu l${level + 1}`}
+              ref={floatingEl}
+              onAnimationEnd={() => {}}
+            >
               <For each={nav.children}>
                 {(subNav) => (
                   <MenuItem
