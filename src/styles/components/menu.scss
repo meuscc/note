@@ -45,9 +45,9 @@
 //
 
 .expand-enter-active {
-  transition: max-height 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .expand-exit-active {
-  transition: max-height 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }

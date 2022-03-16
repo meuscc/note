@@ -77,7 +77,7 @@ export default function MenuItem({
     </div>
   );
 
-  const subMenuHeight = `${childrenLength * 40}px`;
+  const subMenuHeight = `${childrenLength * 40 + 10}px`;
 
   return (
     <li
@@ -123,20 +123,20 @@ export default function MenuItem({
         <Transition
           name={"expand"}
           onBeforeEnter={(el) => {
-            el.setAttribute("style", `max-height: 0`);
+            el.setAttribute("style", `height: 0; padding: 0`);
           }}
           onEnter={(el) => {
-            el.setAttribute("style", `max-height: ${subMenuHeight}`);
+            el.setAttribute("style", `height: ${subMenuHeight}`);
           }}
           onAfterEnter={(el) => {
             el.removeAttribute("style");
           }}
           onBeforeExit={(el) => {
-            el.setAttribute("style", `max-height: ${subMenuHeight}`);
+            el.setAttribute("style", `height: ${subMenuHeight}`);
           }}
           onExit={(el) => {
             requestAnimationFrame(() => {
-              el.setAttribute("style", `max-height: 0`);
+              el.setAttribute("style", `height: 0; padding: 0`);
             });
           }}
           onAfterExit={(el) => {
