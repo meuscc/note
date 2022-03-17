@@ -25,3 +25,26 @@
 :not(:defined) {
   visibility: hidden;
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+li > div {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}
+
+li {
+  overflow-y: hidden;
+}

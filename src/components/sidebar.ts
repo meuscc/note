@@ -4,7 +4,7 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { map } from "lit/directives/map.js";
 import { when } from "lit/directives/when.js";
 import { classMap } from "lit/directives/class-map.js";
-import createNavs from "/src/sections/header/header_navs";
+import createNavs from "/src/create_navs";
 
 export interface Nav {
   name: string;
