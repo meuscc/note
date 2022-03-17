@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
       <div>我是首页</div>
 
-      <Link href={"/about"}>关于</Link>
+      <Link href={"/about"}>关于 </Link>
     </div>
   );
 };
