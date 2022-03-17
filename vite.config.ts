@@ -12,25 +12,8 @@ entries.forEach((entry) => {
   input[entry] = resolve(__dirname, entry);
 });
 
-const myPlugin = () => {
-  let server;
-  return {
-    name: "configure-server",
-    configureServer(_server) {
-      server = _server;
-    },
-    transform(code, id) {
-      console.log(id);
-
-      if (server) {
-        // use server...
-      }
-    },
-  };
-};
-
 export default defineConfig({
-  plugins: [myPlugin(), viteMarkdownPlugin(), viteHtmlPlugin()],
+  plugins: [viteMarkdownPlugin(), viteHtmlPlugin()],
   build: {
     target: "esnext",
     polyfillDynamicImport: false,
