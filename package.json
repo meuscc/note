@@ -1,34 +1,13 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prettier": "prettier -c --write \"**/*\"",
-    "theme": "node tools/create_themes.js"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "@floating-ui/dom": "^0.4.1",
-    "@ltd/j-toml": "^1.30.0",
-    "@mui/material": "^5.5.1",
-    "next": "^12.1.0",
-    "popmotion": "^11.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "swiper": "^8.0.7"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.40",
-    "eslint": "^8.11.0",
-    "eslint-config-next": "^12.1.0",
-    "prettier": "^2.5.1",
+    "nuxt3": "latest",
+    "prettier": "^2.6.0",
     "sass": "^1.49.9",
     "typescript": "^4.6.2"
   }
