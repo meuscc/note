@@ -171,11 +171,11 @@ export class SidebarMenu extends LitElement {
   }
 }
 
-// declare global {
-//   interface HTMLElementTagNameMap {
-//     "y-sidebar": Sidebar;
-//   }
-// }
+declare global {
+  interface HTMLElementTagNameMap {
+    "y-sidebar": Sidebar;
+  }
+}
 
 declare global {
   export namespace JSX {

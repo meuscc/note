@@ -7,7 +7,6 @@
     "dev": "vite",
     "b": "vite build",
     "build": "vite build",
-    "build2": "vite --base /notes/ build",
     "serve": "vite preview",
     "prettier": "prettier -c --write \"**/*\"",
     "theme": "node tools/create_themes.js"

@@ -5,3 +5,4 @@ declare namespace JSX {
     "y-sidebar": any;
   }
 }
+declare const commonTags: any;
