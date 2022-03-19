@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Math from "../components/math/Math";
 import Audio from "../widgets/audio/Audio";
+import Code from "../components/code/Code";
+import Md from "../components/md/Md";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +15,40 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>我是首页</div>
-
       <Link href={"/about"}>关于 </Link>
       <Audio></Audio>
+      <Math
+        m={`
+          f(x) = x^22332232332323232323232
+      `}
+      />
+      <Code
+        c={`
+          const a = 121343422323;
+          const a = 123;
+          const a = 123;
+      `}
+      />
+      <Md
+        c={`
+
+#  你好世界
+#  你好世界
+#  你好世界
+#  你好世界
+#  你好世界
+
+\`\`\`javascript
+const a = 123;
+\`\`\`
+
+\\[
+f(x) = x^2
+\\]
+
+sdfsssdf sdf士大夫 \\( f(x) = x^2 \\) 手动阀手动阀
+      `}
+      />
     </div>
   );
 };

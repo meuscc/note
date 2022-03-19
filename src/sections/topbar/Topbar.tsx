@@ -5,7 +5,6 @@ import Menu from "../../menu/Menu";
 const navs = createNavs();
 
 export default React.memo(function Topbar() {
-  console.log("render");
   return (
     <div>
       <Menu navs={navs} />

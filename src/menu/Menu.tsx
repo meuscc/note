@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Menu({ navs }: Props) {
-  console.log(navs);
   return (
     <ul className={"menu"}>
       {navs.map((nav) => {
@@ -28,21 +27,27 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
   const subMenuRef = useRef<HTMLUListElement>(null);
   const newPath = parentPath ? `${parentPath}${nav.path}` : nav.path;
 
-  console.log(newPath);
-
   const showSubMenu = useCallback(() => {
-    subMenuRef.current!.removeAttribute("style");
-    subMenuRef.current!.animate(
-      [{ height: "0px" }, { height: `${hasChildren! * 40}px` }],
+    if (!subMenuRef.current) return;
+    subMenuRef.current.removeAttribute("style");
+    subMenuRef.current.animate(
+      [
+        { height: "0px" },
+        { height: getComputedStyle(subMenuRef.current!).height },
+      ],
       {
         duration: 95,
       }
     );
   }, []);
   const hideSubMenu = useCallback(() => {
-    subMenuRef
-      .current!.animate(
-        [{ height: `${hasChildren! * 40}px` }, { height: `0px` }],
+    if (!subMenuRef.current) return;
+    subMenuRef.current
+      .animate(
+        [
+          { height: getComputedStyle(subMenuRef.current!).height },
+          { height: `0px` },
+        ],
         {
           duration: 95,
         }
@@ -86,7 +91,7 @@ const SubMenu = React.forwardRef<
   }, []);
 
   return (
-    <ul ref={ref} className={"menu"} style={{ height: 0 }}>
+    <ul ref={ref} className={"menu"} style={{ display: "none" }}>
       {nav.children!.map((subNav) => (
         <MenuItem key={subNav.path} nav={subNav} parentPath={parentPath} />
       ))}

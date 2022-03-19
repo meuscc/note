@@ -40,3 +40,5 @@ bitbucket-pipelines.yml
 public
 pnpm-lock.yaml
 .next/
+
+out/
