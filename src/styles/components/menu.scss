@@ -8,10 +8,16 @@
 .menu-navi {
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  > * {
+    width: 400px;
+  }
 }
 
 .menu .menu {
-  position: absolute;
+  //position: absolute;
 }
 
 // menu vertical
@@ -22,4 +28,8 @@
 // menu horizontal
 .menu.horizontal {
   display: flex;
+}
+
+.menu {
+  background-color: rgba(0, 0, 0, 0.12);
 }

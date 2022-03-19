@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Audio from "../widgets/audio/Audio";
 
 const Home: NextPage = () => {
   return (
@@ -11,8 +12,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        我是关于页面
+        <div>我是关于页面</div>
         <Link href={"/"}>链接到首页</Link>
+        <Audio></Audio>
       </div>
     </div>
   );

@@ -2,3 +2,11 @@
 @import "reboot";
 @import "components";
 @import "sections";
+
+li > div {
+  height: 40px;
+}
+
+.menu {
+  overflow-y: hidden;
+}
