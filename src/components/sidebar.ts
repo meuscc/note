@@ -3,7 +3,6 @@ import { customElement, property } from "lit/decorators.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { map } from "lit/directives/map.js";
 import { when } from "lit/directives/when.js";
-import { classMap } from "lit/directives/class-map.js";
 import createNavs from "/src/create_navs";
 
 export interface Nav {
@@ -35,8 +34,6 @@ export class Sidebar extends LitElement {
   navs = createNavs();
 
   render() {
-    console.log(this.navs[0].children);
-
     return html`<ul class="menu">
       ${map(
         this.navs[0].children,
@@ -55,21 +52,11 @@ export class SidebarMenu extends LitElement {
         margin: 0;
         padding: 0;
         list-style: none;
+        overflow: hidden;
       }
       li {
         cursor: pointer;
         user-select: none;
-      }
-      .box {
-        position: relative;
-        width: 200px;
-        /*height: 0;*/
-        /*height: 20px;*/
-        overflow: hidden;
-      }
-      .shifted {
-        /*height: 400px;*/
-        opacity: 1;
       }
       .menu-navi {
         height: 40px;
@@ -94,28 +81,21 @@ export class SidebarMenu extends LitElement {
   @property({ state: true })
   showed = false;
 
-  @property({ state: true })
-  opened = false;
-
   handleClick() {
     if (!this.showed) {
       this.showed = true;
-      this.opened = true;
     } else {
       if (this.inputRef.value && this.nav?.children?.length) {
-        console.log(this.inputRef.value);
-        console.log(getComputedStyle(this.inputRef.value!).height);
-
         const animate = this.inputRef.value.animate(
           [
             {
-              height: this.nav?.children?.length * 40 + "px",
+              height: getComputedStyle(this.inputRef.value!).height,
             },
             {
               height: 0,
             },
           ],
-          { duration: 200 }
+          { duration: 95 }
         );
 
         animate.onfinish = () => {
@@ -129,24 +109,21 @@ export class SidebarMenu extends LitElement {
     super.updated(_changedProperties);
 
     if (this.inputRef.value && this.nav?.children?.length) {
-      console.log(this.inputRef.value);
-      console.log(getComputedStyle(this.inputRef.value!).height);
-
-      console.log(this.showed);
-
-      this.inputRef.value.animate(
-        [
+      requestAnimationFrame(() => {
+        this.inputRef.value!.animate(
+          [
+            {
+              height: 0,
+            },
+            {
+              height: getComputedStyle(this.inputRef.value!).height,
+            },
+          ],
           {
-            height: 0,
-          },
-          {
-            height: this.nav?.children?.length * 40 + "px",
-          },
-        ],
-        {
-          duration: 200,
-        }
-      );
+            duration: 95,
+          }
+        );
+      });
     }
   }
 
@@ -158,10 +135,7 @@ export class SidebarMenu extends LitElement {
       ${when(
         this.nav?.children?.length && this.showed,
         () =>
-          html`<ul
-            ${ref(this.inputRef)}
-            class="box ${classMap({ shifted: this.opened })}"
-          >
+          html`<ul ${ref(this.inputRef)}>
             ${map(this.nav?.children, (subNav) => {
               return html`<y-sidebar-menu .nav=${subNav}></y-sidebar-menu>`;
             })}
