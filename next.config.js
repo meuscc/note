@@ -1,3 +1,7 @@
+import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
+import { remarkMdxCodeMeta } from "remark-mdx-code-meta";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -7,8 +11,18 @@ const nextConfig = {
       test: /\.mdx?/,
       use: [
         {
-          loader: "./loader.cjs",
+          loader: "@mdx-js/loader",
+          options: {
+            remarkPlugins: [
+              remarkGfm,
+              [remarkToc, { heading: "目录" }],
+              remarkMdxCodeMeta,
+            ],
+            rehypePlugins: [],
+            // providerImportSource: "@mdx-js/react",
+          },
         },
+        "./loaders/md_loader.cjs",
       ],
     });
     return config;
