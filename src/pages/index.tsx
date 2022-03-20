@@ -5,8 +5,14 @@ import Math from "../components/math/Math";
 import Audio from "../widgets/audio/Audio";
 import Code from "../components/code/Code";
 import Md from "../components/md/Md";
+import tet from "./test.md";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    console.log(tet);
+  }, []);
+
   return (
     <div>
       <Head>
