@@ -2,6 +2,7 @@
 @import "reboot";
 @import "components";
 @import "sections";
+@import "lib";
 
 li > div {
   height: 40px;
@@ -9,4 +10,14 @@ li > div {
 
 .menu {
   overflow-y: hidden;
+}
+
+.book-page {
+  background-color: #ffffff;
+  max-width: 768px;
+  padding: 48px;
+  border-radius: 2px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 32%);
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -42,3 +42,8 @@ pnpm-lock.yaml
 .next/
 
 out/
+
+*.cc
+*.cpp
+*.rust
+*.ico

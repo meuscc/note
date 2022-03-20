@@ -4,9 +4,11 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-size: var(--typography-htmlFontSize);
+  scroll-behavior: smooth;
 }
 
 body {
   font-size: var(--typography-fontSize);
   color: var(--palette-text-primary);
+  scroll-behavior: smooth;
 }
