@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Nav } from "../sections/topbar/Nav";
+import bs from "/src/icons/bs";
 
 interface Props {
   navs: Nav[];
@@ -19,9 +20,10 @@ export default function Menu({ navs }: Props) {
 interface MenuItemProps {
   nav: Nav;
   parentPath?: string;
+  level?: number;
 }
 
-function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
+function MenuItem({ nav, parentPath = "", level = 1 }: MenuItemProps) {
   const [show, setShow] = useState(false);
   const hasChildren = nav.children?.length;
   const subMenuRef = useRef<HTMLUListElement>(null);
@@ -30,10 +32,11 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
   const showSubMenu = useCallback(() => {
     if (!subMenuRef.current) return;
     subMenuRef.current.removeAttribute("style");
+    const currentStyle = getComputedStyle(subMenuRef.current);
     subMenuRef.current.animate(
       [
-        { height: "0px" },
-        { height: getComputedStyle(subMenuRef.current!).height },
+        { height: `0px`, padding: "0 0" },
+        { height: currentStyle.height, padding: currentStyle.padding },
       ],
       {
         duration: 95,
@@ -42,11 +45,12 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
   }, []);
   const hideSubMenu = useCallback(() => {
     if (!subMenuRef.current) return;
+    const currentStyle = getComputedStyle(subMenuRef.current);
     subMenuRef.current
       .animate(
         [
-          { height: getComputedStyle(subMenuRef.current!).height },
-          { height: `0px` },
+          { height: currentStyle.height, padding: currentStyle.padding },
+          { height: `0px`, padding: "0 0" },
         ],
         {
           duration: 95,
@@ -63,11 +67,26 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
 
   return (
     <li className={"menu-item"}>
-      <div className={"menu-navi"}>
+      <div className={`menu-navi ${show ? "open" : ""}`}>
         {hasChildren ? (
-          <div onClick={() => handleToggle(show)}>{nav.name}</div>
+          <div
+            onPointerDown={() => handleToggle(show)}
+            className={"menu-link"}
+            style={{ paddingLeft: level * 16, paddingRight: 16 }}
+          >
+            <div style={{ flex: 1 }}>{nav.name}</div>
+            <span
+              className={"menu-chevron"}
+              dangerouslySetInnerHTML={{ __html: bs.chevron_right }}
+            ></span>
+          </div>
         ) : (
-          <Link href={`${newPath}`}>{nav.name}</Link>
+          <div
+            className={"menu-link"}
+            style={{ paddingLeft: level * 16, paddingRight: 16 }}
+          >
+            <Link href={`${newPath}`}>{nav.name}</Link>
+          </div>
         )}
       </div>
       {hasChildren && show && (
@@ -76,7 +95,8 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
           nav={nav}
           showSubMenu={showSubMenu}
           parentPath={newPath}
-        ></SubMenu>
+          level={level + 1}
+        />
       )}
     </li>
   );
@@ -84,8 +104,8 @@ function MenuItem({ nav, parentPath = "" }: MenuItemProps) {
 
 const SubMenu = React.forwardRef<
   HTMLUListElement,
-  { nav: Nav; parentPath: string; showSubMenu: () => void }
->(({ nav, showSubMenu, parentPath }, ref) => {
+  { nav: Nav; parentPath: string; showSubMenu: () => void; level: number }
+>(({ nav, showSubMenu, parentPath, level }, ref) => {
   useEffect(() => {
     showSubMenu();
   }, []);
@@ -93,7 +113,12 @@ const SubMenu = React.forwardRef<
   return (
     <ul ref={ref} className={"menu"} style={{ display: "none" }}>
       {nav.children!.map((subNav) => (
-        <MenuItem key={subNav.path} nav={subNav} parentPath={parentPath} />
+        <MenuItem
+          key={subNav.path}
+          nav={subNav}
+          parentPath={parentPath}
+          level={level}
+        />
       ))}
     </ul>
   );

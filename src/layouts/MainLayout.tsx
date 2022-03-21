@@ -7,7 +7,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
     <>
       <div style={{ display: "flex" }}>
         <Sidebar />
-        <main>{children}</main>
+        <main style={{ flex: 1 }}>{children}</main>
       </div>
     </>
   );
