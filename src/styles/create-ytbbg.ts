@@ -3,13 +3,13 @@ function createYtbBg() {
   const iframe = document.createElement("iframe");
   const opEl = document.createElement("div");
 
-  opEl.style.position = "absolute";
+  opEl.style.position = "fixed";
   opEl.style.zIndex = "9999";
   opEl.style.right = "24px";
   opEl.style.top = "100px";
 
   ctn.style.pointerEvents = "none";
-  ctn.style.position = "absolute";
+  ctn.style.position = "fixed";
   ctn.style.left = "0";
   ctn.style.top = "0";
   ctn.style.overflow = "hidden";
@@ -18,7 +18,7 @@ function createYtbBg() {
   ctn.style.height = "100vh";
 
   // iframe.style.pointerEvents = "none";
-  iframe.style.position = "absolute";
+  iframe.style.position = "fixed";
   iframe.style.width = "120vw";
   iframe.style.height = "120vh";
   iframe.title = "YouTube video player";
@@ -28,7 +28,7 @@ function createYtbBg() {
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
-  let vid = "xQ92XiwyFBs";
+  let vid = "Su8EegJQwZU";
   if (location.search.includes("?bgv=")) {
     vid = location.search.replace("?bgv=", "");
   }

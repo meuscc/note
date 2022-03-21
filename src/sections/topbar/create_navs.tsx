@@ -1,11 +1,15 @@
+import bs from "/src/icons/bs";
+
 export default function createNavs() {
   return [
     {
       path: "/",
       name: "首页",
+      icon: bs.house,
     },
     {
       path: "/math",
+      icon: bs.meta,
       name: "数学",
       children: [
         {
@@ -94,7 +98,7 @@ export default function createNavs() {
     {
       path: "/langs",
       name: "计算机",
-
+      icon: bs.code_square,
       children: [
         {
           path: "/clang",
@@ -211,18 +215,22 @@ export default function createNavs() {
     {
       path: "/videos",
       name: "动视",
+      icon: bs.play_circle,
     },
     {
       path: "/sounds",
       name: "音声",
+      icon: bs.music_note_beamed,
     },
     {
       path: "/color",
       name: "乐色",
+      icon: bs.palette,
     },
     {
       path: "/articles",
       name: "美文",
+      icon: bs.book,
     },
   ];
 }

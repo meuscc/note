@@ -4,12 +4,10 @@
 @import "sections";
 @import "lib";
 
-.menu {
-  overflow-y: hidden;
-}
-
 .book-page {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   max-width: 768px;
   padding: 48px;
   border-radius: 2px;
