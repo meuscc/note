@@ -10,22 +10,25 @@ const navs = createNavs();
 
 export default function Sidebar() {
   const sidebarStore = useSidebarStore();
-  // const isLg = useMedia("(min-width: 1200px)");
-  // const isMd = useMedia("(min-width: 900px)");
+  const isLg = useMedia("(min-width: 1200px)");
+  const isMd = useMedia("(min-width: 900px)");
   const [shrinking, setShrinking] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(isMd, isLg);
-  //   if (isMd && isLg) {
-  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.full });
-  //   }
-  //   if (isMd && !isLg) {
-  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.shrink });
-  //   }
-  //   if (!isMd && !isLg) {
-  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
-  //   }
-  // }, [isMd, isLg]);
+  useEffect(() => {
+    console.log(isMd, isLg);
+    if (isMd && isLg) {
+      useSidebarStore.setState({ sidebarStatus: SidebarStatus.full });
+    }
+    if (isMd && !isLg) {
+      useSidebarStore.setState({ sidebarStatus: SidebarStatus.shrink });
+    }
+    if (!isMd && !isLg) {
+      useSidebarStore.setState({ sidebarStatus: SidebarStatus.hiding });
+      setTimeout(() => {
+        // useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
+      }, 1000);
+    }
+  }, [isMd, isLg]);
 
   useEffect(() => {
     if (sidebarStore.sidebarStatus === SidebarStatus.shrink) {
@@ -40,12 +43,11 @@ export default function Sidebar() {
     <>
       <div
         onPointerUp={(e) => {
-          // @ts-ignore
-          if (e.target.classList.contains("sidebar-mask")) {
-            useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
-          }
+          useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
         }}
-        className={`sidebar-mask ${sidebarStore.sidebarStatus}`}
+        className={`sidebar-mask ${
+          sidebarStore.sidebarStatus === SidebarStatus.float ? "show" : ""
+        }`}
       />
       <div
         className={`sidebar ${sidebarStore.sidebarStatus} ${
