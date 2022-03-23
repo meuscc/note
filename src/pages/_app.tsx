@@ -3,10 +3,11 @@ import "../styles/index.scss";
 import qs from "qs";
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import Layout from "../layouts/MainLayout";
-import React from "react";
+import React, { useEffect } from "react";
 
-function MyApp({ Component, pageProps }: AppProps) {
+import Layout from "../layouts/MainLayout";
+
+function App({ Component, pageProps }: AppProps) {
   const components = {
     code: function Code(props: any) {
       const split = props.className.split("?");
@@ -24,6 +25,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       return props.children;
     },
   };
+
+  useEffect(() => {
+    import("/src/styles/index");
+    import("/src/elements/code");
+    import("/src/elements/math");
+  }, []);
+
   return (
     <MDXProvider components={components}>
       <Layout>
@@ -33,4 +41,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

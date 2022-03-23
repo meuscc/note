@@ -1,31 +1,43 @@
 import bs from "/src/icons/bs";
 import Link from "next/link";
 import React from "react";
-import { SidebarStatus, sidebarStore } from "../sidebar/SidebarStore";
+import sidebarStore, { SidebarStatus } from "../sidebar/SidebarStore";
 
 export default function Brand() {
   return (
-    <div>
-      <span className="brand">
-        <div
-          dangerouslySetInnerHTML={{ __html: bs.list }}
-          className={"brand-toggle"}
-          onClick={() => {
-            sidebarStore.setState((v) => ({
-              sidebarStatus:
-                v.sidebarStatus === SidebarStatus.hide
-                  ? SidebarStatus.full
-                  : SidebarStatus.hide,
-            }));
-          }}
-        />
-        <Link href={"/"}>
-          <span className={"brand-name"}>
-            <Logo />
-            天真笔记
-          </span>
-        </Link>
-      </span>
+    <div className="brand">
+      <div
+        dangerouslySetInnerHTML={{ __html: bs.list }}
+        className={"brand-toggle hide-md"}
+        onPointerUp={(e) => {
+          e.stopPropagation();
+          sidebarStore.setState((v) => ({
+            sidebarStatus:
+              v.sidebarStatus === SidebarStatus.hide
+                ? SidebarStatus.float
+                : SidebarStatus.hide,
+          }));
+        }}
+      />
+      <div
+        dangerouslySetInnerHTML={{ __html: bs.list }}
+        className={"brand-toggle show-md"}
+        onPointerUp={(e) => {
+          e.stopPropagation();
+          sidebarStore.setState((v) => ({
+            sidebarStatus:
+              v.sidebarStatus === SidebarStatus.shrink
+                ? SidebarStatus.full
+                : SidebarStatus.shrink,
+          }));
+        }}
+      />
+      <Link href={"/"}>
+        <span className={"brand-name"}>
+          <Logo />
+          天真笔记
+        </span>
+      </Link>
     </div>
   );
 }

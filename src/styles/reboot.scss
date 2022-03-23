@@ -15,4 +15,7 @@ body {
 
 body {
   background-color: var(--palette-background-default);
+  //background: url("/bg.jpg");
+  background-size: contain;
+  padding-top: var(--topbar-height);
 }

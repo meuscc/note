@@ -1,8 +1,9 @@
-@import "normalize";
+@import "lib";
+@import "variables";
 @import "reboot";
 @import "components";
 @import "sections";
-@import "lib";
+@import "layouts";
 
 .book-page {
   background-color: rgba(255, 255, 255, 0.5);

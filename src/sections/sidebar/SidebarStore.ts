@@ -1,4 +1,4 @@
-import createStore from "/src/stores/create-store";
+import create from "zustand";
 
 export enum SidebarStatus {
   hide = "hide",
@@ -7,6 +7,8 @@ export enum SidebarStatus {
   full = "full",
 }
 
-export const sidebarStore = createStore(() => ({
-  sidebarStatus: SidebarStatus.hide,
-}));
+export default create(() => {
+  return {
+    sidebarStatus: SidebarStatus.hide,
+  };
+});

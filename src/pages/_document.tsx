@@ -1,9 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import React from "react";
 
 export default function Document() {
   return (
     <Html lang={"zh-CN"}>
       <Head>
+        <link rel="icon" href="/favicon.svg" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/heti/umd/heti.min.css"

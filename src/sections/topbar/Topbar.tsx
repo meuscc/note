@@ -1,5 +1,5 @@
 import React from "react";
-import createNavs from "./create_navs";
+import createNavs from "./create-navs";
 import Menu from "../../menu/Menu";
 import Brand from "./Brand";
 

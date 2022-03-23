@@ -22,15 +22,15 @@
   left: 0;
   width: 0;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  opacity: 0;
+  background-color: rgba(0, 0, 0, 0);
   z-index: calc(var(--zIndex-drawer) - 1);
-  transition: opacity var(--transitions-duration-shorter);
+  transition: background-color var(--transitions-duration-shorter)
+    var(--transitions-easing-sharp);
 }
 
-.sidebar-mask.open {
+.sidebar-mask.float {
   width: 100vw;
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sidebar {
@@ -40,7 +40,8 @@
   height: 100vh;
   transform: translate3d(-100%, 0, 0);
   z-index: var(--zIndex-drawer);
-  transition: all 0.095s ease;
+  transition: all var(--transitions-duration-shorter)
+    var(--transitions-easing-sharp);
   background: var(--sidebar-bg);
   color: var(--sidebar-color);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -52,7 +53,7 @@
   flex-direction: column;
 }
 
-.sidebar.full {
+.sidebar.float {
   transform: translate3d(0, 0, 0);
   width: var(--sidebar-width);
 }
@@ -112,7 +113,31 @@
 }
 
 @media screen and (min-width: 768px) {
-  .sidebar {
+  .menu-navi.l1 {
+    transition: all 0.2s ease;
+  }
+  .sidebar-mask {
     display: none;
+  }
+  .sidebar-content {
+    overflow: unset;
+  }
+  .sidebar {
+    transform: translate3d(0, 0, 0);
+    display: block;
+    position: sticky;
+    top: var(--topbar-height);
+    height: calc(100vh - var(--topbar-height));
+    width: 240px;
+    overflow-y: unset;
+    .brand {
+      display: none;
+    }
+    .menu {
+      overflow: unset;
+    }
+  }
+  .sidebar.full {
+    width: 240px;
   }
 }

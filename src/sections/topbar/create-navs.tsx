@@ -13,72 +13,72 @@ export default function createNavs() {
       name: "数学",
       children: [
         {
-          path: "/set_theory",
+          path: "/set-theory",
           name: "集合论",
 
           children: [
             {
-              path: "/set_theory_cheat",
+              path: "/set-theory-cheat/set-theory-cheat",
               name: "集合论概览",
             },
           ],
         },
         {
-          path: "/set_topology",
+          path: "/set-topology",
           name: "点集拓扑",
           children: [
             {
-              path: "/set_topology_cheat",
+              path: "/set-topology-cheat/set-topology-cheat",
               name: "点集拓扑概览",
             },
           ],
         },
         {
-          path: "/real_analysis",
+          path: "/real-analysis",
           name: "实分析",
           children: [
             {
-              path: "/real_analysis_cheat",
+              path: "/real-analysis-cheat/real-analysis-cheat",
               name: "实分析概览",
             },
           ],
         },
         {
-          path: "/complex_analysis",
+          path: "/complex-analysis",
           name: "复分析",
           children: [
             {
-              path: "/complex_analysis_cheat",
+              path: "/complex-analysis-cheat/complex-analysis-cheat",
               name: "复分析概览",
             },
           ],
         },
         {
-          path: "/linear_algebra",
+          path: "/linear-algebra",
           name: "线性代数",
           children: [
             {
-              path: "/linear_algebra_cheat",
+              path: "/linear-algebra-cheat/linear-algebra-cheat",
               name: "线性代数概览",
             },
           ],
         },
         {
-          path: "/abstract_algebra",
+          path: "/abstract-algebra",
           name: "抽象代数",
           children: [
             {
-              path: "/abstract_algebra_cheat",
+              path: "/abstract-algebra-cheat/abstract-algebra-cheat",
               name: "抽象代数概览",
             },
           ],
         },
         {
-          path: "/probability_theory",
+          path: "/probability-theory",
           name: "概率论",
           children: [
             {
-              path: "/probability_theory",
+              path: "/probability-theory-cheat/probability-theory-cheat",
               name: "概率论概览",
             },
           ],
@@ -88,7 +88,7 @@ export default function createNavs() {
           name: "统计",
           children: [
             {
-              path: "/statistics_cheat",
+              path: "/statistics-cheat/statistics-cheat",
               name: "统计概览",
             },
           ],
@@ -105,7 +105,7 @@ export default function createNavs() {
           name: "C语言",
           children: [
             {
-              path: "/c_cheat",
+              path: "/clang-cheat/clang-cheat",
               name: "C语言概览",
             },
           ],
@@ -115,7 +115,7 @@ export default function createNavs() {
           name: "C++",
           children: [
             {
-              path: "/cpp_cheat",
+              path: "/cpp-cheat/cpp-cheat",
               name: "C++概览",
             },
           ],
@@ -125,7 +125,7 @@ export default function createNavs() {
           name: "Rust语言",
           children: [
             {
-              path: "/rust_cheat",
+              path: "/rust-cheat/rust-cheat",
               name: "Rust概览",
             },
           ],
@@ -135,7 +135,7 @@ export default function createNavs() {
           name: "C#语言",
           children: [
             {
-              path: "/csharp_cheat",
+              path: "/csharp-cheat/csharp-cheat",
               name: "C#概览",
             },
           ],
@@ -145,7 +145,7 @@ export default function createNavs() {
           name: "Go语言",
           children: [
             {
-              path: "/go_cheat",
+              path: "/go-cheat/go-cheat",
               name: "Go语言概览",
             },
           ],
@@ -155,7 +155,7 @@ export default function createNavs() {
           name: "Swift语言",
           children: [
             {
-              path: "/swift_cheat",
+              path: "/swift-cheat/swift-cheat",
               name: "Swift概览",
             },
           ],
@@ -165,7 +165,7 @@ export default function createNavs() {
           name: "Julia语言",
           children: [
             {
-              path: "/JuliaCheat",
+              path: "/julia-cheat/julia-cheat",
               name: "Julia概览",
             },
           ],
@@ -175,7 +175,7 @@ export default function createNavs() {
           name: "Js语言",
           children: [
             {
-              path: "/js_cheat",
+              path: "/js-cheat/js-cheat",
               name: "Js概览",
             },
           ],
@@ -185,7 +185,7 @@ export default function createNavs() {
           name: "Python语言",
           children: [
             {
-              path: "/python_cheat",
+              path: "/python-cheat/python-cheat",
               name: "Python概览",
             },
           ],
@@ -195,40 +195,40 @@ export default function createNavs() {
           name: "SQL语言",
           children: [
             {
-              path: "/sql_cheat",
+              path: "/sql-cheat/sql-cheat",
               name: "SQL概览",
             },
           ],
         },
         {
-          path: "/script",
+          path: "/scripts",
           name: "其他脚本语言",
           children: [
             {
-              path: "/ScriptCheat",
-              name: "其他脚本概览",
+              path: "/lua-cheat/lua-cheat",
+              name: "Lua概览",
             },
           ],
         },
       ],
     },
     {
-      path: "/videos",
+      path: "/videos/videos",
       name: "动视",
       icon: bs.play_circle,
     },
     {
-      path: "/sounds",
+      path: "/sounds/sounds",
       name: "音声",
       icon: bs.music_note_beamed,
     },
     {
-      path: "/color",
+      path: "/color/color",
       name: "乐色",
       icon: bs.palette,
     },
     {
-      path: "/articles",
+      path: "/articles/articles",
       name: "美文",
       icon: bs.book,
     },

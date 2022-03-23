@@ -1,18 +1,31 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Nav } from "../sections/topbar/Nav";
 import bs from "/src/icons/bs";
 
 interface Props {
   navs: Nav[];
   direction?: "vertical" | "horizontal";
+  shrink?: boolean;
 }
 
-export default function Menu({ navs, direction = "vertical" }: Props) {
+export default function Menu({
+  navs,
+  direction = "vertical",
+  shrink = false,
+}: Props) {
   return (
-    <ul className={`menu ${direction} l1`}>
+    <ul className={`menu ${direction} l1 ${shrink ? "shrink" : ""}`}>
       {navs.map((nav) => {
-        return <MenuItem direction={direction} key={nav.path} nav={nav} />;
+        return (
+          <MenuItem
+            shrink={shrink}
+            direction={direction}
+            key={nav.path}
+            nav={nav}
+          />
+        );
       })}
     </ul>
   );
@@ -23,6 +36,7 @@ interface MenuItemProps {
   parentPath?: string;
   level?: number;
   direction: "vertical" | "horizontal";
+  shrink: boolean;
 }
 
 function MenuItem({
@@ -30,7 +44,9 @@ function MenuItem({
   parentPath = "",
   level = 1,
   direction,
+  shrink,
 }: MenuItemProps) {
+  const router = useRouter();
   const [show, setShow] = useState(false);
   const hasChildren = nav.children?.length;
   const subMenuRef = useRef<HTMLUListElement>(null);
@@ -65,7 +81,8 @@ function MenuItem({
         duration: 95,
       }
     );
-  }, []);
+  }, [direction, shrink]);
+
   const hideSubMenu = useCallback(() => {
     if (!subMenuRef.current) return;
     const currentStyle = getComputedStyle(subMenuRef.current);
@@ -95,28 +112,42 @@ function MenuItem({
         }
       )
       .finished.then(() => setShow(false));
-  }, []);
-  const handleToggle = useCallback((_show: boolean) => {
-    if (direction === "horizontal") return;
-    if (!_show) {
-      return setShow(true);
-    }
-    return hideSubMenu();
-  }, []);
+  }, [direction, shrink]);
 
-  const handleHover = useCallback((_show: boolean) => {
-    if (direction === "vertical") return;
-    if (timerRef.current) window.clearTimeout(timerRef.current);
-    setShow(true);
-  }, []);
+  const handleToggle = useCallback(
+    (_show: boolean) => {
+      if (direction === "horizontal" || shrink) return;
+      if (!_show) {
+        return setShow(true);
+      }
+      return hideSubMenu();
+    },
+    [direction, shrink]
+  );
 
-  const handleOut = useCallback((_show: boolean) => {
-    if (direction === "vertical") return;
-    timerRef.current = window.setTimeout(() => {
-      window.clearTimeout(timerRef.current);
-      hideSubMenu();
-    }, 95);
-  }, []);
+  const handleHover = useCallback(
+    (_show: boolean) => {
+      if (direction === "vertical" && !shrink) return;
+      if (timerRef.current) window.clearTimeout(timerRef.current);
+      setShow(true);
+    },
+    [direction, shrink]
+  );
+
+  const handleOut = useCallback(
+    (_show: boolean) => {
+      if (direction === "vertical" && !shrink) return;
+      timerRef.current = window.setTimeout(() => {
+        window.clearTimeout(timerRef.current);
+        hideSubMenu();
+      }, 95);
+    },
+    [direction, shrink]
+  );
+
+  useEffect(() => {
+    hideSubMenu();
+  }, [direction, shrink]);
 
   return (
     <li
@@ -124,11 +155,13 @@ function MenuItem({
       onMouseLeave={() => handleOut(show)}
       onMouseEnter={() => handleHover(show)}
     >
-      <div className={`menu-navi ${show ? "open" : ""}`}>
+      <div className={`menu-navi l${level} ${show ? "open" : ""}`}>
         {hasChildren ? (
           <div
             onPointerDown={() => handleToggle(show)}
-            className={"menu-link"}
+            className={`menu-link l${level} ${
+              router.pathname.startsWith(newPath) ? "has-active" : ""
+            }`}
             style={{
               paddingLeft: direction === "vertical" ? level * 16 : 16,
               paddingRight: 16,
@@ -140,32 +173,39 @@ function MenuItem({
                 dangerouslySetInnerHTML={{ __html: nav.icon }}
               ></span>
             )}
-            <div style={{ flex: 1 }}>{nav.name}</div>
+            <span className={"menu-text"} style={{ flex: 1 }}>
+              {nav.name}
+            </span>
             <span
               className={"menu-chevron"}
               dangerouslySetInnerHTML={{ __html: bs.chevron_right }}
             ></span>
           </div>
         ) : (
-          <div
-            className={"menu-link"}
-            style={{
-              paddingLeft: direction === "vertical" ? level * 16 : 16,
-              paddingRight: 16,
-            }}
-          >
-            {nav.icon && (
-              <span
-                className={"menu-icon"}
-                dangerouslySetInnerHTML={{ __html: nav.icon }}
-              ></span>
-            )}
-            <Link href={`${newPath}`}>{nav.name}</Link>
-          </div>
+          <Link href={`${newPath}`}>
+            <a
+              className={`menu-link l${level} ${
+                router.pathname === newPath ? "active" : ""
+              }`}
+              style={{
+                paddingLeft: direction === "vertical" ? level * 16 : 16,
+                paddingRight: 16,
+              }}
+            >
+              {nav.icon && (
+                <span
+                  className={"menu-icon"}
+                  dangerouslySetInnerHTML={{ __html: nav.icon }}
+                ></span>
+              )}
+              <span className={"menu-text"}>{nav.name}</span>
+            </a>
+          </Link>
         )}
       </div>
       {hasChildren && show && (
         <SubMenu
+          shrink={shrink}
           ref={subMenuRef}
           nav={nav}
           showSubMenu={showSubMenu}
@@ -186,8 +226,9 @@ const SubMenu = React.forwardRef<
     showSubMenu: () => void;
     level: number;
     direction: "vertical" | "horizontal";
+    shrink: boolean;
   }
->(({ nav, showSubMenu, parentPath, level, direction }, ref) => {
+>(({ nav, showSubMenu, parentPath, level, direction, shrink }, ref) => {
   useEffect(() => {
     showSubMenu();
   }, []);
@@ -196,6 +237,7 @@ const SubMenu = React.forwardRef<
     <ul ref={ref} className={`menu l${level}`} style={{ display: "none" }}>
       {nav.children!.map((subNav) => (
         <MenuItem
+          shrink={shrink}
           key={subNav.path}
           nav={subNav}
           parentPath={parentPath}
