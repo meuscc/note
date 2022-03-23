@@ -1,8 +1,14 @@
 declare module "*.md";
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    "y-sidebar": any;
+import * as React from "react";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "c-b": {
+        c: string;
+        l: string;
+      };
+    }
   }
 }
-declare const commonTags: any;

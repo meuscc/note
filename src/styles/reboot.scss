@@ -1,13 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   touch-action: manipulation;
   font-feature-settings: "rlig" 1, "calt" 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-size: var(--typography-htmlFontSize);
+  scroll-behavior: smooth;
 }
 
 body {
   font-size: var(--typography-fontSize);
   color: var(--palette-text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
   background-color: var(--palette-background-default);
+  //background: url("/bg.jpg");
+  background-size: contain;
+  padding-top: var(--topbar-height);
 }

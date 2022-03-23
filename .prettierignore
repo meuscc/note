@@ -37,5 +37,13 @@ docs/
 bitbucket-pipelines.yml
 .parcel-cache
 .lessrc
-public
+
 pnpm-lock.yaml
+.next/
+
+out/
+
+*.cc
+*.cpp
+*.rust
+*.ico

@@ -1,78 +1,106 @@
-// menu
+// 菜单
 .menu {
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
   list-style: none;
+  transform-origin: left top;
+}
+
+.menu-item {
+  position: relative;
 }
 
 .menu-navi {
   cursor: pointer;
   user-select: none;
-}
-
-.menu .menu {
-  position: absolute;
-}
-
-// menu vertical
-.menu.vertical .menu {
-  position: relative;
-}
-
-// menu horizontal
-.menu.horizontal {
   display: flex;
-}
-
-.menu-navi {
-  color: currentColor;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .menu-link {
+  width: 100%;
+  height: 32px;
   display: flex;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.menu-link-content {
-  display: flex;
+  align-items: center;
+  border-radius: 4px;
   gap: 8px;
+  flex: 1;
+  color: currentColor;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--palette-primary-main);
+  }
+  &.has-active {
+    color: var(--palette-primary-main);
+  }
+  &.active {
+    background-color: #1976d225;
+    color: var(--palette-primary-main);
+  }
 }
 
-//
-
-.expand-enter-active {
-  transition: all 0.2s ease-in-out;
+.menu-icon {
+  display: flex;
 }
 
-.expand-exit-active {
-  transition: all 0.2s ease-in-out;
+.menu-text {
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
-// horizontal
-.dropdown-enter-active {
-  opacity: 0.25;
-  transform: translate3d(0, -10px, 0);
+.menu-chevron {
+  width: 12px;
+  height: 12px;
+  display: block;
+  svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+  }
 }
 
-.dropdown-enter-to {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+// 竖直菜单
+.menu.vertical {
+  /// 1. 数值菜单项目之间留空白
+  .menu-item {
+    // 普通菜单项目下面有 5px 的间隔
+    margin-bottom: 5px;
+    // 最后一个菜单项目 去除间隔
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  // 展开状态下 打开的菜单项目 去除间隔
+  &:not(.shrink) .menu-item.open {
+    margin-bottom: 0;
+  }
 }
 
-.dropdown-exit-to {
-  opacity: 0.5;
-  transform: translate3d(0, 0, 0);
+// 水平菜单
+.menu.horizontal {
+  display: flex;
+  .menu {
+    position: absolute;
+  }
+  // 子级菜单
+  .menu.l2 {
+    top: calc(100% + 5px);
+    left: 0;
+  }
+  .menu.l3 {
+    left: calc(100% + 1px);
+    top: 0;
+  }
+  .menu-chevron {
+    display: none;
+  }
 }
 
-//
-.dropdown-enter-active {
-  transition: all 0.2s ease-in-out;
-}
-
-.dropdown-exit-active {
-  transition: all 0.2s ease-in-out;
+// 链接动画
+.menu-link.l1 {
+  transition: all var(--transitions-duration-shorter)
+    var(--transitions-easing-sharp);
 }

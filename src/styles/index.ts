@@ -1,8 +1,7 @@
-import "./index.scss";
-
 import { createStyle } from "../themes/create_theme_variables";
 import { variables } from "../themes/variables";
 import { themes } from "../themes/themes";
+import createYtbBg from "/src/styles/create-ytbbg";
 
 const style = document.createElement("style")!;
 
@@ -17,3 +16,6 @@ style.innerText = `:root{${createStyle(variables)}${createStyle(
 )}}.dark{${createStyle(themes.dark, "--palette")}}`;
 
 document.head.appendChild(style);
+// createYtbBg();
+
+console.log(1212121);
