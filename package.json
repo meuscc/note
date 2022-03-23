@@ -41,5 +41,8 @@
     "remark-toc": "^8.0.1",
     "sass": "^1.49.9",
     "typescript": "^4.6.2"
+  },
+  "engines": {
+    "node": ">=16.14.0"
   }
 }
