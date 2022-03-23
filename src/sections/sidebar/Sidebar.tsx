@@ -10,22 +10,22 @@ const navs = createNavs();
 
 export default function Sidebar() {
   const sidebarStore = useSidebarStore();
-  const isLg = useMedia("(min-width: 1200px)");
-  const isMd = useMedia("(min-width: 900px)");
+  // const isLg = useMedia("(min-width: 1200px)");
+  // const isMd = useMedia("(min-width: 900px)");
   const [shrinking, setShrinking] = useState(false);
 
-  useEffect(() => {
-    console.log(isMd, isLg);
-    if (isMd && isLg) {
-      useSidebarStore.setState({ sidebarStatus: SidebarStatus.full });
-    }
-    if (isMd && !isLg) {
-      useSidebarStore.setState({ sidebarStatus: SidebarStatus.shrink });
-    }
-    if (!isMd && !isLg) {
-      useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
-    }
-  }, [isMd, isLg]);
+  // useEffect(() => {
+  //   console.log(isMd, isLg);
+  //   if (isMd && isLg) {
+  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.full });
+  //   }
+  //   if (isMd && !isLg) {
+  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.shrink });
+  //   }
+  //   if (!isMd && !isLg) {
+  //     useSidebarStore.setState({ sidebarStatus: SidebarStatus.hide });
+  //   }
+  // }, [isMd, isLg]);
 
   useEffect(() => {
     if (sidebarStore.sidebarStatus === SidebarStatus.shrink) {
