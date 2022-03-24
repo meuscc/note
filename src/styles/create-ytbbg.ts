@@ -6,7 +6,7 @@ function createYtbBg() {
   opEl.style.position = "fixed";
   opEl.style.zIndex = "9999";
   opEl.style.right = "24px";
-  opEl.style.top = "100px";
+  opEl.style.top = "10px";
 
   ctn.style.pointerEvents = "none";
   ctn.style.position = "fixed";

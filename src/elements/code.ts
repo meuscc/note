@@ -11,9 +11,21 @@ const prismStyle = css`code[class*=language-],pre[class*=language-]{color:#000;b
 export class CodeBlock extends LitElement {
   static styles = [
     prismStyle,
+    // language=css
     css`
       :host {
         display: block;
+      }
+      pre[class*="language-"] {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+      }
+      .language-css .token.string,
+      .style .token.string,
+      .token.entity,
+      .token.operator,
+      .token.url {
+        background-color: transparent;
       }
     `,
   ];

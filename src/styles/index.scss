@@ -8,8 +8,30 @@
 .book-page {
   padding: var(--card-padding);
   background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+  //backdrop-filter: blur(5px);
   border-radius: var(--shape-borderRadius);
   margin-left: auto;
   margin-right: auto;
+
+  #目录 + ul {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    //right: var(--card-padding);
+    //top: var(--card-padding);
+    right: 40px;
+    top: 80px;
+    height: 80vh;
+    overflow: auto;
+    margin: 0;
+    padding: var(--card-padding);
+    list-style: none;
+    border-radius: var(--shape-borderRadius);
+
+    a {
+      display: flex;
+      text-decoration: none;
+      color: currentColor;
+      padding: 5px 0;
+    }
+  }
 }

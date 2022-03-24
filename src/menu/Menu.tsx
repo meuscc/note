@@ -65,7 +65,7 @@ const MenuItem = React.memo(function _MenuItem({
     subMenuRef.current.removeAttribute("style");
     const currentStyle = getComputedStyle(subMenuRef.current);
     subMenuRef.current.animate(
-      direction === "vertical"
+      direction === "vertical" && !shrink
         ? [
             { height: `0px`, padding: "0 0" },
             { height: currentStyle.height, padding: currentStyle.padding },
@@ -95,7 +95,7 @@ const MenuItem = React.memo(function _MenuItem({
     const currentStyle = getComputedStyle(subMenuRef.current);
     subMenuRef.current
       .animate(
-        direction === "vertical"
+        direction === "vertical" && !shrink
           ? [
               { height: currentStyle.height, padding: currentStyle.padding },
               { height: `0px`, padding: "0 0" },

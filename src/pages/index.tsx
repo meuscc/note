@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Tet from "../contents/langs/cpp/cpp_cheat/cpp_cheat.mdx";
+import Tet from "../contents/langs/cpp/cpp-cheat/cpp-cheat.mdx";
 
 export const HomePage: NextPage = () => {
   return (
