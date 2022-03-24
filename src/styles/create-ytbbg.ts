@@ -28,7 +28,7 @@ function createYtbBg() {
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
-  let vid = "Su8EegJQwZU";
+  let vid = "BhbhiQZwjf4";
   if (location.search.includes("?bgv=")) {
     vid = location.search.replace("?bgv=", "");
   }
