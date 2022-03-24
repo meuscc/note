@@ -10,8 +10,8 @@ const navs = createNavs();
 
 export default function Sidebar() {
   const sidebarStore = useSidebarStore();
-  const isLg = useMedia("(min-width: 1200px)");
-  const isMd = useMedia("(min-width: 900px)");
+  const isLg = useMedia("(min-width: 1200px)", false);
+  const isMd = useMedia("(min-width: 900px)", false);
   const [shrinking, setShrinking] = useState(false);
 
   useEffect(() => {

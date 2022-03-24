@@ -6,7 +6,8 @@ import sidebarStore, { SidebarStatus } from "../sidebar/SidebarStore";
 export default function Brand() {
   return (
     <div className="brand">
-      <div
+      <button
+        role={"button"}
         dangerouslySetInnerHTML={{ __html: bs.list }}
         className={"brand-toggle hide-md"}
         onPointerUp={(e) => {
@@ -19,7 +20,8 @@ export default function Brand() {
           }));
         }}
       />
-      <div
+      <button
+        role={"button"}
         dangerouslySetInnerHTML={{ __html: bs.list }}
         className={"brand-toggle show-md"}
         onPointerUp={(e) => {

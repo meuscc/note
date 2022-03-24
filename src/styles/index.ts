@@ -16,6 +16,6 @@ style.innerText = `:root{${createStyle(variables)}${createStyle(
 )}}.dark{${createStyle(themes.dark, "--palette")}}`;
 
 document.head.appendChild(style);
-// createYtbBg();
+createYtbBg();
 
 console.log(1212121);

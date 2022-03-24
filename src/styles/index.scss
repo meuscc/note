@@ -6,13 +6,10 @@
 @import "layouts";
 
 .book-page {
+  padding: var(--card-padding);
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  max-width: 768px;
-  padding: 48px;
-  border-radius: 2px;
-  box-shadow: 0 8px 32px rgb(0 0 0 / 32%);
+  border-radius: var(--shape-borderRadius);
   margin-left: auto;
   margin-right: auto;
 }
