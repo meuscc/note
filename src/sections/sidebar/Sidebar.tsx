@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useMedia } from "react-use";
-import Menu from "/src/menu/Menu";
 import createNavs from "/src/sections/topbar/create-navs";
 import useSidebarStore, { SidebarStatus } from "./SidebarStore";
-
+import useNavsStore, { NavsPosition } from "/src/sections/navs-store";
 import Brand from "/src/sections/topbar/Brand";
+import Menu from "/src/menu/Menu";
 
 const navs = createNavs();
 
 export default function Sidebar() {
   const sidebarStore = useSidebarStore();
+  const navsPosition = useNavsStore((s) => s.navsPosition);
+
   const isLg = useMedia("(min-width: 1200px)", false);
   const isMd = useMedia("(min-width: 900px)", false);
   const [shrinking, setShrinking] = useState(false);
@@ -39,6 +41,15 @@ export default function Sidebar() {
     }
   }, [sidebarStore.sidebarStatus]);
 
+  let sideNavClass = "hide";
+
+  if (navsPosition === NavsPosition.top) {
+    sideNavClass =
+      sidebarStore.sidebarStatus === SidebarStatus.float ? "float" : "hide";
+  } else {
+    sideNavClass = sidebarStore.sidebarStatus;
+  }
+
   return (
     <>
       <div
@@ -50,9 +61,7 @@ export default function Sidebar() {
         }`}
       />
       <div
-        className={`sidebar ${sidebarStore.sidebarStatus} ${
-          shrinking ? "shrinking" : ""
-        }`}
+        className={`sidebar ${sideNavClass} ${shrinking ? "shrinking" : ""}`}
       >
         <Brand />
         <div className={"sidebar-content"}>
