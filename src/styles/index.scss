@@ -1,3 +1,4 @@
+@import "../themes/css-themes";
 @import "lib";
 @import "variables";
 @import "reboot";
@@ -34,4 +35,9 @@
       padding: 5px 0;
     }
   }
+}
+
+.nowrap-keep-all {
+  white-space: nowrap;
+  word-break: keep-all;
 }

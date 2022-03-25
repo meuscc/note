@@ -9,6 +9,9 @@ declare global {
         c: string;
         l: string;
       };
+      "y-dropdown": any;
+      "y-dropdown-trigger": any;
+      "y-dropdown-container": any;
     }
   }
 }

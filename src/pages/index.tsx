@@ -12,7 +12,7 @@ export const HomePage: NextPage = () => {
         <meta name="description" content="c++ 简要笔记" />
       </Head>
       <div className={"book-page article heti heti--sans"}>
-        <Tet></Tet>
+        <Tet />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
       "/src/*": ["src/*"]

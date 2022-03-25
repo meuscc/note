@@ -183,7 +183,7 @@ const MenuItem = React.memo(function _MenuItem({
               <span
                 className={"menu-icon"}
                 dangerouslySetInnerHTML={{ __html: nav.icon }}
-              ></span>
+              />
             )}
             <span className={"menu-text"} style={{ flex: 1 }}>
               {nav.name}
@@ -191,7 +191,7 @@ const MenuItem = React.memo(function _MenuItem({
             <span
               className={"menu-chevron"}
               dangerouslySetInnerHTML={{ __html: bs.chevron_right }}
-            ></span>
+            />
           </div>
         ) : (
           <Link href={`${newPath}`}>
@@ -209,7 +209,7 @@ const MenuItem = React.memo(function _MenuItem({
                 <span
                   className={"menu-icon"}
                   dangerouslySetInnerHTML={{ __html: nav.icon }}
-                ></span>
+                />
               )}
               <span className={"menu-text"}>{nav.name}</span>
             </a>

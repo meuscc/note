@@ -28,8 +28,7 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     import("/src/styles/index");
-    import("/src/elements/code");
-    import("/src/elements/math");
+    import("/src/elements/index");
   }, []);
 
   return (
