@@ -9,7 +9,7 @@ const katexStyle = css`.katex{text-rendering:auto;font:normal 1.21em KaTeX_Main,
 
 @customElement("m-b")
 export class MathBlock extends LitElement {
-  static styles = [
+  static override styles = [
     katexStyle,
     css`
       :host {
@@ -20,12 +20,19 @@ export class MathBlock extends LitElement {
 
   @property()
   m?: string;
+  @property()
+  name = "Worldddddsdfsdfsdfsd";
 
   // createRenderRoot() {
   //   return this;
   // }
+  constructor() {
+    super();
+    console.log(this.name);
+    console.log(23233334);
+  }
 
-  render() {
+  override render() {
     return html`${unsafeHTML(
       katex.renderToString(this.m ?? this.innerHTML, {
         throwOnError: false,
@@ -37,7 +44,7 @@ export class MathBlock extends LitElement {
 
 @customElement("m-i")
 export class MathInline extends LitElement {
-  static styles = [
+  static override styles = [
     katexStyle,
     css`
       :host {
@@ -47,13 +54,22 @@ export class MathInline extends LitElement {
   ];
 
   @property()
+  name = "Worldddddsdfsdfsdfsd";
+
+  @property()
   m?: string;
 
   // createRenderRoot() {
   //   return this;
   // }
 
-  render() {
+  constructor() {
+    super();
+    console.log(this.name);
+    console.log(23233334);
+  }
+
+  override render() {
     return html`${unsafeHTML(
       katex.renderToString(this.m ?? this.innerHTML, {
         throwOnError: false,

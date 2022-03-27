@@ -28,6 +28,10 @@ export const HomePage: NextPage = () => {
 
           socketRef.current?.send(`${Math.random()}`)
         }} className={'btn-success btn-fill'}>发送</button>
+
+        <div>
+          <m-b>f(x) x^2</m-b>
+        </div>
         <Tet />
       </div>
     </div>

@@ -27,8 +27,8 @@ function App({ Component, pageProps }: AppProps) {
   };
 
   useEffect(() => {
-    import("/src/styles/index");
-    // import("/src/elements/index");
+    // import("/src/styles/index");
+    import("/src/elements/index");
   }, []);
 
   return (
