@@ -6,9 +6,9 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt3": "latest",
-    "prettier": "^2.6.0",
-    "sass": "^1.49.9",
-    "typescript": "^4.6.2"
+    "nuxt": "^3.0.0-rc.1",
+    "prettier": "^2.6.2",
+    "sass": "^1.50.1",
+    "typescript": "^4.6.3"
   }
 }
