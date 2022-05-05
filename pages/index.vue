@@ -1,4 +1,6 @@
 <template>
-  <h1>Index page大是大非士大夫士大夫</h1>
-  <router-view></router-view>
+  <div>
+    <h1>Index</h1>
+    <router-view></router-view>
+  </div>
 </template>

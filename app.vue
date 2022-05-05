@@ -1,6 +1,6 @@
 <template>
   <div id="root"></div>
-  <div class="dark">
+  <div class="">
     <!-- Markup shared across all pages, ex: NavBar -->
     <NuxtPage />
   </div>

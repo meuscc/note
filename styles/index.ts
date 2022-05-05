@@ -19,7 +19,7 @@ export function createStyles() {
   )}}.dark{${createStyle(themes.dark, "--palette")}}`;
 
   console.log(style);
-  document.body.classList.add("dark");
+  // document.body.classList.add("dark");
 
   document.head.append(style);
 }
