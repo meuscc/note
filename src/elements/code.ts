@@ -29,11 +29,15 @@ export class CodeBlock extends LitElement {
       }
     `,
   ];
+  static properties = {
+    c: { type: String },
+    l: { type: String },
+  };
 
-  @property()
+  // @property({ type: String })
   c: string = "";
-
-  @property()
+  //
+  // @property({ type: String })
   l: string = "javascript";
 
   // createRenderRoot() {
