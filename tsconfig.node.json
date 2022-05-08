@@ -1,10 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["es2021", "dom", "dom.iterable"],
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "decorators-legacy": true
+    "moduleResolution": "node"
   },
-  "include": ["vite.config.ts", "tools/**/*"]
+  "include": ["vite.config.ts"]
 }

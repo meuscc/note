@@ -1,16 +1,14 @@
-import { html } from "lit";
+import md from "./test.md";
 
 customElements.define(
   "page-index",
   class extends HTMLElement {
     constructor() {
       super();
-
-      console.log(2323);
-      console.log(html);
+      console.log(md);
 
       const el = document.createElement("div");
-      el.innerHTML = `<div>首页sfsdf sdf </div>`;
+      el.innerHTML = md;
 
       const shadowRoot = this.attachShadow({ mode: "open" });
       shadowRoot.appendChild(el);
