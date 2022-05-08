@@ -3,6 +3,7 @@
 </template>
 <script setup lang="ts">
 declare const Prism: any;
+declare const shiki: any;
 
 const props = defineProps({
   c: {},
@@ -12,7 +13,19 @@ const props = defineProps({
 
 const slots = useSlots();
 
+// const html = await shiki
+//   .getHighlighter({
+//     theme: "dracula",
+//   })
+//   .then((highlighter) => {
+//     // @ts-ignore
+//     return highlighter.codeToHtml(slots.default()[0].children.trim(), {
+//       lang: props.l ?? "js",
+//     });
+//   });
+
 const html = Prism.highlight(
+  // @ts-ignore
   slots.default()[0].children.trim(),
   Prism.languages[(props.l as string) ?? "javascript"],
   "javascript"

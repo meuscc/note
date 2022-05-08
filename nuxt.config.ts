@@ -29,6 +29,9 @@ export default defineNuxtConfig({
         {
           src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-dart.min.js",
         },
+        {
+          src: "https://unpkg.com/shiki",
+        },
       ],
       link: [
         {
@@ -42,4 +45,5 @@ export default defineNuxtConfig({
       ],
     },
   },
+  modules: [],
 });

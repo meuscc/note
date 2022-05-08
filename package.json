@@ -1,6 +1,6 @@
 {
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
@@ -9,10 +9,9 @@
   "devDependencies": {
     "nuxt": "^3.0.0-rc.2",
     "prettier": "^2.6.2",
-    "sass": "^1.50.1",
-    "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "vite-plugin-md": "^0.13.0"
+    "sass": "^1.51.0",
+    "shiki": "^0.10.1",
+    "typescript": "^4.6.4",
+    "vite-plugin-md": "^0.13.1"
   }
 }
