@@ -1,6 +1,8 @@
 // @ts-ignore
 import glob from "glob";
 import fs from "node:fs";
+// @ts-ignore
+import prettier from "prettier";
 
 function obj2Arr(obj: any) {
   try {
@@ -14,9 +16,18 @@ function obj2Arr(obj: any) {
   } catch (e) {}
 }
 
-// 获得所有路由文件
-glob("src/routes/**/*.tsx", {}, async function (_: any, files: any) {
-  const paths = files.map((v: any) => v.replace("src/routes/", ""));
+// get all routes files
+glob("src/routes/**/*.tsx", {}, async function (er: any, files: any) {
+  const allPaths = files.map((v: any) => v.replace("src/routes/", ""));
+  const paths: string[] = [];
+  for (let i = 0; i < allPaths.length; i++) {
+    const { pageMeta } = await import(`../src/routes/${allPaths[i]}`);
+
+    if (pageMeta) {
+      paths.push(allPaths[i]);
+    }
+  }
+
   const routes = await createRoutes(paths);
 
   const router = {
@@ -24,63 +35,87 @@ glob("src/routes/**/*.tsx", {}, async function (_: any, files: any) {
     children: routes,
   };
   obj2Arr(router);
-  fs.writeFileSync("a.json", JSON.stringify(router));
+  fs.writeFileSync(
+    "src/router/routes.tsx",
+    prettier
+      .format(
+        `import React from 'react';\n export const routes = ${JSON.stringify(
+          router
+        )}`.replace(/\\\[((.|\s)*?)\\]/g, function (_$1, $2) {
+          return "import(" + $2.trim() + "')";
+        }),
+        {
+          parser: "typescript",
+        }
+      )
+      .replaceAll('"import(', "import(")
+      .replaceAll(".tsx')\"", "')")
+  );
 });
 
-// 遍历所有文件
+// walk through all routes
 async function createRoutes(paths: any[]) {
   const routes: any = {};
 
   for (let i = 0; i < paths.length; i++) {
-    await createNestedRoutes(paths[i].split("/"), routes);
+    await createNestedRoutes(
+      paths[i].split("/").map((v: string) => v.replaceAll(".tsx", "")),
+      routes
+    );
   }
   return routes;
 }
 
-// 根据每个文件创建嵌套路由
+// create nested routes
 async function createNestedRoutes(
-  pathSections: string[],
+  filePaths: string[],
   obj: any,
   pathPrefix = ""
 ) {
-  const pathSection = pathSections.shift();
-  if (!pathSection) return;
+  const filePath = filePaths.shift();
+  if (!filePath) return;
 
-  const trimmedPathSections = pathSection.replace(".tsx", "");
+  // file import path
+  const importPath = `${pathPrefix === "" ? "" : pathPrefix}/${filePath}`;
 
-  // 文件 import 路径
-  const modulePath = `${
-    pathPrefix === "" ? "" : pathPrefix
-  }/${encodeURIComponent(trimmedPathSections)}`;
+  // resolve route params
+  const routePath = filePath.replace(/\[((.|\s)*?)]/g, function (_$1, $2) {
+    return `:${$2}`;
+  });
 
-  let path =
-    modulePath === "/index" ? "/" : encodeURIComponent(trimmedPathSections);
+  if (!obj[filePath]) {
+    let pageMeta = {};
+    let haveComponent = true;
+    try {
+      const { pageMeta: page_meta } = await import(
+        `../src/routes${importPath}.tsx`
+      );
+      pageMeta = page_meta;
+    } catch (e) {
+      haveComponent = false;
+      // console.log(e);
+    }
 
-  // 有子路由啦
-  if (pathSections.length > 0) {
-    console.log(pathSections.length);
-    path += "/*";
-    console.log(path);
-  }
-
-  // 设置路由详情
-  if (!obj[trimmedPathSections]) {
-    const { pageMeta } = await import(`../src/routes/${modulePath}.tsx`);
-    obj[trimmedPathSections] = {
-      name: trimmedPathSections,
-      path,
-      modulePath,
-      fullPath:
-        modulePath === "/index" ? "/" : modulePath.replace("/index", ""),
-      element: pathSection,
+    obj[filePath] = {
+      name: filePath,
+      fullName: removeIndexPrefix(importPath).replace("/", ""),
+      path: removeIndexPrefix(encodeURI(routePath)),
+      fullPath: removeIndexPrefix(encodeURI(importPath)),
+      modulePath: `/src/routes${importPath}`,
+      component: haveComponent
+        ? `import('/src/routes${importPath}.tsx')`
+        : undefined,
       ...pageMeta,
       children: {},
     };
+    obj[filePath].path += obj[filePath].path.endsWith("/") ? "*" : "/*";
   }
 
-  await createNestedRoutes(
-    pathSections,
-    obj[trimmedPathSections].children,
-    modulePath
-  );
+  // add `*` if has children routes
+  await createNestedRoutes(filePaths, obj[filePath].children, importPath);
+}
+
+function removeIndexPrefix(route: string) {
+  if (route === "index" || route === "/index") return "/";
+  return route.replace("/index", "").replace("index", "");
 }
