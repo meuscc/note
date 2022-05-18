@@ -5,7 +5,6 @@ customElements.define(
   class extends HTMLElement {
     constructor() {
       super();
-      console.log(md);
 
       const el = document.createElement("div");
       el.innerHTML = md;
