@@ -16,7 +16,7 @@ export const HomePage: NextPage = () => {
           发送
         </button>
 
-        <div></div>
+        <div>士大夫士大夫大苏打士大夫士大夫</div>
         <Tet />
       </div>
     </div>
