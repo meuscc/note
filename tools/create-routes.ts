@@ -1,8 +1,13 @@
-// @ts-ignore
-import glob from "glob";
 import fs from "node:fs";
 // @ts-ignore
+import glob from "glob";
+// @ts-ignore
+import toml from "toml";
+// @ts-ignore
 import prettier from "prettier";
+
+const start_text = "/****";
+const end_text = "****/";
 
 function obj2Arr(obj: any) {
   try {
@@ -16,49 +21,28 @@ function obj2Arr(obj: any) {
   } catch (e) {}
 }
 
-// get all routes files
-glob("src/routes/**/*.tsx", {}, async function (er: any, files: any) {
-  const allPaths = files.map((v: any) => v.replace("src/routes/", ""));
-  const paths: string[] = [];
-  for (let i = 0; i < allPaths.length; i++) {
-    const { pageMeta } = await import(`../src/routes/${allPaths[i]}`);
+// 获得所有路由路径
+function getRoutePaths() {
+  const allPaths = glob.sync("src/routes/**/*.ts");
 
-    if (pageMeta) {
-      paths.push(allPaths[i]);
+  const routePaths: string[] = [];
+  for (let i = 0; i < allPaths.length; i++) {
+    const path = allPaths[i];
+    const content = fs.readFileSync(path).toString();
+    if (content.includes(start_text) && content.includes(end_text)) {
+      routePaths.push(allPaths[i]);
     }
   }
 
-  const routes = await createRoutes(paths);
+  return routePaths;
+}
 
-  const router = {
-    name: "root",
-    children: routes,
-  };
-  obj2Arr(router);
-  fs.writeFileSync(
-    "src/router/routes.tsx",
-    prettier
-      .format(
-        `import React from 'react';\n export const routes = ${JSON.stringify(
-          router
-        )}`.replace(/\\\[((.|\s)*?)\\]/g, function (_$1, $2) {
-          return "import(" + $2.trim() + "')";
-        }),
-        {
-          parser: "typescript",
-        }
-      )
-      .replaceAll('"import(', "import(")
-      .replaceAll(".tsx')\"", "')")
-  );
-});
-
-// walk through all routes
-async function createRoutes(paths: any[]) {
+// 获得路由对象
+function getRoutes() {
   const routes: any = {};
-
+  const paths = getRoutePaths();
   for (let i = 0; i < paths.length; i++) {
-    await createNestedRoutes(
+    createNestedRoutes(
       paths[i].split("/").map((v: string) => v.replaceAll(".tsx", "")),
       routes
     );
@@ -66,42 +50,35 @@ async function createRoutes(paths: any[]) {
   return routes;
 }
 
-// create nested routes
-async function createNestedRoutes(
-  filePaths: string[],
-  obj: any,
-  pathPrefix = ""
-) {
+// 获得级联路径
+function createNestedRoutes(filePaths: string[], obj: any, pathPrefix = "") {
   const filePath = filePaths.shift();
   if (!filePath) return;
 
-  // file import path
+  // 文件 import 路径
   const importPath = `${pathPrefix === "" ? "" : pathPrefix}/${filePath}`;
 
-  // resolve route params
+  // 解析路由参数
   const routePath = filePath.replace(/\[((.|\s)*?)]/g, function (_$1, $2) {
     return `:${$2}`;
   });
+
+  console.log(importPath);
 
   if (!obj[filePath]) {
     let pageMeta = {};
     let haveComponent = true;
     try {
-      const { pageMeta: page_meta } = await import(
-        `../src/routes${importPath}.tsx`
-      );
-      pageMeta = page_meta;
+      const content = fs.readFileSync(filePath).toString();
+      const metaStr = content.split(start_text)[1].split(end_text)[0].trim();
+      pageMeta = toml.parse(metaStr);
     } catch (e) {
       haveComponent = false;
-      // console.log(e);
     }
 
     obj[filePath] = {
       name: filePath,
-      fullName: removeIndexPrefix(importPath).replace("/", ""),
-      path: removeIndexPrefix(encodeURI(routePath)),
-      fullPath: removeIndexPrefix(encodeURI(importPath)),
-      modulePath: `/src/routes${importPath}`,
+      path: removeIndexPrefix(encodeURI(routePath.replace("src/routes/", ""))),
       component: haveComponent
         ? `import('/src/routes${importPath}.tsx')`
         : undefined,
@@ -111,11 +88,35 @@ async function createNestedRoutes(
     obj[filePath].path += obj[filePath].path.endsWith("/") ? "*" : "/*";
   }
 
-  // add `*` if has children routes
-  await createNestedRoutes(filePaths, obj[filePath].children, importPath);
+  createNestedRoutes(filePaths, obj[filePath].children, importPath);
 }
 
 function removeIndexPrefix(route: string) {
   if (route === "index" || route === "/index") return "/";
   return route.replace("/index", "").replace("index", "");
 }
+
+const routes = getRoutes();
+
+const router = {
+  name: "root",
+  children: routes,
+};
+obj2Arr(router);
+
+fs.writeFileSync(
+  "src/router/r.ts",
+  prettier
+    .format(
+      `export default ${JSON.stringify(router)}`.replace(
+        /\\\[((.|\s)*?)\\]/g,
+        function (_$1, $2) {
+          return "import(" + $2.trim() + "')";
+        }
+      ),
+      {
+        parser: "typescript",
+      }
+    )
+    .replaceAll('"import(', "import(")
+);

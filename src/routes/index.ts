@@ -1,3 +1,7 @@
+/****
+name = "home"
+title = "首页"
+****/
 import md from "./test.md";
 
 customElements.define(
@@ -14,3 +18,5 @@ customElements.define(
     }
   }
 );
+
+export default {};
