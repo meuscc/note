@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="root">
+  <a href="/about">关于</a>
+</div>
+</body>
+<script>
+  const portal = document.getElementById('root')
+
+  console.log(portal)
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      fetch('/about.html').then(res => res.text()).then(res => {
+        portal.innerHTML = res;
+        history.pushState(undefined, undefined, "/about")
+      })
+    })
+  })
+
+  window.addEventListener('popstate', (e) => {
+    console.log(e)
+  });
+
+
+</script>
+</html>

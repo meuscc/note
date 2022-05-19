@@ -12,5 +12,5 @@ insert_final_newline = true
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{json,xml,yml,yaml,html,xaml,csproj}]
+[*.{go,java,gradle}]
 indent_size = 2
