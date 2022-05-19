@@ -1,38 +1,23 @@
 {
-  "name": "note",
-  "version": "0.0.0",
+  "name": "notes",
+  "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "b": "vite build",
-    "build": "vite build",
-    "serve": "vite preview",
-    "prettier": "prettier -c --write \"**/*\"",
-    "theme": "ts-node --esm tools/create-themes.ts",
-    "routes": "ts-node --esm tools/create-routes.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
-  "dependencies": {
-    "@floating-ui/dom": "^0.5.0",
-    "lit": "^2.2.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meuscc/notes.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meuscc/notes/issues"
+  },
+  "homepage": "https://github.com/meuscc/notes#readme",
   "devDependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@ltd/j-toml": "^1.30.0",
-    "@mui/material": "^5.8.0",
-    "@types/node": "^17.0.34",
-    "fast-glob": "^3.2.11",
-    "glob": "^8.0.3",
-    "marked": "^4.0.16",
-    "prettier": "^2.6.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "sass": "^1.51.0",
-    "toml": "^3.0.0",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4",
-    "vite": "^2.9.9"
+    "prettier": "^2.6.2"
   }
 }
