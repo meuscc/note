@@ -1,3 +1,1 @@
-import { run } from "./router/router";
-
-run();
+import "./router/router";
