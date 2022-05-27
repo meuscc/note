@@ -17,6 +17,9 @@
     "url": "https://github.com/meuscc/notes/issues"
   },
   "homepage": "https://github.com/meuscc/notes#readme",
+  "dependencies": {
+    "lit": "^2.2.5"
+  },
   "devDependencies": {
     "prettier": "^2.6.2"
   }
