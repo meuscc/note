@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "b": "vite build",
     "build": "vite build",
     "serve": "vite preview",
     "prettier": "prettier -c --write \"**/*\"",

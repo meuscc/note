@@ -5,7 +5,7 @@ import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 import a from "./test.md";
 
-@customElement("router-test-1")
+@customElement("app-router")
 export class Test1 extends LitElement {
   _router = new Router(
     this,

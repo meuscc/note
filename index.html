@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="">
+<html lang="zh-CN" class="dark">
   <head>
     <meta charset="utf-8" />
     <title></title>
@@ -16,7 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom/dist/floating-ui.dom.min.js"></script>
+    <script src="./src/styles/index.ts" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-typescript.min.js"></script>
@@ -28,13 +28,12 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-julia.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/heti/umd/heti-addon.min.js"></script>
-    <script type="module" src="./src/components/index.ts"></script>
-    <script type="module" src="./src/sections/index.ts"></script>
-    <script type="module" src="./src/layouts/index.ts"></script>
+    <script src="./src/components/index.ts" type="module"></script>
+    <script src="./src/sections/index.ts" type="module"></script>
+    <script src="./src/layouts/index.ts" type="module"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <router-test-1></router-test-1>
+    <app-router></app-router>
     <script type="module" src="./src/index.ts"></script>
   </body>
 </html>
