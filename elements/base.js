@@ -7,7 +7,7 @@ class Base extends HTMLElement {
 
     const css = new CSSStyleSheet();
     css.replace(Base.styles);
-    el.adopt;
+    el.adoptedStyleSheets = css;
 
     el.innerHTML = this.render();
     this.shadowRoot.append(el);
