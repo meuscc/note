@@ -4,6 +4,8 @@ customElements.define(
     constructor() {
       super();
 
+      this.attachShadow({ mode: "open" });
+
       this.count = 0;
 
       const el = document.createElement("div");
@@ -13,8 +15,10 @@ customElements.define(
         <y-link href="/">首页</y-link>
       `;
 
-      const shadowRoot = this.attachShadow({ mode: "open" });
-      shadowRoot.appendChild(el);
+      const style = document.createElement("style");
+      style.textContent = "div{background-color: red}";
+
+      this.shadowRoot.append(style, el);
     }
   }
 );
