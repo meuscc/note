@@ -1,19 +1,20 @@
-class Base extends HTMLElement {
+export default class BaseComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
 
+    this.shadowRoot.adoptedStyleSheets = [this.constructor.styles];
+
     const el = document.createElement("div");
-
-    const css = new CSSStyleSheet();
-    css.replace(Base.styles);
-    el.adoptedStyleSheets = css;
-
     el.innerHTML = this.render();
     this.shadowRoot.append(el);
   }
 
-  static get styles() {}
+  static get styles() {
+    return "";
+  }
 
-  render() {}
+  render() {
+    return "";
+  }
 }
