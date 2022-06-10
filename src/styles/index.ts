@@ -6,3 +6,5 @@ document.adoptedStyleSheets = [
   createThemes().styleSheet,
   createReboot().styleSheet,
 ];
+
+export default {};
