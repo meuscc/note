@@ -7,18 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "prettier": "prettier -c --write \"**/*\"",
-    "theme": "ts-node --esm tools/create-themes.ts"
+    "prettier": "prettier -c --write \"**/*\""
   },
   "license": "MIT",
   "dependencies": {
-    "@floating-ui/dom": "^0.5.2",
+    "@floating-ui/dom": "^0.5.4",
     "@lit-labs/router": "^0.1.0",
-    "lit": "^2.2.5"
+    "lit": "^2.2.6"
   },
   "devDependencies": {
-    "prettier": "^2.6.2",
-    "typescript": "^4.7.3",
-    "vite": "^2.9.10"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.13"
   }
 }

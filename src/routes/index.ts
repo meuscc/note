@@ -11,6 +11,14 @@ import { customElement } from "lit/decorators.js";
 export default class PageIndex extends LitElement {
   _routes = new Routes(this, [
     {
+      path: "",
+      enter: async () => {
+        await import("./index/index");
+        return true;
+      },
+      render: ({ id }) => html`<page-home></page-home>`,
+    },
+    {
       path: "math/axiom-of-choice",
       enter: async () => {
         await import("./index/math/axiom-of-choice/axiom-of-choice");
