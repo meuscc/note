@@ -1,14 +1,49 @@
 import { customElement } from "lit/decorators.js";
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 
 @customElement("page-home")
 export default class extends LitElement {
+  static styles = [
+    css`
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+    `,
+  ];
+  constructor() {
+    super();
+  }
+  override connectedCallback() {
+    super.connectedCallback();
+    console.log(this.getElementsByClassName("yyt"));
+  }
+
+  handleClick() {
+    console.log(123);
+  }
   override render() {
     return html`
       <div>
-        <div>士大夫十分十大撒旦发生声道士大夫士大夫</div>
+        <span class="material-symbols-outlined">search</span>
+        <span class="material-symbols-outlined">home</span>
+        <span class="material-symbols-outlined">settings</span>
+        <span class="material-symbols-outlined">favorite</span>
         <div>默认按钮</div>
-        <y-button color="default">sfs是否是</y-button>
+        <y-button @pointerdown="${this.handleClick}" class="yyt" color="default"
+          >sfs是否是</y-button
+        >
         <y-button color="primary">sfs是否是</y-button>
         <y-button color="secondary">sfs是否是</y-button>
         <y-button color="info">sfs是否是</y-button>

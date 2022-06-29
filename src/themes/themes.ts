@@ -1,9 +1,21 @@
-import { pink, purple, red, deepOrange, cyan, green } from "./colors";
+import { pink, purple, red, deepOrange, cyan, green, grey } from "./colors";
 
 export default {
   light: {
     mode: "light",
+    common: { black: "#000", white: "#fff" },
+    default: {
+      "50": grey[50],
+      main: grey[100],
+      light: grey[50],
+      dark: grey[300],
+      hover: grey[300],
+      active: grey[400],
+      disabled: grey[100],
+      contrastText: "inherit",
+    },
     primary: {
+      "50": pink[50],
       main: pink[500],
       light: pink[300],
       dark: pink[700],
@@ -12,13 +24,12 @@ export default {
       disabled: pink[100],
       contrastText: "#fff",
     },
-    common: { black: "#000", white: "#fff" },
     secondary: {
       main: purple[500],
       light: purple[300],
       dark: purple[700],
       hover: purple[600],
-      active: purple[700],
+      active: purple[800],
       disabled: purple[100],
       contrastText: "#fff",
     },
@@ -27,7 +38,7 @@ export default {
       light: red[300],
       dark: red[700],
       hover: red[600],
-      active: red[700],
+      active: red[800],
       disabled: red[100],
       contrastText: "#fff",
     },
@@ -36,7 +47,7 @@ export default {
       light: deepOrange[300],
       dark: deepOrange[700],
       hover: deepOrange[600],
-      active: deepOrange[700],
+      active: deepOrange[800],
       disabled: deepOrange[100],
       contrastText: "#fff",
     },
@@ -45,7 +56,7 @@ export default {
       light: cyan[300],
       dark: cyan[700],
       hover: cyan[600],
-      active: cyan[700],
+      active: cyan[800],
       disabled: cyan[100],
       contrastText: "#fff",
     },
@@ -54,7 +65,7 @@ export default {
       light: green[300],
       dark: green[700],
       hover: green[600],
-      active: green[700],
+      active: green[800],
       disabled: green[100],
       contrastText: "#fff",
     },
