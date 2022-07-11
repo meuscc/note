@@ -13,9 +13,9 @@ export default function createReboot() {
     }
     body {
       margin: 0;
-      background-color: var(--plt-background-default);
+      background-color: var(--scheme-background);
       font-size: var(--var-typography-fontSize);
-      color: var(--plt-text-primary);
+      color: var(--scheme-onBackground);
     }
   `;
 }

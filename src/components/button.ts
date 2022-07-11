@@ -1,10 +1,19 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { themes } from "/src/themes/themes";
+import { hexFromArgb } from "@material/material-color-utilities";
+
+function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// 按钮
+// text filled tonal outlined
 
 export type ButtonColor =
-  | "default"
   | "primary"
   | "secondary"
+  | "tertiary"
   | "info"
   | "warning"
   | "success"
@@ -16,33 +25,42 @@ export type ButtonSize = "sm" | "default" | "lg";
 export type ButtonRadius = "sm" | "default" | "lg";
 
 const buttonColors: ButtonColor[] = [
-  "default",
   "primary",
   "secondary",
+  "tertiary",
   "info",
   "success",
   "warning",
   "error",
 ];
 
-function createContainedButton() {
-  let rule = "";
-  for (let i = 0; i < buttonColors.length; i++) {
-    const color = buttonColors[i];
-    // language=css
-    rule += `
+function f(color: ButtonColor) {
+  // language=css
+  return `
+
         .variant-contained.color-${color} {
-          background-color: var(--plt-${color}-main);
-          color: var(--plt-${color}-contrastText);
+          background-color: var(--${color}-light-default);
+          color: var(--${color}-light-on-default);
         }
         .variant-contained.color-${color}:hover {
-          background-color: var(--plt-${color}-hover);
+            background-color: var(--${color}-light-hover);
         }
         .variant-contained.color-${color}:active {
-          background-color: var(--plt-${color}-active);
+            background-color:var(--${color}-light-active);
+        }
+        .variant-contained.color-${color}.disabled {
+            background-color: var(--${color}-light-disabled);
+            color: var(--${color}-light-on-disabled);;
+            cursor: not-allowed;
         }
     `;
-  }
+}
+
+function createContainedButton() {
+  let rule = "";
+  buttonColors.forEach((color) => {
+    rule += f(color);
+  });
 
   return rule;
 }
@@ -65,8 +83,9 @@ function createOutlinedButton() {
       rule += `
         .variant-outlined.color-${color} {
             background-color: transparent;
-            color: var(--plt-${color}-main);
-            border-color: var(--plt-${color}-main);
+            color: var(--scheme-${color}Container);
+            border-color: var(--scheme-${color}Container);
+            border-width: 1px;
         }
     `;
     }
@@ -201,10 +220,14 @@ export class Button extends LitElement {
   size?: ButtonSize = "default";
   @property()
   radius?: ButtonRadius = "default";
+  @property()
+  disabled?: boolean = false;
 
   render() {
     return html` <button
-      class="${`radius-${this.radius} size-${this.size} variant-${this.variant} color-${this.color}`}"
+      class="${`radius-${this.radius} size-${this.size} variant-${
+        this.variant
+      } color-${this.color} ${this.disabled ? "disabled" : ""}`}"
     >
       <slot name="start-icon"></slot>
       <slot></slot>

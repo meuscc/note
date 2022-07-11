@@ -73,10 +73,34 @@ export default class extends LitElement {
         <y-button color="default" variant="contained">sfs是否是</y-button>
         <y-button color="primary" variant="contained">sfs是否是</y-button>
         <y-button color="secondary" variant="contained">sfs是否是</y-button>
+
         <y-button color="info" variant="contained">sfs是否是</y-button>
         <y-button color="success" variant="contained">sfs是否是</y-button>
         <y-button color="warning" variant="contained">sfs是否是</y-button>
         <y-button color="error" variant="contained">sfs是否是</y-button>
+
+        <div>实心按钮禁用</div>
+        <y-button color="default" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="primary" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="secondary" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="info" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="success" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="warning" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
+        <y-button color="error" variant="contained" disabled="true"
+          >sfs是否是</y-button
+        >
       </div>
     `;
   }
