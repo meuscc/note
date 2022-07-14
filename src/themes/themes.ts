@@ -2,7 +2,8 @@ import { argbFromHex, TonalPalette } from "@material/material-color-utilities";
 import { createPalettes, createScheme } from "/src/themes/create-themes";
 
 const palettes = {
-  primary: TonalPalette.fromInt(argbFromHex("#9e403d")),
+  primary: TonalPalette.fromInt(argbFromHex("#0052cc")),
+  // primary: TonalPalette.fromInt(argbFromHex("#9e403d")),
   secondary: TonalPalette.fromInt(argbFromHex("#e5e5e5")),
   tertiary: TonalPalette.fromInt(argbFromHex("#735b2e")),
 
@@ -19,6 +20,9 @@ const schemes = {
   light: {
     //
     primary: palettes.primary.tone(40),
+    primaryHover: palettes.primary.tone(40),
+    primaryActive: palettes.primary.tone(40),
+    primaryDisabled: palettes.primary.tone(40),
     onPrimary: palettes.primary.tone(100),
     primaryContainer: palettes.primary.tone(90),
     primaryContainerHover: palettes.primary.tone(80),

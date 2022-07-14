@@ -15,22 +15,35 @@ export type SchemeColor =
 
 const schemeColors: SchemeColor[] = [
   "primary",
-  "secondary",
+  // "secondary",
   "tertiary",
   "info",
   "success",
   "warning",
-  "secondary",
   "error",
   // "neutral",
   // "neutralVariant",
 ];
+
+function c() {
+  const color = "secondary";
+  return `
+      
+          --${color}-default: ${hexFromArgb(themes.palettes[color].tone(90))};
+      --${color}-hover: ${hexFromArgb(themes.palettes[color].tone(80))};
+      --${color}-active: ${hexFromArgb(themes.palettes[color].tone(70))};
+      --${color}-disabled: ${hexFromArgb(themes.palettes[color].tone(90))};
+      --${color}-on-default: ${hexFromArgb(themes.palettes[color].tone(30))};
+      --${color}-on-disabled: ${hexFromArgb(themes.palettes[color].tone(80))};
+  `;
+}
 
 export default function createThemeStyle() {
   // language=css
   return css`
     :root {
       ${unsafeCSS(f())}
+      ${unsafeCSS(c())}
     }
     .dark {
       ${unsafeCSS(f2())}

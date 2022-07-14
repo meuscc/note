@@ -27,7 +27,6 @@ export type ButtonRadius = "sm" | "default" | "lg";
 const buttonColors: ButtonColor[] = [
   "primary",
   "secondary",
-  "tertiary",
   "info",
   "success",
   "warning",
@@ -39,18 +38,18 @@ function f(color: ButtonColor) {
   return `
 
         .variant-contained.color-${color} {
-          background-color: var(--${color}-light-default);
-          color: var(--${color}-light-on-default);
+          background-color: var(--palette-${color}-default);
+          color: var(--${color}-on-default);
         }
         .variant-contained.color-${color}:hover {
-            background-color: var(--${color}-light-hover);
+            background-color: var(--palette-${color}-hover);
         }
         .variant-contained.color-${color}:active {
-            background-color:var(--${color}-light-active);
+            background-color:var(--palette-${color}-active);
         }
         .variant-contained.color-${color}.disabled {
-            background-color: var(--${color}-light-disabled);
-            color: var(--${color}-light-on-disabled);;
+            background-color: var(--palette-${color}-disabled);
+            color: var(--${color}-on-disabled);;
             cursor: not-allowed;
         }
     `;
