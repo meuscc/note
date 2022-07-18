@@ -9,7 +9,7 @@ export default class extends LitElement {
         font-family: "Material Symbols Outlined";
         font-weight: normal;
         font-style: normal;
-        font-size: 24px;
+        font-size: inherit;
         line-height: 1;
         letter-spacing: normal;
         text-transform: none;
@@ -40,77 +40,62 @@ export default class extends LitElement {
         <span class="material-symbols-outlined">home</span>
         <span class="material-symbols-outlined">settings</span>
         <span class="material-symbols-outlined">favorite</span>
-        <div>默认按钮</div>
-        <y-button @pointerdown="${this.handleClick}" class="yyt" color="default"
-          >sfs是否是</y-button
-        >
-        <y-button color="primary">sfs是否是</y-button>
-        <y-button color="secondary">sfs是否是</y-button>
-        <y-button color="info">sfs是否是</y-button>
-        <y-button color="success">sfs是否是</y-button>
-        <y-button color="warning">sfs是否是</y-button>
-        <y-button color="error">sfs是否是</y-button>
 
         <div>文字按钮</div>
-        <y-button color="default" variant="text">sfs是否是</y-button>
-        <y-button color="primary" variant="text">sfs是否是</y-button>
-        <y-button color="secondary" variant="text">sfs是否是</y-button>
-        <y-button color="info" variant="text">sfs是否是</y-button>
-        <y-button color="success" variant="text">sfs是否是</y-button>
-        <y-button color="warning" variant="text">sfs是否是</y-button>
-        <y-button color="error" variant="text">sfs是否是</y-button>
+        <y-button color="primary" type="text"
+          ><span slot="start-icon" class="material-symbols-outlined"
+            >settings</span
+          ></y-button
+        >
+        <y-button color="secondary" type="text">次要按钮</y-button>
+        <y-button color="tertiary" type="text">第三按钮</y-button>
+        <y-button color="neutral" type="text">中性按钮</y-button>
+        <y-button color="info" type="text">提示按钮</y-button>
+        <y-button color="success" type="text">成功按钮</y-button>
+        <y-button color="warning" type="text">敬告按钮</y-button>
+        <y-button color="error" type="text">错误按钮</y-button>
 
         <div>线框按钮</div>
-        <y-button color="default" variant="outlined">sfs是否是</y-button>
-        <y-button color="primary" variant="outlined">sfs是否是</y-button>
-        <y-button color="secondary" variant="outlined">sfs是否是</y-button>
-        <y-button color="info" variant="outlined">sfs是否是</y-button>
-        <y-button color="success" variant="outlined">sfs是否是</y-button>
-        <y-button color="warning" variant="outlined">sfs是否是</y-button>
-        <y-button color="error" variant="outlined">sfs是否是</y-button>
+        <y-button color="primary" type="outline"
+          ><span slot="start-icon" class="material-symbols-outlined"
+            >settings</span
+          ></y-button
+        >
+        <y-button color="secondary" type="outline">次要按钮</y-button>
+        <y-button color="tertiary" type="outline">第三按钮</y-button>
+        <y-button color="neutral" type="outline">中性按钮</y-button>
+        <y-button color="info" type="outline">提示按钮</y-button>
+        <y-button color="success" type="outline">成功按钮</y-button>
+        <y-button color="warning" type="outline">敬告按钮</y-button>
+        <y-button color="error" type="outline">错误按钮</y-button>
 
         <div>实心按钮</div>
-        <y-button color="default" type="filled">sfs是否是</y-button>
-        <y-button color="primary" type="filled">sfs是否是</y-button>
-        <y-button color="secondary" type="filled">sfs是否是</y-button>
+        <y-button color="primary" type="filled"
+          ><span slot="start-icon" class="material-symbols-outlined"
+            >settings</span
+          ></y-button
+        >
+        <y-button color="secondary" type="filled">次要按钮</y-button>
+        <y-button color="tertiary" type="filled">第三按钮</y-button>
+        <y-button color="neutral" type="filled">中性按钮</y-button>
+        <y-button color="info" type="filled">提示按钮</y-button>
+        <y-button color="success" type="filled">成功按钮</y-button>
+        <y-button color="warning" type="filled">敬告按钮</y-button>
+        <y-button color="error" type="filled">错误按钮</y-button>
 
-        <y-button color="info" type="filled">sfs是否是</y-button>
-        <y-button color="success" type="filled">sfs是否是</y-button>
-        <y-button color="warning" type="filled">sfs是否是</y-button>
-        <y-button color="error" type="filled">sfs是否是</y-button>
-
-        <div>实心按钮</div>
-        <y-button color="default" type="filledTonal">sfs是否是</y-button>
-        <y-button color="primary" type="filledTonal">sfs是否是</y-button>
-        <y-button color="secondary" type="filledTonal">sfs是否是</y-button>
-
-        <y-button color="info" type="filledTonal">sfs是否是</y-button>
-        <y-button color="success" type="filledTonal">sfs是否是</y-button>
-        <y-button color="warning" type="filledTonal">sfs是否是</y-button>
-        <y-button color="error" type="filledTonal">sfs是否是</y-button>
-
-        <div>实心按钮禁用</div>
-        <y-button color="default" type="filled" disabled="true"
-          >sfs是否是</y-button
+        <div>浅色按钮</div>
+        <y-button color="primary" type="filledTonal"
+          ><span slot="start-icon" class="material-symbols-outlined"
+            >settings</span
+          ></y-button
         >
-        <y-button color="primary" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
-        <y-button color="secondary" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
-        <y-button color="info" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
-        <y-button color="success" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
-        <y-button color="warning" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
-        <y-button color="error" type="filled" disabled="true"
-          >sfs是否是</y-button
-        >
+        <y-button color="secondary" type="filledTonal">次要按钮</y-button>
+        <y-button color="tertiary" type="filledTonal">第三按钮</y-button>
+        <y-button color="neutral" type="filledTonal">中性按钮</y-button>
+        <y-button color="info" type="filledTonal">提示按钮</y-button>
+        <y-button color="success" type="filledTonal">成功按钮</y-button>
+        <y-button color="warning" type="filledTonal">敬告按钮</y-button>
+        <y-button color="error" type="filledTonal">错误按钮</y-button>
       </div>
     `;
   }
