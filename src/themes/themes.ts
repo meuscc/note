@@ -112,7 +112,7 @@ const schemes = {
     //////////////////////////////////////////////////////
     background: palettes.neutral.tone(99),
     onBackground: palettes.neutral.tone(10),
-    surface: palettes.neutral.tone(99),
+    surface: palettes.neutral.tone(95),
     onSurface: palettes.neutral.tone(10),
 
     surfaceVariant: palettes.neutralVariant.tone(90),
@@ -141,7 +141,7 @@ const schemes = {
     //////////////////////////////////////////////////////
     background: palettes.neutral.tone(10),
     onBackground: palettes.neutral.tone(90),
-    surface: palettes.neutral.tone(10),
+    surface: palettes.neutral.tone(20),
     onSurface: palettes.neutral.tone(90),
 
     surfaceVariant: palettes.neutralVariant.tone(30),
@@ -157,4 +157,14 @@ const schemes = {
 
 export default {
   schemes,
+  variables: {
+    layout: {
+      topbarHeight: 50,
+      sidebarWidth: 240,
+      sidebarShrink: 40,
+    },
+    shape: {
+      radius: 4,
+    },
+  },
 };

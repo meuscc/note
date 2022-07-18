@@ -8,13 +8,13 @@ export default function createReboot() {
       font-feature-settings: "rlig" 1, "calt" 0;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
-      font-size: var(--var-typography-htmlFontSize);
+      font-size: 14px;
       scroll-behavior: smooth;
     }
     body {
       margin: 0;
       background-color: var(--scheme-background);
-      font-size: var(--var-typography-fontSize);
+      font-size: 14px;
       color: var(--scheme-onBackground);
     }
   `;

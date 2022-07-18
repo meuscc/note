@@ -30,6 +30,6 @@ export default class PageIndex extends LitElement {
   ]);
 
   override render() {
-    return html` ${this._routes.outlet()} `;
+    return html`<y-topbar></y-topbar>${this._routes.outlet()} `;
   }
 }

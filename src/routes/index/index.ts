@@ -1,9 +1,11 @@
 import { customElement } from "lit/decorators.js";
 import { css, html, LitElement } from "lit";
+import themes from "/src/themes/themes";
 
 @customElement("page-home")
 export default class extends LitElement {
   static styles = [
+    // language=css
     css`
       .material-symbols-outlined {
         font-family: "Material Symbols Outlined";
@@ -20,6 +22,13 @@ export default class extends LitElement {
         -webkit-font-feature-settings: "liga";
         -webkit-font-smoothing: antialiased;
       }
+
+      .container {
+        background-color: var(--scheme-surface);
+        margin: 8px;
+        padding: 8px;
+        border-radius: ${themes.variables.shape.radius}px;
+      }
     `,
   ];
   constructor() {
@@ -35,67 +44,35 @@ export default class extends LitElement {
   }
   override render() {
     return html`
-      <div>
-        <span class="material-symbols-outlined">search</span>
-        <span class="material-symbols-outlined">home</span>
-        <span class="material-symbols-outlined">settings</span>
-        <span class="material-symbols-outlined">favorite</span>
+      <div class="container">
+        <div>语言学习</div>
+        <div>Rust</div>
+        <a href="https://course.rs/">Rust语言圣经</a>
+        <a href="https://zh.practice.rs/">Rust语言实战</a>
+        <a href="https://cheats.rs/">Rust Language Cheat Sheet</a>
+        <a href="https://doc.rust-lang.org/nomicon/">The Rustonomicon</a>
+        <a href="https://rust-lang.github.io/async-book/">
+          Asynchronous Programming in Rust
+        </a>
+        <a href="https://book.async.rs/">
+          Async programming in Rust with async-std
+        </a>
+        <a href="https://github.com/trickster0/OffensiveRust">
+          Offensive Rust
+        </a>
+        <div>C++</div>
+        <a href="https://c-cpp.com/">C(++)参考手册</a>
+        <a href="https://wangdoc.com/clang/">C教程</a>
 
-        <div>文字按钮</div>
-        <y-button color="primary" type="text"
-          ><span slot="start-icon" class="material-symbols-outlined"
-            >settings</span
-          ></y-button
-        >
-        <y-button color="secondary" type="text">次要按钮</y-button>
-        <y-button color="tertiary" type="text">第三按钮</y-button>
-        <y-button color="neutral" type="text">中性按钮</y-button>
-        <y-button color="info" type="text">提示按钮</y-button>
-        <y-button color="success" type="text">成功按钮</y-button>
-        <y-button color="warning" type="text">敬告按钮</y-button>
-        <y-button color="error" type="text">错误按钮</y-button>
-
-        <div>线框按钮</div>
-        <y-button color="primary" type="outline"
-          ><span slot="start-icon" class="material-symbols-outlined"
-            >settings</span
-          ></y-button
-        >
-        <y-button color="secondary" type="outline">次要按钮</y-button>
-        <y-button color="tertiary" type="outline">第三按钮</y-button>
-        <y-button color="neutral" type="outline">中性按钮</y-button>
-        <y-button color="info" type="outline">提示按钮</y-button>
-        <y-button color="success" type="outline">成功按钮</y-button>
-        <y-button color="warning" type="outline">敬告按钮</y-button>
-        <y-button color="error" type="outline">错误按钮</y-button>
-
-        <div>实心按钮</div>
-        <y-button color="primary" type="filled"
-          ><span slot="start-icon" class="material-symbols-outlined"
-            >settings</span
-          ></y-button
-        >
-        <y-button color="secondary" type="filled">次要按钮</y-button>
-        <y-button color="tertiary" type="filled">第三按钮</y-button>
-        <y-button color="neutral" type="filled">中性按钮</y-button>
-        <y-button color="info" type="filled">提示按钮</y-button>
-        <y-button color="success" type="filled">成功按钮</y-button>
-        <y-button color="warning" type="filled">敬告按钮</y-button>
-        <y-button color="error" type="filled">错误按钮</y-button>
-
-        <div>浅色按钮</div>
-        <y-button color="primary" type="filledTonal"
-          ><span slot="start-icon" class="material-symbols-outlined"
-            >settings</span
-          ></y-button
-        >
-        <y-button color="secondary" type="filledTonal">次要按钮</y-button>
-        <y-button color="tertiary" type="filledTonal">第三按钮</y-button>
-        <y-button color="neutral" type="filledTonal">中性按钮</y-button>
-        <y-button color="info" type="filledTonal">提示按钮</y-button>
-        <y-button color="success" type="filledTonal">成功按钮</y-button>
-        <y-button color="warning" type="filledTonal">敬告按钮</y-button>
-        <y-button color="error" type="filledTonal">错误按钮</y-button>
+        <div>算法</div>
+        <div>机器学习</div>
+        <div>数据库</div>
+        <div>UI库</div>
+        <div>UI设计</div>
+        <div>3D/建模</div>
+        <div>动画</div>
+        <div>可视化</div>
+        <div>工具</div>
       </div>
     `;
   }
