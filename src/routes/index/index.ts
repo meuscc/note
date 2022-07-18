@@ -70,35 +70,45 @@ export default class extends LitElement {
         <y-button color="error" variant="outlined">sfs是否是</y-button>
 
         <div>实心按钮</div>
-        <y-button color="default" variant="contained">sfs是否是</y-button>
-        <y-button color="primary" variant="contained">sfs是否是</y-button>
-        <y-button color="secondary" variant="contained">sfs是否是</y-button>
+        <y-button color="default" type="filled">sfs是否是</y-button>
+        <y-button color="primary" type="filled">sfs是否是</y-button>
+        <y-button color="secondary" type="filled">sfs是否是</y-button>
 
-        <y-button color="info" variant="contained">sfs是否是</y-button>
-        <y-button color="success" variant="contained">sfs是否是</y-button>
-        <y-button color="warning" variant="contained">sfs是否是</y-button>
-        <y-button color="error" variant="contained">sfs是否是</y-button>
+        <y-button color="info" type="filled">sfs是否是</y-button>
+        <y-button color="success" type="filled">sfs是否是</y-button>
+        <y-button color="warning" type="filled">sfs是否是</y-button>
+        <y-button color="error" type="filled">sfs是否是</y-button>
+
+        <div>实心按钮</div>
+        <y-button color="default" type="filledTonal">sfs是否是</y-button>
+        <y-button color="primary" type="filledTonal">sfs是否是</y-button>
+        <y-button color="secondary" type="filledTonal">sfs是否是</y-button>
+
+        <y-button color="info" type="filledTonal">sfs是否是</y-button>
+        <y-button color="success" type="filledTonal">sfs是否是</y-button>
+        <y-button color="warning" type="filledTonal">sfs是否是</y-button>
+        <y-button color="error" type="filledTonal">sfs是否是</y-button>
 
         <div>实心按钮禁用</div>
-        <y-button color="default" variant="contained" disabled="true"
+        <y-button color="default" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="primary" variant="contained" disabled="true"
+        <y-button color="primary" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="secondary" variant="contained" disabled="true"
+        <y-button color="secondary" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="info" variant="contained" disabled="true"
+        <y-button color="info" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="success" variant="contained" disabled="true"
+        <y-button color="success" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="warning" variant="contained" disabled="true"
+        <y-button color="warning" type="filled" disabled="true"
           >sfs是否是</y-button
         >
-        <y-button color="error" variant="contained" disabled="true"
+        <y-button color="error" type="filled" disabled="true"
           >sfs是否是</y-button
         >
       </div>

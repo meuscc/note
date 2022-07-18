@@ -1,7 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { themes } from "/src/themes/themes";
-import { hexFromArgb } from "@material/material-color-utilities";
 
 function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -19,9 +17,8 @@ export type ButtonColor =
   | "success"
   | "error";
 
-export type ButtonVariant = "default" | "text" | "outlined" | "contained";
+export type ButtonType = "filled" | "filledTonal" | "outlined" | "text";
 export type ButtonSize = "sm" | "default" | "lg";
-
 export type ButtonRadius = "sm" | "default" | "lg";
 
 const buttonColors: ButtonColor[] = [
@@ -37,58 +34,59 @@ function f(color: ButtonColor) {
   // language=css
   return `
 
-        .variant-contained.color-${color} {
-          background-color: var(--palette-${color}-default);
-          color: var(--${color}-on-default);
+        .type-filled.color-${color} {
+            background-color: var(--scheme-${color}-main-base);
+            color: var(--scheme-${color}-main-onBase);
         }
-        .variant-contained.color-${color}:hover {
-            background-color: var(--palette-${color}-hover);
+
+        .type-filled.color-${color}:hover {
+            background-color: var(--scheme-${color}-main-baseHover);
         }
-        .variant-contained.color-${color}:active {
-            background-color:var(--palette-${color}-active);
+
+        .type-filled.color-${color}:active {
+            background-color: var(--scheme-${color}-main-baseActive);
         }
-        .variant-contained.color-${color}.disabled {
-            background-color: var(--palette-${color}-disabled);
-            color: var(--${color}-on-disabled);;
+
+        .type-filled.color-${color}.disabled {
+            background-color: var(--scheme-${color}-main-baseDisabled);
+            color: var(--scheme-${color}-main-onBaseDisabled);
+            cursor: not-allowed;
+        }
+        
+        
+                .type-filledTonal.color-${color} {
+            background-color: var(--scheme-${color}-lite-base);
+            color: var(--scheme-${color}-lite-onBase);
+        }
+
+        .type-filledTonal.color-${color}:hover {
+            background-color: var(--scheme-${color}-lite-baseHover);
+        }
+
+        .type-filledTonal.color-${color}:active {
+            background-color: var(--scheme-${color}-lite-baseActive);
+        }
+
+        .type-filledTonal.color-${color}.disabled {
+            background-color: var(--scheme-${color}-lite-baseDisabled);
+            color: var(--scheme-${color}-lite-onBaseDisabled);
             cursor: not-allowed;
         }
     `;
 }
 
-function createContainedButton() {
-  let rule = "";
+function createFilled() {
+  // language=css
+  let rule = `
+        .type-filled,.type-filledTonal {
+            border: 0;
+          outline: 0;
+
+        }
+    `;
   buttonColors.forEach((color) => {
     rule += f(color);
   });
-
-  return rule;
-}
-
-function createOutlinedButton() {
-  let rule = "";
-  for (let i = 0; i < buttonColors.length; i++) {
-    const color = buttonColors[i];
-    // language=css
-
-    if (color === "default") {
-      rule += `
-        .variant-outlined.color-${color} {
-            background-color: transparent;
-            color: var(--plt-${color}-contrastText);
-            border-color: var(--plt-${color}-contrastText);
-        }
-    `;
-    } else {
-      rule += `
-        .variant-outlined.color-${color} {
-            background-color: transparent;
-            color: var(--scheme-${color}Container);
-            border-color: var(--scheme-${color}Container);
-            border-width: 1px;
-        }
-    `;
-    }
-  }
 
   return rule;
 }
@@ -132,89 +130,14 @@ export class Button extends LitElement {
         border-radius: 8px;
       }
 
-      /* 默认按钮 */
-      .variant-default {
-        border-width: 0;
-      }
-
-      .variant-default.color-primary {
-        color: var(--plt-primary-main);
-      }
-
-      .variant-default.color-secondary {
-        color: var(--plt-secondary-main);
-      }
-
-      .variant-default.color-info {
-        color: var(--plt-info-main);
-      }
-
-      .variant-default.color-success {
-        color: var(--plt-success-main);
-      }
-
-      .variant-default.color-warning {
-        color: var(--plt-warning-main);
-      }
-
-      .variant-default.color-error {
-        color: var(--plt-error-main);
-      }
-
-      /* 文字按钮 */
-      .variant-text {
-        border-width: 0;
-        background-color: transparent;
-      }
-
-      .variant-text.color-primary {
-        color: var(--plt-primary-main);
-      }
-
-      .variant-text.color-secondary {
-        color: var(--plt-secondary-main);
-      }
-
-      .variant-text.color-info {
-        color: var(--plt-info-main);
-      }
-
-      .variant-text.color-success {
-        color: var(--plt-success-main);
-      }
-
-      .variant-text.color-warning {
-        color: var(--plt-warning-main);
-      }
-
-      .variant-text.color-error {
-        color: var(--plt-error-main);
-      }
-
-      /* 线框按钮 */
-      .variant-outlined {
-        border-width: 1px;
-        outline: 0;
-      }
-      .variant-outlined:active {
-        outline: 0;
-      }
-      .variant-outlined:active {
-        outline: 0;
-      }
-      ${unsafeCSS(createOutlinedButton())}
-      /* 实心按钮 */
-      .variant-contained {
-        border-width: 0;
-      }
-      ${unsafeCSS(createContainedButton())}
+      ${unsafeCSS(createFilled())}
     `,
   ];
 
   @property()
-  color?: ButtonColor = "default";
+  color?: ButtonColor = "primary";
   @property()
-  variant?: ButtonVariant = "default";
+  type?: ButtonType = "filled";
   @property()
   size?: ButtonSize = "default";
   @property()
@@ -224,8 +147,8 @@ export class Button extends LitElement {
 
   render() {
     return html` <button
-      class="${`radius-${this.radius} size-${this.size} variant-${
-        this.variant
+      class="${`radius-${this.radius} size-${this.size} type-${
+        this.type
       } color-${this.color} ${this.disabled ? "disabled" : ""}`}"
     >
       <slot name="start-icon"></slot>
