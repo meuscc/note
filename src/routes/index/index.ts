@@ -1,6 +1,7 @@
 import { customElement } from "lit/decorators.js";
 import { css, html, LitElement } from "lit";
 import themes from "/src/themes/themes";
+import navs from "/src/components/navs";
 
 @customElement("page-home")
 export default class extends LitElement {
@@ -29,6 +30,13 @@ export default class extends LitElement {
         padding: 8px;
         border-radius: ${themes.variables.shape.radius}px;
       }
+      y-a {
+        display: flex;
+        padding: 5px;
+      }
+      y-a:hover {
+        background-color: var(--scheme-primary-tonal-10);
+      }
     `,
   ];
   constructor() {
@@ -45,34 +53,7 @@ export default class extends LitElement {
   override render() {
     return html`
       <div class="container">
-        <div>语言学习</div>
-        <div>Rust</div>
-        <a href="https://course.rs/">Rust语言圣经</a>
-        <a href="https://zh.practice.rs/">Rust语言实战</a>
-        <a href="https://cheats.rs/">Rust Language Cheat Sheet</a>
-        <a href="https://doc.rust-lang.org/nomicon/">The Rustonomicon</a>
-        <a href="https://rust-lang.github.io/async-book/">
-          Asynchronous Programming in Rust
-        </a>
-        <a href="https://book.async.rs/">
-          Async programming in Rust with async-std
-        </a>
-        <a href="https://github.com/trickster0/OffensiveRust">
-          Offensive Rust
-        </a>
-        <div>C++</div>
-        <a href="https://c-cpp.com/">C(++)参考手册</a>
-        <a href="https://wangdoc.com/clang/">C教程</a>
-
-        <div>算法</div>
-        <div>机器学习</div>
-        <div>数据库</div>
-        <div>UI库</div>
-        <div>UI设计</div>
-        <div>3D/建模</div>
-        <div>动画</div>
-        <div>可视化</div>
-        <div>工具</div>
+        <y-tree .data="${navs}"></y-tree>
       </div>
     `;
   }

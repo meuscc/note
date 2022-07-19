@@ -12,6 +12,9 @@ export default function createReboot() {
       scroll-behavior: smooth;
     }
     body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI,
+        PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue,
+        Helvetica, Arial, sans-serif;
       margin: 0;
       background-color: var(--scheme-background);
       font-size: 14px;
