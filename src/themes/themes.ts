@@ -110,9 +110,9 @@ const schemes = {
     error: createLightPaletteTonal(palettes.error),
 
     //////////////////////////////////////////////////////
-    background: palettes.neutral.tone(99),
+    background: palettes.neutral.tone(95),
     onBackground: palettes.neutral.tone(10),
-    surface: palettes.neutral.tone(95),
+    surface: palettes.neutral.tone(99),
     onSurface: palettes.neutral.tone(10),
 
     surfaceVariant: palettes.neutralVariant.tone(90),

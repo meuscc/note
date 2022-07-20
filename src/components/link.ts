@@ -26,8 +26,13 @@ export class Link extends LitElement {
   @property()
   href?: string = "";
 
+  @property()
+  target?: string = "";
+
   render() {
-    return html`<a href="${this.href}"><slot></slot></a>`;
+    return html`<a href="${this.href}" target="${this.target}">
+      <slot></slot>
+    </a>`;
   }
 }
 
