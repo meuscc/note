@@ -1,9 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/langs/clang/clang-cheat/clang-cheat": "pages/langs/clang/clang-cheat/clang-cheat.js",
-  "/math/real-analysis/real-analysis-cheat/real-analysis-cheat": "pages/math/real-analysis/real-analysis-cheat/real-analysis-cheat.js",
-  "/math/set-theory/set-theory-cheat/set-theory-cheat": "pages/math/set-theory/set-theory-cheat/set-theory-cheat.js",
-  "/videos/videos": "pages/videos/videos.js"
-}
