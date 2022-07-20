@@ -11,20 +11,50 @@ const navs: TreeData = {
   link: "",
   children: [
     {
-      name: "计算机基础",
-      link: "",
+      name: "计算机",
       children: [
         {
-          name: "github 博客",
-          link: "https://github.blog/",
-          description: "github 博客",
-          icon: "https://github.githubassets.com/favicon.ico",
-        },
-        {
-          name: "github 榜单",
-          link: "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",
-          description: "github 榜单",
-          icon: "https://github.githubassets.com/favicon.ico",
+          name: "通识",
+          link: "",
+          children: [
+            {
+              name: "github 博客",
+              link: "https://github.blog/",
+              description: "github 博客",
+              icon: "https://github.githubassets.com/favicon.ico",
+            },
+            {
+              name: "github 榜单",
+              link: "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",
+              description: "github 榜单",
+              icon: "https://github.githubassets.com/favicon.ico",
+            },
+            {
+              name: "Build your own x",
+              link: "https://github.com/codecrafters-io/build-your-own-x",
+              description: "",
+              icon: "",
+            },
+            {
+              name: "你好 GitHub",
+              link: "https://hellogithub.com/",
+              description:
+                "分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+              icon: "https://img.hellogithub.com/favicon/favicon.ico",
+            },
+            {
+              name: "What every programmer should know about memory",
+              link: "https://lwn.net/Articles/250967/",
+              description: "What every programmer should know about memory",
+              icon: "https://static.lwn.net/images/favicon.png",
+            },
+            {
+              name: "计算机体系结构基础\n",
+              link: "https://foxsen.github.io/archbase/",
+              description: "计算机体系结构基础",
+              icon: "https://foxsen.github.io/favicon.ico",
+            },
+          ],
         },
         {
           name: "Rust",
@@ -182,7 +212,32 @@ const navs: TreeData = {
           children: [
             {
               name: "文档",
-              children: [],
+              children: [
+                {
+                  name: "Go 入门指南",
+                  link: "https://github.com/Unknwon/the-way-to-go_ZH_CN",
+                },
+                {
+                  name: "Go 圣经",
+                  link: "https://book.itsfun.top/gopl-zh/",
+                },
+                {
+                  name: "Go 高级编程",
+                  link: "https://chai2010.cn/advanced-go-programming-book/",
+                },
+                {
+                  name: "Go 简明教程",
+                  link: "https://geektutu.com/post/quick-golang.html",
+                },
+                {
+                  name: "Go 高性能",
+                  link: "https://geektutu.com/post/high-performance-go.html",
+                },
+                {
+                  name: "Go 修养之路",
+                  link: "https://www.yuque.com/aceld/golang/ithv8f",
+                },
+              ],
             },
             {
               name: "生态",
@@ -212,6 +267,48 @@ const navs: TreeData = {
                 {
                   name: "Wtf Js",
                   link: "https://github.com/denysdovhan/wtfjs",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "YDKJS",
+                  link: "https://github.com/getify/You-Dont-Know-JS",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "33 Js Concepts",
+                  link: "https://github.com/stephentian/33-js-concepts",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "Web Attack Cheat Sheet",
+                  link: "https://github.com/riramar/Web-Attack-Cheat-Sheet",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "木易杨前端进阶",
+                  link: "https://muyiy.cn/blog/",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "前端瓶子君",
+                  link: "https://www.pzijun.cn/blog/",
+                  description: "",
+                  icon: "",
+                },
+                {
+                  name: "前端进阶之道",
+                  link: "https://yuchengkai.cn/docs/frontend/",
+                  description: "",
+                  icon: "https://yuchengkai.cn/icon.png",
+                },
+                {
+                  name: "前端周报",
+                  link: "https://github.com/ascoders/weekly",
                   description: "",
                   icon: "",
                 },
@@ -328,7 +425,24 @@ const navs: TreeData = {
           children: [
             {
               name: "文档",
-              children: [],
+              children: [
+                {
+                  name: "小浩算法",
+                  link: "https://www.geekxh.com/",
+                  icon: "https://www.geekxh.com/logo.png",
+                },
+                {
+                  name: "程序厨算法基础",
+                  link: "https://www.chengxuchu.com/",
+                  description:
+                    "一位酷爱做饭的程序员，立志用动画将算法说的通俗易懂",
+                },
+                {
+                  name: "代码随想录",
+                  link: "https://programmercarl.com/",
+                  icon: "https://img-blog.csdnimg.cn/20210614201246512.png",
+                },
+              ],
             },
             {
               name: "生态",
@@ -795,6 +909,12 @@ const navs: TreeData = {
               link: "https://docsmall.com/",
               description: "",
               icon: "https://docsmall.com/favicon.png",
+            },
+            {
+              name: "Penpot UI 设计工具",
+              link: "https://penpot.app/",
+              description: "",
+              icon: "https://penpot.app/images/favicon.png",
             },
           ],
         },

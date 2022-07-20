@@ -4,12 +4,14 @@ import themes from "/src/themes/themes";
 import navs from "/src/components/navs";
 
 import { proxy, subscribe, snapshot } from "valtio";
+import scroll from "/src/styles/scroll";
 
 export const pageState = proxy({ currentLink: "" });
 
 @customElement("page-home")
 export default class extends LitElement {
   static styles = [
+    scroll,
     // language=css
     css`
       .container {
@@ -69,7 +71,7 @@ export default class extends LitElement {
     return html`
       <div class="container">
         <section>
-          <div class="nav-ctn">
+          <div class="nav-ctn y-scroll">
             <y-tree .data="${navs}"></y-tree>
           </div>
           <div class="iframe-ctn">

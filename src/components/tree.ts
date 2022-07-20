@@ -13,6 +13,7 @@ export class Tree extends LitElement {
       :host {
         display: block;
         width: 100%;
+        font-size: 13px;
       }
       .item-control {
         height: 32px;
@@ -42,10 +43,10 @@ export class Tree extends LitElement {
         transform-origin: center center;
         transition: 0.2s ease transform;
         color: var(--scheme-neutral-tonal-7);
-        font-size: 14px;
+        font-size: 12px;
       }
       .caret-open {
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
       }
 
       ::slotted(svg) {
@@ -75,6 +76,18 @@ export class Tree extends LitElement {
         display: flex;
         gap: 5px;
       }
+
+      .dropdown {
+        padding-left: 8px;
+      }
+
+      .item-label {
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow-x: hidden;
+      }
     `,
   ];
 
@@ -85,17 +98,21 @@ export class Tree extends LitElement {
   data: TreeData = navs;
 
   @property()
-  level: number = 1;
+  level: number = 0;
 
   constructor() {
     super();
   }
 
   handleClick() {
-    if (this.level === 1) {
+    if (this.level === 0) {
       return;
     }
     if (this.data.link) {
+      if (this.data.link.startsWith("https://github.com")) {
+        window.open(this.data.link);
+        return;
+      }
       pageState.currentLink = this.data.link;
       return;
     }
@@ -136,31 +153,44 @@ export class Tree extends LitElement {
   }
 
   render() {
-    const _opened = this.level === 1 ? true : this.opened;
+    const _opened = this.level === 0 ? true : this.opened;
 
     return html`
       <div class="item level-${this.level} item-${_opened ? "open" : ""}">
-        <div
-          @click="${this.handleClick}"
-          class="item-control level-${this.level}"
-        >
-          <div class="item-label">
-            ${when(
-              this.data.icon,
-              () =>
-                html`<img class="item-icon" src="${this.data.icon}" alt="" />`
-            )}
-            ${this.data.name}
-          </div>
-          ${when(
-            !this.data.link && this.level !== 1,
-            () =>
-              html`<y-icon
-                class="caret caret-${_opened ? "open" : ""}"
-                name="caretDownFill"
-              ></y-icon>`
-          )}
-        </div>
+        ${when(
+          this.level > 0,
+          () => html`
+            <div
+              @click="${this.handleClick}"
+              class="item-control level-${this.level}"
+            >
+              <div class="item-label">
+                ${when(
+                  this.data.icon,
+                  () =>
+                    html`<img
+                      class="item-icon"
+                      src="${this.data.icon}"
+                      alt=""
+                    />`,
+                  () =>
+                    html`<y-icon
+                      name="${this.data.children ? "list" : "bookmark-start"}"
+                    ></y-icon>`
+                )}
+                ${this.data.name}
+              </div>
+              ${when(
+                !this.data.link && this.level !== 0,
+                () =>
+                  html`<y-icon
+                    class="caret caret-${_opened ? "open" : ""}"
+                    name="chevron_right"
+                  ></y-icon>`
+              )}
+            </div>
+          `
+        )}
         <div class="dropdown">
           ${when(
             this.data.children?.length && _opened,
@@ -177,11 +207,5 @@ export class Tree extends LitElement {
         </div>
       </div>
     `;
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "y-tree": Tree;
   }
 }
