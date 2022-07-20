@@ -26,8 +26,12 @@ export class Tree extends LitElement {
         padding-left: 5px;
         padding-right: 5px;
       }
-      .level-control.level-1 .level-control {
-        background-color: rgba(0, 0, 0, 0.1);
+      .item-control:hover {
+        background-color: var(--scheme-primary-tonal-11);
+      }
+
+      .item-control:active {
+        background-color: var(--scheme-primary-tonal-10);
       }
 
       .dropdown {
@@ -37,6 +41,8 @@ export class Tree extends LitElement {
       .caret {
         transform-origin: center center;
         transition: 0.2s ease transform;
+        color: var(--scheme-neutral-tonal-7);
+        font-size: 14px;
       }
       .caret-open {
         transform: rotate(-90deg);
@@ -50,21 +56,24 @@ export class Tree extends LitElement {
         color: red !important;
       }
 
-      .item-control.level-1 {
-        background-color: var(--scheme-primary-main-base);
-        color: var(--scheme-primary-main-onBase);
+      .item-open:not(.level-1) .dropdown {
+        background-color: var(--scheme-neutral-tonal-11);
       }
-      .item-control.level-2 {
-        background-color: var(--scheme-primary-tonal-11);
-      }
-      .item-control.level-3 {
+
+      .item-open:not(.level-1) .item-control {
         background-color: var(--scheme-primary-tonal-10);
+        border-bottom: 1px solid var(--scheme-primary-tonal-9);
       }
-      .item-control.level-4 {
-        background-color: var(--scheme-primary-tonal-9);
+
+      .item-icon {
+        width: 16px;
+        height: 16px;
+        display: block;
       }
-      .item-control.level-5 {
-        background-color: var(--scheme-primarytonal-8);
+
+      .item-label {
+        display: flex;
+        gap: 5px;
       }
     `,
   ];
@@ -130,12 +139,19 @@ export class Tree extends LitElement {
     const _opened = this.level === 1 ? true : this.opened;
 
     return html`
-      <div class="item level-${this.level}">
+      <div class="item level-${this.level} item-${_opened ? "open" : ""}">
         <div
           @click="${this.handleClick}"
           class="item-control level-${this.level}"
         >
-          <div>${this.data.name}</div>
+          <div class="item-label">
+            ${when(
+              this.data.icon,
+              () =>
+                html`<img class="item-icon" src="${this.data.icon}" alt="" />`
+            )}
+            ${this.data.name}
+          </div>
           ${when(
             !this.data.link && this.level !== 1,
             () =>
