@@ -63,6 +63,12 @@ const navs: TreeData = {
               icon: "",
             },
             {
+              name: "程序员延寿指南",
+              link: "https://github.com/geekan/HowToLiveLonger",
+              description: "程序员延寿指南",
+              icon: "",
+            },
+            {
               name: "简历制作",
               link: "https://rxresu.me/",
               description: "简历制作",
@@ -126,6 +132,82 @@ const navs: TreeData = {
               link: "https://github.com/biggerduck/RedTeamNotes",
               description: "红队笔记",
             },
+            {
+              name: "开发内功修炼",
+              link: "https://github.com/yanfeizhang/coder-kung-fu",
+            },
+            {
+              name: "Awesome Metaverse",
+              link: "https://github.com/M3-org/awesome-metaverse",
+            },
+            {
+              name: "游戏程序员生涯的读书笔记",
+              link: "https://github.com/QianMo/Game-Programmer-Study-Notes",
+            },
+            {
+              name: "Stat Rethinking 2022",
+              link: "https://github.com/rmcelreath/stat_rethinking_2022",
+            },
+            {
+              name: "2022年开源操作系统训练营",
+              link: "https://learningos.github.io/rust-based-os-comp2022/",
+              description:
+                "本教程展示了如何 从零开始 用 Rust 语言写一个基于 RISC-V 架构的 类 Unix 内核 。用于 2022年开源操作系统训练营。",
+            },
+            {
+              name: "vim-cheatsheet",
+              link: "https://www.cnblogs.com/chloneda/p/vim-cheatsheet.html",
+            },
+            {
+              name: "滴水逆向课程笔记",
+              link: "https://gh0st.cn/Binary-Learning/Binary-Learning.html",
+            },
+            {
+              name: "Halfrost-Field 冰霜之地",
+              link: "https://github.com/halfrost/Halfrost-Field",
+              description: "这里是写博客的地方 —— Halfrost-Field 冰霜之地",
+            },
+            {
+              name: "品读 Linux 0.11 核心代码",
+              link: "https://github.com/sunym1993/flash-linux0.11-talk",
+              description: "品读 Linux 0.11 核心代码",
+            },
+            {
+              name: "分布式系统模式",
+              link: "https://github.com/dreamhead/patterns-of-distributed-systems",
+            },
+            {
+              name: "The Art of Command Line",
+              link: "https://github.com/jlevy/the-art-of-command-line",
+              description: "Master the command line, in one page",
+            },
+            {
+              name: "Every programmer should know",
+              link: "https://github.com/mtdvio/every-programmer-should-know",
+              description: "Master the command line, in one page",
+            },
+            {
+              name: "Google Research",
+              link: "https://research.google/",
+              description: "Google Research",
+              icon: "https://research.google/static/images/favicon-6da5620880159634213e197fafca1dde0272153be3e4590818533fab8d040770.ico",
+            },
+            {
+              name: "DDIA中文翻译",
+              link: "https://github.com/Vonng/ddia",
+              description: "Designing Data-Intensive Application",
+            },
+            {
+              name: "极客时间",
+              link: "https://time.geekbang.org/",
+              description: "极客时间-轻松学习，高效学习-极客邦",
+              icon: "https://static001.geekbang.org/static/time/icon/favicon-32x32.jpg",
+            },
+            {
+              name: "Hackingtool",
+              link: "https://github.com/Z4nzu/hackingtool",
+              description: "ALL IN ONE Hacking Tool For Hackers",
+            },
           ],
         },
         {
@@ -176,6 +258,12 @@ const navs: TreeData = {
                   description: "",
                   icon: "",
                 },
+                {
+                  name: "Rust Data Structures book",
+                  link: "https://github.com/QMHTMY/RustBook",
+                  description:
+                    "A book about Rust Data Structures and Algorithms.",
+                },
               ],
             },
             {
@@ -222,7 +310,7 @@ const navs: TreeData = {
                 },
                 {
                   name: "现代 C++ 教程",
-                  link: "https://github.com/changkun/modern-cpp-tutorial",
+                  link: "https://changkun.de/modern-cpp",
                   description: "现代 C++ 教程",
                   icon: "",
                 },
@@ -246,10 +334,24 @@ const navs: TreeData = {
                   icon: "",
                 },
                 {
-                  name: "Learn OpenGL 中文版",
-                  link: "https://learnopengl-cn.github.io/",
-                  description: "Learn OpenGL 中文版",
-                  icon: "https://learnopengl-cn.github.io/img/favicon.ico",
+                  name: "高性能并行编程与优化 - 课件",
+                  link: "https://github.com/parallel101/course",
+                },
+                {
+                  name: "CMake Cookbook",
+                  link: "https://www.bookstack.cn/read/CMake-Cookbook/",
+                  description: "CMake菜谱（CMake Cookbook中文版）",
+                },
+                {
+                  name: "Cpp Core Guidelines",
+                  link: "https://github.com/isocpp/CppCoreGuidelines",
+                  description:
+                    "he C++ Core Guidelines are a set of tried-and-true guidelines, rules, and best practices about coding in C++",
+                },
+                {
+                  name: "30天自制C++服务器",
+                  link: "https://github.com/yuesong-feng/30dayMakeCppServer",
+                  description: "30天自制C++服务器，包含教程和源代码",
                 },
               ],
             },
@@ -271,6 +373,14 @@ const navs: TreeData = {
                   link: "https://www.boost.org/",
                   description: "Boost C++ 库",
                   icon: "https://www.boost.org/favicon.ico",
+                },
+                {
+                  name: "Folly",
+                  link: "https://github.com/facebook/folly",
+                },
+                {
+                  name: "Poco",
+                  link: "https://pocoproject.org/",
                 },
                 {
                   name: "Stb libraries",
@@ -313,6 +423,31 @@ const navs: TreeData = {
                   name: "Apache Arrow",
                   link: "https://arrow.apache.org/",
                   icon: "https://arrow.apache.org/img/favicon-32x32.png",
+                },
+                {
+                  name: "Filament",
+                  link: "https://github.com/google/filament",
+                  description:
+                    "Filament is a real-time physically based rendering engine",
+                },
+                {
+                  name: "Tink",
+                  link: "https://github.com/google/tink",
+                  description: "Open-source cryptography library",
+                },
+                {
+                  name: "Z3Prover",
+                  link: "https://github.com/Z3Prover/z3",
+                  description: "The Z3 Theorem Prover",
+                },
+                {
+                  name: "TCMalloc",
+                  link: "https://github.com/google/tcmalloc",
+                  description: "TCMalloc",
+                },
+                {
+                  name: "Concurrentqueue",
+                  link: "https://github.com/cameron314/concurrentqueue",
                 },
               ],
             },
@@ -385,6 +520,11 @@ const navs: TreeData = {
                   name: "Maui Workshop ",
                   link: "https://github.com/dotnet-presentations/dotnet-maui-workshop",
                 },
+                {
+                  name: "Csharp ",
+                  link: "https://docs.microsoft.com/zh-cn/dotnet/csharp/",
+                  icon: "https://docs.microsoft.com/favicon.ico",
+                },
               ],
             },
             {
@@ -429,6 +569,12 @@ const navs: TreeData = {
                   icon: "",
                 },
                 {
+                  name: "The Modern JavaScript Tutorial",
+                  link: "https://javascript.info/",
+                  description: "",
+                  icon: "https://javascript.info/img/favicon/favicon.png",
+                },
+                {
                   name: "Web Attack Cheat Sheet",
                   link: "https://github.com/riramar/Web-Attack-Cheat-Sheet",
                   description: "",
@@ -464,6 +610,12 @@ const navs: TreeData = {
                   description: "Learn Web",
                   icon: "https://web.dev/images/favicon.ico",
                 },
+                {
+                  name: "冴羽博客",
+                  link: "https://github.com/mqyqingfeng/Blog",
+                  description:
+                    "JavaScript深入系列、JavaScript专题系列、ES6系列、React系列。",
+                },
               ],
             },
             {
@@ -486,6 +638,12 @@ const navs: TreeData = {
                   icon: "https://pixijs.com/images/favicon.png",
                   link: "https://pixijs.com/",
                   description: "PIXI 2D Canvas Library",
+                },
+                {
+                  name: "p5js",
+                  link: "https://p5js.org/",
+                  description: "p5js",
+                  icon: "https://p5js.org/assets/img/favicon.ico",
                 },
                 {
                   name: "Threejs",
@@ -602,6 +760,17 @@ const navs: TreeData = {
                   description: "A data visualization and analytics component",
                   icon: "https://www.finos.org/hubfs/FINOS/finos-logo/favicon.ico",
                 },
+                {
+                  name: "Ethereum JavaScript API",
+                  link: "https://github.com/ChainSafe/web3.js",
+                  description: "Ethereum JavaScript API",
+                },
+                {
+                  name: "Lib phonenumber",
+                  link: "https://github.com/google/libphonenumber",
+                  description:
+                    "Formatting, and validating international phone numbers.",
+                },
               ],
             },
           ],
@@ -649,6 +818,50 @@ const navs: TreeData = {
                   link: "https://programmercarl.com/",
                   icon: "https://img-blog.csdnimg.cn/20210614201246512.png",
                 },
+                {
+                  name: "算法通关手册",
+                  link: "https://algo.itcharge.cn/",
+                  icon: "https://algo.itcharge.cn/favicon.png",
+                },
+                {
+                  name: "Path Planning",
+                  link: "https://github.com/zhm-real/PathPlanning",
+                  description:
+                    "Common used path planning algorithms with animations.",
+                },
+                {
+                  name: "高频 Leetcode",
+                  link: "https://github.com/afatcoder/LeetcodeTop",
+                  description: "汇总各大互联网公司容易考察的高频leetcode题🔥",
+                },
+                {
+                  name: "Leetcode Cookbook",
+                  link: "https://books.halfrost.com/leetcode/",
+                  description: "Leetcode Go 语言解题",
+                },
+                {
+                  name: "Labuladong 算法小抄",
+                  link: "https://labuladong.gitee.io/algo/",
+                  description: "刷算法全靠套路，认准 labuladong 就够了",
+                  icon: "https://labuladong.gitee.io/algo/images/avatar.png",
+                },
+                {
+                  name: "Leetcode 多语言解题",
+                  link: "https://doocs.github.io/leetcode/",
+                  description:
+                    "多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解",
+                  icon: "https://doocs.github.io/leetcode/images/favicon-32x32.png",
+                },
+                {
+                  name: "TheAlgorithms - Rust",
+                  link: "https://github.com/TheAlgorithms/Rust",
+                  description: "All Algorithms implemented in Rust",
+                },
+                {
+                  name: "TheAlgorithms - C++",
+                  link: "https://github.com/TheAlgorithms/C-Plus-Plus",
+                  description: "All Algorithms implemented in C++",
+                },
               ],
             },
             {
@@ -692,6 +905,26 @@ const navs: TreeData = {
                   link: "https://github.com/berty/berty",
                   description: `About Berty is a secure peer-to-peer messaging app that works with or without internet access, cellular data or trust in the network`,
                   icon: "https://berty.tech/favicon/favicon.ico",
+                },
+                {
+                  name: "webrtc",
+                  link: "https://webrtc.rs/",
+                  description: "A pure Rust implementation of WebRTC",
+                  icon: "https://webrtc.rs/res/webrtc.rs.ico",
+                },
+                {
+                  name: "Pion",
+                  link: "https://pion.ly/",
+                  description:
+                    "The Modern Stack for Web Real-Time Communication.",
+                  icon: "https://pion.ly/img/pion-logo.svg",
+                },
+                {
+                  name: "Peercalls",
+                  link: "https://peercalls.com/",
+                  description:
+                    "Group peer to peer video calls for everyone written in Go and TypeScript",
+                  icon: "https://peercalls.com/res/icon.png",
                 },
               ],
             },
@@ -801,6 +1034,50 @@ const navs: TreeData = {
                   description: "An open-source time-series database",
                   icon: "https://www.taosdata.com/wp-content/uploads/2021/12/favicon.ico",
                 },
+                {
+                  name: "Neon",
+                  link: "https://neon.tech/",
+                  description: "Serverless Postgres",
+                  icon: "https://neon.tech/favicon-32x32.png?v=7edfb4e59568029a30df63c907deb893",
+                },
+                {
+                  name: "scylladb",
+                  link: "https://www.scylladb.com/",
+                  description: "Cassandra alternative",
+                  icon: "https://www.scylladb.com/wp-content/themes/scylladb/favicon.ico",
+                },
+                {
+                  name: "Dragonflydb",
+                  link: "https://dragonflydb.io/",
+                  description: "A modern Redis",
+                  icon: "https://dragonflydb.io/img/favicon.ico",
+                },
+                {
+                  name: "Milvus",
+                  link: "https://milvus.io/",
+                  description:
+                    "Vector database for scalable similarity search and AI applications",
+                  icon: "https://milvus.io/favicon-32x32.png?v=587ea7d315fa8ebc198a8c112e054ef6",
+                },
+                {
+                  name: "Qdrant",
+                  link: "https://qdrant.tech/",
+                  description:
+                    "Vector Search Engine for the next generation of AI applications",
+                  icon: "https://qdrant.tech/images/favicon-32x32.png",
+                },
+                {
+                  name: "Faiss",
+                  link: "https://github.com/facebookresearch/faiss",
+                  description:
+                    "A library for efficient similarity search and clustering of dense vectors.",
+                },
+                {
+                  name: "Gorse",
+                  link: "https://gorse.io/",
+                  description:
+                    "Gorse is an open source recommendation system written in Go.,
+                },
               ],
             },
           ],
@@ -865,6 +1142,34 @@ const navs: TreeData = {
                 "Scalable real-time messaging server in a language-agnostic way. Set up once and forever.",
               icon: "https://centrifugal.dev/img/favicon.png",
             },
+            {
+              name: "Seastar",
+              link: "https://seastar.io/",
+              description: "High performance server-side application framework",
+              icon: "https://seastar.io/favicon.ico",
+            },
+            {
+              name: "Oatpp",
+              link: "https://oatpp.io/",
+              description: "An Open Source C++ Web Framework",
+              icon: "https://raw.githubusercontent.com/lganzzzo/oatpp-website-res/master/logo_x400.png",
+            },
+            {
+              name: "Axum",
+              link: "https://github.com/tokio-rs/axum",
+            },
+            {
+              name: "Casbin",
+              link: "https://casbin.org/",
+              icon: "https://casbin.org/img/favicon.png",
+            },
+            {
+              name: "Authelia",
+              link: "https://www.authelia.com/",
+              description:
+                "The Single Sign-On Multi-Factor portal for web apps",
+              icon: "https://www.authelia.com/favicon.ico",
+            },
           ],
         },
         {
@@ -886,10 +1191,10 @@ const navs: TreeData = {
               icon: "https://traefik.io/favicon.svg",
             },
             {
-              name: "Sealyun",
-              link: "https://www.sealyun.com/",
+              name: "sealos",
+              link: "https://www.sealos.io/",
               description: "sealos 是以 kubernetes 为内核的云操作系统发行版",
-              icon: "https://www.sealyun.com/img/sealos.ico",
+              icon: "https://www.sealos.io/img/sealos.ico",
             },
             {
               name: "Tanzu Community Edition",
@@ -914,14 +1219,86 @@ const navs: TreeData = {
                 "An open-source, lightning-fast, and hyper-relevant search engine",
               icon: "https://www.meilisearch.com/favicon-32x32.png",
             },
+            {
+              name: "Tantivy",
+              link: "https://github.com/quickwit-oss/tantivy",
+              description: "Rust Apache Lucene alternative",
+              icon: "",
+            },
+            {
+              name: "Sonic",
+              link: "https://github.com/valeriansaliou/sonic",
+              description: "An alternative to Elasticsearch",
+              icon: "",
+            },
           ],
         },
         {
           name: "逆向",
           children: [
             {
+              name: "EdgeSecurityTeam Vulnerability",
+              link: "https://github.com/EdgeSecurityTeam/Vulnerability",
+              description: "此项目将不定期从棱角社区对外进行公布一些最新漏洞。",
+            },
+            {
+              name: "Ffffffff0x 1earn",
+              link: "https://github.com/ffffffff0x/1earn",
+              description:
+                "ffffffff0x 团队维护的安全知识框架,内容包括不仅限于 web安全、工控安全、取证、应急、蓝队设施部署、后渗透、Linux安全、各类靶机writup",
+            },
+          ],
+        },
+        {
+          name: "Cheat",
+          children: [
+            {
               name: "Osiris",
               link: "https://github.com/danielkrupinski/Osiris",
+            },
+            {
+              name: "Snap Genshin",
+              link: "https://github.com/DGP-Studio/Snap.Genshin",
+              description: "你想要的原神全家桶",
+            },
+            {
+              name: "Waldo",
+              link: "https://waldo.vision/",
+              description:
+                "This is a desktop application for the WALDO cheat detection software.",
+              icon: "https://waldo.vision/assets/favicon.6702f20d.svg",
+            },
+          ],
+        },
+        {
+          name: "游戏自动化",
+          children: [
+            {
+              name: "GameAISDK",
+              link: "https://github.com/Tencent/GameAISDK",
+            },
+            {
+              name: "Ahk",
+              link: "https://github.com/spyoungtech/ahk",
+              description:
+                "Python wrapper for AutoHotkey. Harness the automation power of AutoHotkey with the beauty of Python.",
+            },
+            {
+              name: "Autohotkey",
+              link: "https://www.autohotkey.com/",
+              description:
+                "The ultimate automation scripting language for Windows.",
+            },
+            {
+              name: "Pine",
+              link: "https://github.com/petercunha/Pine",
+              description:
+                "Aimbot powered by real-time object detection with neural networks, GPU accelerated with Nvidia. Optimized for use with CS:GO.",
+            },
+            {
+              name: "Robotgo",
+              link: "https://github.com/go-vgo/robotgo",
+              description: "RobotGo, Go Native cross-platform GUI automation",
             },
           ],
         },
@@ -935,11 +1312,43 @@ const navs: TreeData = {
             },
           ],
         },
+        {
+          name: "数据集",
+          children: [
+            {
+              name: "gopup",
+              link: "https://github.com/justinzm/gopup",
+            },
+            {
+              name: "Datasets for ML models",
+              link: "https://github.com/huggingface/datasets",
+            },
+            {
+              name: "免费接口服务",
+              link: "https://github.com/fangzesheng/free-api",
+              description: "收集免费的接口服务,做一个api的搬运工",
+            },
+            {
+              name: "Public-apis",
+              link: "https://github.com/public-apis/public-apis",
+              description: "A collective list of free APIs",
+            },
+          ],
+        },
       ],
     },
     {
       name: "图形视觉",
       children: [
+        {
+          name: "文档",
+          children: [
+            {
+              name: "Tiny renderer",
+              link: "A brief computer graphics / rendering course",
+            },
+          ],
+        },
         {
           name: "应用开发",
           children: [
@@ -973,6 +1382,13 @@ const navs: TreeData = {
               description: "Web 编译到 flutter",
               icon: "https://img.alicdn.com/imgextra/i1/O1CN01u0y8XT25HxxAVpBQL_!!6000000007502-2-tps-109-103.png",
             },
+            {
+              name: "Node Serialport",
+              link: "https://github.com/serialport/node-serialport",
+              description:
+                "Access serial ports with JavaScript. Linux, OSX and Windows. Welcome your robotic JavaScript overlords. Better yet, program them!",
+              icon: "",
+            },
           ],
         },
         {
@@ -997,10 +1413,9 @@ const navs: TreeData = {
               icon: "",
             },
             {
-              name: "Material Design",
-              icon: "https://m3.material.io/static/assets/m3-favicon.svg",
-              link: "https://m3.material.io/",
-              description: "谷歌 Material Design",
+              name: "GuiLite",
+              link: "https://github.com/idea4good/GuiLite",
+              description: "The smallest header-only GUI library",
             },
           ],
         },
@@ -1068,6 +1483,12 @@ const navs: TreeData = {
                 "3D animation software for physics-based character animation",
               icon: "https://cascadeur.com/favicon/favicon_32.png",
             },
+            {
+              name: "Learn OpenGL 中文版",
+              link: "https://learnopengl-cn.github.io/",
+              description: "Learn OpenGL 中文版",
+              icon: "https://learnopengl-cn.github.io/img/favicon.ico",
+            },
           ],
         },
         {
@@ -1127,6 +1548,23 @@ const navs: TreeData = {
               description: "虚幻游戏引擎",
               icon: "https://www.unrealengine.com/favicon-32x32.png?v=5",
             },
+            {
+              name: "minetest",
+              link: "https://www.minetest.net/",
+              description: "An open source voxel game engine",
+              icon: "https://www.minetest.net/media/favicon/96x96.png",
+            },
+            {
+              name: "HybridCLR",
+              link: "https://github.com/focus-creative-games/hybridclr",
+              description:
+                "一个特性完整、零成本、高性能、低内存的近乎完美的Unity全平台原生c#热更方案",
+            },
+            {
+              name: "Unity3D Training",
+              link: "https://github.com/XINCGer/Unity3DTraining",
+              description: "Unity的练习项目",
+            },
           ],
         },
         {
@@ -1172,15 +1610,70 @@ const navs: TreeData = {
                 "Beautiful, free images and photos that you can download and use for any project.",
               icon: "https://unsplash.com/favicon-32x32.png",
             },
+            {
+              name: "Material Design",
+              link: "https://m3.material.io/",
+              description: "谷歌 Material Design",
+              icon: "https://m3.material.io/static/assets/m3-favicon.svg",
+            },
+            {
+              name: "Css Icon",
+              link: "https://css.gg/",
+              description: "Open-source CSS, SVG and Figma UI Icons",
+              icon: "https://css.gg/fav/favicon-96x96.png",
+            },
+            {
+              name: "Css Buttons",
+              link: "https://ui-buttons.web.app/",
+              description: "100 Modern CSS Buttons",
+              icon: "https://ui-buttons.web.app/favicon.ico",
+            },
           ],
         },
         {
           name: "CV",
-          children: [],
+          children: [
+            {
+              name: "Learn OpenCV",
+              link: "https://learnopencv.com/",
+              description: "Learn OpenCV",
+              icon: "https://learnopencv.com/wp-content/uploads/2017/04/cropped-favicon-512x512-192x192.png",
+            },
+            {
+              name: "OpenCV中文官方文档",
+              link: "https://woshicver.com/",
+              description: "OpenCV中文官方文档",
+              icon: "https://woshicver.com/img/favicon.ico",
+            },
+          ],
         },
         {
           name: "OCR",
-          children: [],
+          children: [
+            {
+              name: "Chineseocr lite",
+              link: "https://github.com/DayBreak-u/chineseocr_lite",
+            },
+            {
+              name: "EasyOCR",
+              link: "https://github.com/JaidedAI/EasyOCR",
+            },
+            {
+              name: "PaddleOCR",
+              link: "https://github.com/PaddlePaddle/PaddleOCR",
+            },
+          ],
+        },
+        {
+          name: "模拟仿真",
+          children: [
+            {
+              name: "ZENO",
+              link: "https://zenustech.com/",
+              description: "For the imagineer inside you",
+              icon: "https://zenustech.com/favicon.ico",
+            },
+          ],
         },
       ],
     },
@@ -1199,11 +1692,80 @@ const navs: TreeData = {
                   description: "深度学习经典、新论文逐段精读",
                   icon: "",
                 },
+                {
+                  name: "Machine Learning Cheat Sheet",
+                  link: "https://github.com/soulmachine/machine-learning-cheat-sheet",
+                },
+                {
+                  name: "PyTorch 中文教程 & 文档",
+                  link: "https://pytorch.apachecn.org/",
+                },
+                {
+                  name: "机器学习实战",
+                  link: "https://cuijiahua.com/blog/ml/",
+                  icon: "https://cuijiahua.com/wp-content/uploads/2018/01/favicon-1.ico",
+                },
+                {
+                  name: "深度学习500问",
+                  link: "https://github.com/scutan90/DeepLearning-500-questions",
+                },
+                {
+                  name: "动手学深度学习",
+                  link: "https://zh-v2.d2l.ai/",
+                  icon: "https://zh-v2.d2l.ai/_static/favicon.png",
+                },
+                {
+                  name: "Ai Edu",
+                  link: "https://microsoft.github.io/ai-edu/",
+                  icon: "https://microsoft.github.io/ai-edu/assets/images/favicon.png",
+                },
+                {
+                  name: "计算机视觉实战演练：算法与应用",
+                  link: "https://charmve.github.io/computer-vision-in-action/",
+                  description: "UI Automation Framework for Games and Apps",
+                  icon: "https://raw.githubusercontent.com/Charmve/computer-vision-in-action/main/res/ui/favicon.ico",
+                },
+                {
+                  name: "机器学习系统：设计和实现",
+                  link: "https://openmlsys.github.io/",
+                  description: "机器学习系统：设计和实现",
+                  icon: "https://openmlsys.github.io/_static/favicon.png",
+                },
               ],
             },
             {
               name: "生态",
-              children: [],
+              children: [
+                {
+                  name: "Nvidia-triton-inference-server",
+                  link: "https://developer.nvidia.com/nvidia-triton-inference-server",
+                  description: "",
+                  icon: "https://developer.nvidia.com/sites/all/themes/devzone_new/favicon.ico",
+                },
+                {
+                  name: "A lite AI Toolkit",
+                  link: "https://github.com/DefTruth/lite.ai.toolkit",
+                  description:
+                    "A lite C++ toolkit of awesome AI models with ONNXRuntime, NCNN, MNN and TNN. YOLOX, YOLOP, YOLOv6, YOLOR, MODNet, YOLOX, YOLOv7, YOLOv5. MNN, NCNN, TNN, ONNXRuntime, CPU/GPU.",
+                },
+                {
+                  name: "oneflow",
+                  link: "http://www.oneflow.org/a/chanpin/oneflow/",
+                  icon: "http://www.oneflow.org/favicon.ico",
+                },
+                {
+                  name: "LightGBM",
+                  link: "https://github.com/microsoft/LightGBM",
+                  description:
+                    "A fast, distributed, high performance gradient boosting (GBT, GBDT, GBRT, GBM or MART) framework",
+                },
+                {
+                  name: "Reshade",
+                  link: "https://github.com/crosire/reshade",
+                  description:
+                    "A generic post-processing injector for games and video software.",
+                },
+              ],
             },
           ],
         },
@@ -1223,6 +1785,18 @@ const navs: TreeData = {
                   description:
                     "Industrial-strength Natural Language Processing (NLP) in Python",
                   icon: "https://spacy.io/icons/icon-48x48.png",
+                },
+                {
+                  name: "HanLP",
+                  link: "https://hanlp.hankcs.com/",
+                  description: "面向生产环境的前沿多语种自然语言处理技术",
+                  icon: "https://hanlp.hankcs.com/favicon.ico",
+                },
+                {
+                  name: "AI拟声",
+                  link: "https://github.com/babysor/MockingBird",
+                  description: "5秒内克隆您的声音并生成任意语音内容",
+                  icon: "",
                 },
               ],
             },
@@ -1299,6 +1873,39 @@ const navs: TreeData = {
                   description:
                     "A Fast and Efficient Music Source Separation Tool with Pre-Trained Models",
                 },
+                {
+                  name: "Noise Torch",
+                  link: "https://github.com/noisetorch/NoiseTorch",
+                  description:
+                    "Real-time microphone noise suppression on Linux.",
+                },
+                {
+                  name: "NUWA",
+                  link: "https://github.com/microsoft/NUWA",
+                  description:
+                    "A unified 3D Transformer Pipeline for visual synthesis",
+                },
+                {
+                  name: "Mediapipe",
+                  link: "https://mediapipe.dev/",
+                  description:
+                    "MediaPipe offers open source cross-platform, customizable ML solutions for live and streaming media.",
+                  icon: "https://mediapipe.dev/assets/img/favicon.svg",
+                },
+                {
+                  name: "Instant ngp",
+                  link: "https://github.com/NVlabs/instant-ngp",
+                  description:
+                    "Instant neural graphics primitives: lightning fast NeRF and more",
+                  icon: "",
+                },
+                {
+                  name: "Robust Video Matting",
+                  link: "https://github.com/PeterL1n/RobustVideoMatting",
+                  description:
+                    "Robust Video Matting in PyTorch, TensorFlow, TensorFlow.js, ONNX, CoreML!",
+                  icon: "",
+                },
               ],
             },
           ],
@@ -1312,7 +1919,46 @@ const navs: TreeData = {
             },
             {
               name: "生态",
-              children: [],
+              children: [
+                {
+                  name: "Label Studio",
+                  link: "https://labelstud.io/",
+                  description: "Open Source Data Labeling Tool",
+                  icon: "https://assets.website-files.com/612013f17754cb859455543d/612e022d890ad68ea8e9a53b_favicon.ico",
+                },
+                {
+                  name: "LabelImg",
+                  link: "https://github.com/heartexlabs/labelImg",
+                  description:
+                    "LabelImg is a graphical image annotation tool and label object bounding boxes in images",
+                },
+                {
+                  name: "Openpose",
+                  link: "https://github.com/CMU-Perceptual-Computing-Lab/openpose",
+                },
+                {
+                  name: "MMdetection",
+                  link: "https://github.com/open-mmlab/mmdetection",
+                  description: "OpenMMLab Detection Toolbox and Benchmark",
+                },
+                {
+                  name: "Paddle Detection",
+                  link: "https://github.com/PaddlePaddle/PaddleDetection",
+                  description:
+                    "Object Detection toolkit based on PaddlePaddle. ",
+                },
+                {
+                  name: "Airtest",
+                  link: "https://github.com/AirtestProject/Airtest",
+                  description: "UI Automation Framework for Games and Apps",
+                },
+                {
+                  name: "Detectron2",
+                  link: "https://github.com/facebookresearch/detectron2",
+                  description:
+                    "Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.",
+                },
+              ],
             },
           ],
         },
@@ -1334,11 +1980,33 @@ const navs: TreeData = {
           children: [
             {
               name: "文档",
-              children: [],
+              children: [
+                {
+                  name: "蘑菇书EasyRL",
+                  link: "https://datawhalechina.github.io/easy-rl",
+                  description: "",
+                },
+              ],
             },
             {
               name: "生态",
               children: [],
+            },
+          ],
+        },
+        {
+          name: "自动驾驶",
+          children: [
+            {
+              name: "Carla",
+              link: "http://carla.org/",
+              description:
+                "Open-source simulator for autonomous driving research",
+              icon: "http://carla.org/img/logo/favicon.png",
+            },
+            {
+              name: "AirSim",
+              link: "https://github.com/microsoft/AirSim",
             },
           ],
         },
@@ -1369,6 +2037,12 @@ const navs: TreeData = {
               description: "Python Patterns",
               icon: "",
             },
+            {
+              name: "Gradio",
+              link: "https://www.gradio.app/",
+              description: "Build & Share Delightful Machine Learning Apps",
+              icon: "https://www.gradio.app/assets/img/logo.png",
+            },
           ],
         },
         {
@@ -1391,6 +2065,13 @@ const navs: TreeData = {
               link: "https://openbb.co/",
               description: "Investment Research for Everyone, Anywhere.",
               icon: "https://openbb.co/favicons/favicon-32x32.png",
+            },
+            {
+              name: "Lean",
+              link: "https://www.lean.io",
+              description:
+                "Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",
+              icon: "https://www.lean.io/lean-header-icon.ico",
             },
           ],
         },
@@ -1477,6 +2158,53 @@ const navs: TreeData = {
               description: "Warp modern Terminal",
               icon: "https://assets-global.website-files.com/62176f9ffac2c484f913de2a/6228aef0377caa51b5764d94_favicon.png",
             },
+            {
+              name: "OBS",
+              link: "https://obsproject.com/",
+              icon: "https://obsproject.com/favicon-96x96.png",
+            },
+            {
+              name: "Tooll",
+              link: "https://github.com/still-scene/t3",
+              description:
+                "Tooll 3 is an open source software to create realtime motion graphics",
+            },
+            {
+              name: "texstudio",
+              link: "https://www.texstudio.org/",
+              description: "LaTeX editor",
+              icon: "https://www.texstudio.org/images/texstudio.ico",
+            },
+            {
+              name: "Free vpn",
+              link: "https://freevpn.win/",
+              description: "Free vpn",
+              icon: "https://freevpn.win/favicon.ico",
+            },
+            {
+              name: "Cutter",
+              link: "https://cutter.re/",
+              description: "A powerful multi-platform reverse engineering tool",
+              icon: "https://cutter.re/assets/images/favicon.png",
+            },
+            {
+              name: "x64dbg",
+              link: "https://x64dbg.com/",
+              description: "An open-source binary debugger for Windows,",
+              icon: "https://x64dbg.com/img/favicon.ico",
+            },
+            {
+              name: "Rnote",
+              link: "https://github.com/flxzt/rnote",
+              description: "Sketch and take handwritten notes.",
+              icon: "",
+            },
+            {
+              name: "ImHex",
+              link: "https://imhex.werwolv.net/",
+              description: "A Hex Editor",
+              icon: "https://imhex.werwolv.net/assets/icon.ico",
+            },
           ],
         },
         {
@@ -1506,6 +2234,51 @@ const navs: TreeData = {
               description: "",
               icon: "https://spline.design/images/icon_favicon32x32.png",
             },
+            {
+              name: "Web3 Files",
+              link: "https://web3.storage/",
+              description: "Store data on the decentralized web",
+              icon: "https://web3.storage/favicon-32x32.png",
+            },
+            {
+              name: "File Doge",
+              link: "https://filedoge.com/",
+              description: "File Doge",
+              icon: "https://filedoge.com/favicon.png",
+            },
+            {
+              name: "阿里云盘找资源",
+              link: "https://zhaoziyuan.me/",
+              icon: "https://zhaoziyuan.me/favicon.ico?v=35",
+            },
+            {
+              name: "kalidoface",
+              link: "https://kalidoface.com/",
+              description: "Live2D face tracking",
+              icon: "https://yeemachine.github.io/k2021/favicon/kalidoface/manifest-icon-192.png",
+            },
+            {
+              name: "Nginx Config Tool",
+              link: "https://www.digitalocean.com/community/tools/nginx",
+              icon: "https://www.digitalocean.com/_next/static/media/favicon-32x32.b7ef9ede.png",
+            },
+            {
+              name: "反向词典",
+              link: "https://wantwords.net/",
+              icon: "https://wantwords.net/static/image/zm2.ico",
+            },
+            {
+              name: "Svgco",
+              link: "https://svgco.de/",
+              description: "Convert raster images to vector graphics",
+              icon: "https://svgco.de/favicon.svg",
+            },
+            {
+              name: "Diagrams",
+              link: "https://app.diagrams.net/",
+              description: "在线画流程图",
+              icon: "https://app.diagrams.net/images/favicon-32x32.png",
+            },
           ],
         },
         {
@@ -1529,6 +2302,13 @@ const navs: TreeData = {
               link: "https://github.com/wg/wrk",
               description: "Modern HTTP benchmarking tool",
               icon: "",
+            },
+            {
+              name: "k6",
+              link: "https://k6.io/",
+              description:
+                "A modern load testing tool, using Go and JavaScript ",
+              icon: "https://k6.io/favicon-32x32.png?v=b39a6f3e0dc925c8ec4f77e0a65490e9",
             },
             {
               name: "Mitmproxy HTTPS proxy.",
@@ -1575,6 +2355,39 @@ const navs: TreeData = {
               name: "Air",
               link: "https://github.com/cosmtrek/air",
               description: "Live reload for Go apps",
+            },
+            {
+              name: "Trojan-gfw",
+              link: "https://github.com/trojan-gfw/trojan",
+              description:
+                "An unidentifiable mechanism that helps you bypass GFW",
+            },
+            {
+              name: "Bore",
+              link: "https://github.com/ekzhang/bore",
+              description:
+                "Bore is a simple CLI tool for making tunnels to localhost",
+            },
+            {
+              name: "Ngrok",
+              link: "https://ngrok.com/",
+              description:
+                "Bore is a simple CLI tool for making tunnels to localhost",
+            },
+          ],
+        },
+        {
+          name: "商品",
+          children: [
+            {
+              name: "Stereolabs",
+              link: "https://www.stereolabs.com/",
+              description: "Stereo Camera",
+            },
+            {
+              name: "Coral AI device",
+              link: "https://coral.ai/",
+              description: "Stereo Camera",
             },
           ],
         },
