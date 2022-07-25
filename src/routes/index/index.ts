@@ -75,6 +75,16 @@ export default class extends LitElement {
             <y-tree .data="${navs}"></y-tree>
           </div>
           <div class="iframe-ctn">
+            <y-h3>集合论</y-h3>
+            <y-h5>定义</y-h5>
+            <y-title>内涵法</y-title>
+            <y-p>
+              <m-b>\\{x | P(x) \\}</m-b>
+            </y-p>
+            <y-title>外延法</y-title>
+            <y-p>
+              <m-b>\\{a, b, c \\}</m-b>
+            </y-p>
             <iframe src=""></iframe>
           </div>
         </section>

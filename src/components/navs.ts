@@ -1076,7 +1076,7 @@ const navs: TreeData = {
                   name: "Gorse",
                   link: "https://gorse.io/",
                   description:
-                    "Gorse is an open source recommendation system written in Go.,
+                    "Gorse is an open source recommendation system written in Go.",
                 },
               ],
             },
@@ -1201,6 +1201,12 @@ const navs: TreeData = {
               link: "https://tanzucommunityedition.io/",
               description: "Kubernetes platform for learners and users",
               icon: "https://tanzucommunityedition.io/img/favicon.png",
+            },
+            {
+              name: "MinIO",
+              link: "https://min.io/",
+              description: "Multi-Cloud Object Storage",
+              icon: "https://min.io/resources/favs/apple-icon-180x180.png",
             },
           ],
         },
@@ -1905,6 +1911,12 @@ const navs: TreeData = {
                   description:
                     "Robust Video Matting in PyTorch, TensorFlow, TensorFlow.js, ONNX, CoreML!",
                   icon: "",
+                },
+                {
+                  name: "Mitsuba 3",
+                  link: "https://www.mitsuba-renderer.org/",
+                  description: "A Retargetable Forward and Inverse Renderer",
+                  icon: "https://www.mitsuba-renderer.org/favicon.ico",
                 },
               ],
             },
