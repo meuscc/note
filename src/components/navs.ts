@@ -280,6 +280,13 @@ const navs: TreeData = {
                   description: "he blazing fast build tool for Rust.",
                   icon: "https://fleet.rs/assets/fire.d8a79711.svg",
                 },
+                {
+                  name: "Polars",
+                  link: "https://www.pola.rs/",
+                  description:
+                    "Lightning-fast DataFrame library for Rust and Python",
+                  icon: "https://fleet.rs/assets/fire.d8a79711.svg",
+                },
               ],
             },
           ],
@@ -575,6 +582,11 @@ const navs: TreeData = {
                   icon: "https://javascript.info/img/favicon/favicon.png",
                 },
                 {
+                  name: "React 技术揭秘",
+                  link: "https://react.iamkasong.com/",
+                  icon: "https://react.iamkasong.com/favicon.ico",
+                },
+                {
                   name: "Web Attack Cheat Sheet",
                   link: "https://github.com/riramar/Web-Attack-Cheat-Sheet",
                   description: "",
@@ -770,6 +782,11 @@ const navs: TreeData = {
                   link: "https://github.com/google/libphonenumber",
                   description:
                     "Formatting, and validating international phone numbers.",
+                },
+                {
+                  name: "Driver JS",
+                  link: "https://kamranahmed.info/driver.js/",
+                  description: "Drive user's focus across the page",
                 },
               ],
             },
@@ -1077,6 +1094,12 @@ const navs: TreeData = {
                   link: "https://gorse.io/",
                   description:
                     "Gorse is an open source recommendation system written in Go.",
+                },
+                {
+                  name: "CeresDB",
+                  link: "https://github.com/CeresDB/ceresdb",
+                  description:
+                    "CeresDB is a high-performance, distributed, schema-less, cloud native time-series database that can handle both time-series and analytics workloads",
                 },
               ],
             },
