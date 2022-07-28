@@ -208,6 +208,12 @@ const navs: TreeData = {
               link: "https://github.com/Z4nzu/hackingtool",
               description: "ALL IN ONE Hacking Tool For Hackers",
             },
+            {
+              name: "Hacksplaining",
+              link: "https://www.hacksplaining.com/",
+              description: "SECURITY TRAINING FOR DEVELOPERS",
+              icon: "https://www.hacksplaining.com/touch-icon-ipad-retina.png",
+            },
           ],
         },
         {
@@ -368,6 +374,11 @@ const navs: TreeData = {
                 {
                   name: "Nlohmann Json",
                   link: "https://github.com/nlohmann/json",
+                  description: "",
+                },
+                {
+                  name: "Spdlog",
+                  link: "https://github.com/gabime/spdlog",
                   description: "",
                 },
                 {
@@ -2239,6 +2250,13 @@ const navs: TreeData = {
               link: "https://imhex.werwolv.net/",
               description: "A Hex Editor",
               icon: "https://imhex.werwolv.net/assets/icon.ico",
+            },
+            {
+              name: "Material Maker",
+              link: "https://www.materialmaker.org/",
+              description:
+                "Material Maker is a procedural PBR (Physically Based Rendering) materials authoring tool, based on the Godot Engine.",
+              icon: "https://www.materialmaker.org/favicon.ico",
             },
           ],
         },
