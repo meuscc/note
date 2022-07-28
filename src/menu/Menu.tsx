@@ -98,7 +98,7 @@ const MenuItem = React.memo(function _MenuItem({
         direction === "vertical" && !shrink
           ? [
               { height: currentStyle.height, padding: currentStyle.padding },
-              { height: `0px`, padding: "0 0" },
+              { height: `20px`, padding: "0 0" },
             ]
           : [
               {
@@ -115,7 +115,7 @@ const MenuItem = React.memo(function _MenuItem({
               },
             ],
         {
-          duration: animationDuration,
+          duration: 10000,
         }
       )
       .finished.then(() => {
@@ -244,7 +244,12 @@ const SubMenu = React.memo(
       shrink: boolean;
     }
   >(({ nav, showSubMenu, parentPath, level, direction, shrink }, ref) => {
+    const firstRenderRef = useRef(true);
     useEffect(() => {
+      if (firstRenderRef.current) {
+        firstRenderRef.current = false;
+        return;
+      }
       showSubMenu();
     }, []);
 

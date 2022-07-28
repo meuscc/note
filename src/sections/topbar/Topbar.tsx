@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import createNavs from "./create-navs";
 import Menu from "../../menu/Menu";
 import Brand from "./Brand";
@@ -11,6 +11,10 @@ const navs = createNavs();
 export default React.memo(
   function Topbar() {
     const navsPosition = useNavsStore((s) => s.navsPosition);
+
+    useEffect(() => {
+      console.log("render");
+    }, []);
 
     return (
       <div className={"topbar"}>
