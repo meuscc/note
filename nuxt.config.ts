@@ -1,6 +1,5 @@
 import { defineNuxtConfig } from "nuxt";
 import Markdown from "vite-plugin-md";
-import viteMarkdownPlugin from "./tools/vite-plugin-md";
 
 export default defineNuxtConfig({
   app: {
@@ -50,4 +49,5 @@ export default defineNuxtConfig({
   vite: {
     plugins: [Markdown()],
   },
+  buildModules: ["@pinia/nuxt"],
 });

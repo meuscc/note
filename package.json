@@ -1,21 +1,25 @@
 {
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0-rc.3",
-    "prettier": "^2.6.2",
-    "sass": "^1.51.0",
+    "nuxt": "^3.0.0-rc.6",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.0",
     "shiki": "^0.10.1",
-    "typescript": "^4.6.4",
-    "vite-plugin-md": "^0.13.1"
+    "typescript": "^4.7.4",
+    "vite-plugin-md": "^0.20.0"
   },
   "dependencies": {
     "@ltd/j-toml": "^1.30.0",
-    "marked": "^4.0.16"
+    "@pinia/nuxt": "^0.3.1",
+    "@vueuse/core": "^9.0.0",
+    "marked": "^4.0.18",
+    "pinia": "^2.0.17"
   }
 }
