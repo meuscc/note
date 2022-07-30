@@ -890,6 +890,12 @@ const navs: TreeData = {
                   link: "https://github.com/TheAlgorithms/C-Plus-Plus",
                   description: "All Algorithms implemented in C++",
                 },
+                {
+                  name: "Algorithm Visualizer",
+                  link: "https://algorithm-visualizer.org/",
+                  description: "Algorithm Visualizer",
+                  icon: "https://algorithm-visualizer.org/favicon.png",
+                },
               ],
             },
             {
@@ -1372,6 +1378,12 @@ const navs: TreeData = {
               name: "Public-apis",
               link: "https://github.com/public-apis/public-apis",
               description: "A collective list of free APIs",
+            },
+            {
+              name: "行政区划API",
+              link: "https://github.com/modood/Administrative-divisions-of-China",
+              description:
+                "中华人民共和国行政区划：省级（省份）、 地级（城市）、 县级（区县）、 乡级（乡镇街道）、 村级（村委会居委会） ，中国省市区镇村二级三级四级五级联动地址数据。",
             },
           ],
         },
@@ -2257,6 +2269,12 @@ const navs: TreeData = {
               description:
                 "Material Maker is a procedural PBR (Physically Based Rendering) materials authoring tool, based on the Godot Engine.",
               icon: "https://www.materialmaker.org/favicon.ico",
+            },
+            {
+              name: "WindTerm",
+              link: "https://github.com/kingToolbox/WindTerm",
+              description:
+                "A professional cross-platform SSH/Sftp/Shell/Telnet/Serial terminal.",
             },
           ],
         },
