@@ -1210,6 +1210,12 @@ const navs: TreeData = {
                 "The Single Sign-On Multi-Factor portal for web apps",
               icon: "https://www.authelia.com/favicon.ico",
             },
+            {
+              name: "Userver",
+              link: "https://userver.tech/",
+              description: "The C++ Asynchronous Framework",
+              icon: "https://userver.tech/favicon.svg",
+            },
           ],
         },
         {
