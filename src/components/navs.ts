@@ -799,6 +799,12 @@ const navs: TreeData = {
                   link: "https://kamranahmed.info/driver.js/",
                   description: "Drive user's focus across the page",
                 },
+                {
+                  name: "Intro JS",
+                  link: "https://github.com/usablica/intro.js",
+                  description:
+                    "Lightweight, user-friendly onboarding tour library",
+                },
               ],
             },
           ],
