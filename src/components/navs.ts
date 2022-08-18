@@ -810,6 +810,18 @@ const navs: TreeData = {
                   description:
                     "Lightweight, user-friendly onboarding tour library",
                 },
+                {
+                  name: "Headlessui",
+                  link: "https://headlessui.com/",
+                },
+                {
+                  name: "Mantine js",
+                  link: "https://mantine.dev/",
+                },
+                {
+                  name: "Radix UI",
+                  link: "https://www.radix-ui.com/",
+                },
               ],
             },
           ],
