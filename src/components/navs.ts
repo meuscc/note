@@ -1145,6 +1145,13 @@ const navs: TreeData = {
                   description:
                     "CeresDB is a high-performance, distributed, schema-less, cloud native time-series database that can handle both time-series and analytics workloads",
                 },
+                {
+                  name: "Surrealdb",
+                  link: "https://surrealdb.com/",
+                  icon: "https://surrealdb.com/static/webapp/favicon-a997a66737547e8ad3cac2ab9805ce13.png",
+                  description:
+                    "SurrealDB is the ultimate database for tomorrow's serverless, jamstack, single-page, and traditional applications.",
+                },
               ],
             },
           ],
