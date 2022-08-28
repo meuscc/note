@@ -823,8 +823,9 @@ const navs: TreeData = {
                   link: "https://www.radix-ui.com/",
                 },
                 {
-                  name: "Undraw",
-                  link: "https://undraw.co/",
+                  name: "iCSS",
+                  link: "https://github.com/chokcoco/iCSS",
+                  description: "不止于 CSS",
                 },
               ],
             },
@@ -1719,6 +1720,10 @@ const navs: TreeData = {
               link: "https://ui-buttons.web.app/",
               description: "100 Modern CSS Buttons",
               icon: "https://ui-buttons.web.app/favicon.ico",
+            },
+            {
+              name: "Undraw",
+              link: "https://undraw.co/",
             },
           ],
         },
