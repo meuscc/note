@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from "nuxt";
 import Markdown from "vite-plugin-md";
 
 export default defineNuxtConfig({

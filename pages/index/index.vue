@@ -1,12 +1,12 @@
 <template>
   <div>
-
-
     <h2>Counter Store</h2>
 
-    <p data-testid="counter-values">Counter: {{ counter.n }}. Double: {{ counter.double }}</p>
+    <p data-testid="counter-values">
+      Counter: {{ counter.n }}. Double: {{ counter.double }}
+    </p>
 
-    <p>sdfs士大夫士大夫士大夫Increment the Store:</p>
+    <p>胜多负少舒服舒服水电费水电费Increment the Store:</p>
 
     <button @click="counter.increment()" data-testid="increment">+1</button>
     <button @click="counter.increment(10)">+10</button>
@@ -15,11 +15,13 @@
     <button
       @click="
         counter.$patch((state) => {
-          state.n++
-          state.incrementedTimes++
+          state.n++;
+          state.incrementedTimes++;
         })
       "
-    >Direct patch</button>
+    >
+      Direct patch
+    </button>
 
     <p>Other actions:</p>
 
@@ -43,10 +45,9 @@
 <script setup lang="ts">
 import { useCounter } from "~/stores/counter";
 
+const counter = useCounter();
 
-const counter = useCounter()
-
-console.log(counter)
+console.log(counter);
 
 // if (process.server) {
 //   counter.n = 20
