@@ -21,6 +21,6 @@
     "@pinia/nuxt": "^0.4.2",
     "@vueuse/core": "^9.2.0",
     "marked": "^4.1.0",
-    "pinia": "^"
+    "pinia": "^2.0.22"
   }
 }
