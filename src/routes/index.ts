@@ -1,8 +1,3 @@
-/****
-name = "home"
-title = "首页"
-****/
-
 import { Routes } from "@lit-labs/router";
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
@@ -24,12 +19,19 @@ export default class PageIndex extends LitElement {
         await import("./index/math/axiom-of-choice/axiom-of-choice");
         return true;
       },
-      render: ({ id }) =>
-        html`<page-math-axiom-of-choice></page-math-axiom-of-choice>`,
+      render: ({ id }) => html`<page-math-axiom-of-choice></page-math-axiom-of-choice>`,
+    },
+    {
+      path: "auth/login",
+      enter: async () => {
+        await import("./auth/login");
+        return true;
+      },
+      render: ({ id }) => html`<page-login></page-login>`,
     },
   ]);
 
   override render() {
-    return html`<y-topbar></y-topbar>${this._routes.outlet()} `;
+    return html`${this._routes.outlet()} `;
   }
 }

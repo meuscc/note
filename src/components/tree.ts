@@ -3,7 +3,6 @@ import { map } from "lit/directives/map.js";
 import { when } from "lit/directives/when.js";
 import { css, html, LitElement } from "lit";
 import navs, { TreeData } from "/src/components/navs";
-import { pageState } from "/src/routes/index/index";
 
 @customElement("y-tree")
 export class Tree extends LitElement {
@@ -113,7 +112,6 @@ export class Tree extends LitElement {
         window.open(this.data.link);
         return;
       }
-      pageState.currentLink = this.data.link;
       return;
     }
     const dropdown = this.shadowRoot?.querySelector(".dropdown");

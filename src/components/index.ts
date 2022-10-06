@@ -5,4 +5,6 @@ import "./typo";
 import "./link";
 import "./tree";
 import "./icon";
+import "./md";
+import "./coder";
 // import "./ytb_bg";

@@ -22,8 +22,10 @@ export class MathBlock extends LitElement {
   m?: string;
 
   render() {
+    const template = this.m ?? this.innerHTML;
+
     return html`${unsafeHTML(
-      katex.renderToString(this.m ?? this.innerHTML, {
+      katex.renderToString(template.replaceAll("^_'_$", '"'), {
         throwOnError: false,
         displayMode: true,
       })
