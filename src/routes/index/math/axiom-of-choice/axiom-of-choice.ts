@@ -1,6 +1,6 @@
 import { customElement, state } from "lit/decorators.js";
 import { html, LitElement, css } from "lit";
-import doc from "./axiom-of-choice.md?raw";
+import doc from "./axiom-fo-choice.html?raw";
 import { contentStore } from "~/components/contentStore";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -29,11 +29,12 @@ export default class extends LitElement {
     console.log(344);
   }
 
+  //        ${unsafeHTML(this.content)}
   override render() {
     return html`
       <div class="flex">
         <c-e></c-e>
-        ${unsafeHTML(this.content)}
+        <div style="display: block">${unsafeHTML(this.content)}</div>
       </div>
     `;
   }

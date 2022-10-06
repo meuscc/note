@@ -1,25 +1,23 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import ixora, { frontmatter } from "@retronav/ixora";
-import emmet from "@emmetio/codemirror-plugin";
 
 import { EditorState } from "@codemirror/state";
 
 import { defaultKeymap } from "@codemirror/commands";
 import { javascript } from "@codemirror/lang-javascript";
 import { html as h } from "@codemirror/lang-html";
-import CodeMirror, { basicSetup, EditorView } from "codemirror";
-import { markdown } from "@codemirror/lang-markdown";
-import { languages } from "@codemirror/language-data";
+import { basicSetup, EditorView } from "codemirror";
+// import { markdown } from "@codemirror/lang-markdown";
+// import { languages } from "@codemirror/language-data";
 import { contentStore } from "~/components/contentStore";
+import { expandAbbreviation } from "@emmetio/codemirror6-plugin";
+import { keymap } from "@codemirror/view";
 
 declare var Prism: any;
 
 console.log(contentStore.get());
 
 contentStore.subscribe((a) => console.log(a));
-
-emmet(CodeMirror);
 
 export const debounce = <TArgs extends any[]>(
   { delay }: { delay: number },
@@ -94,8 +92,14 @@ export class CodeEditor extends LitElement {
       extensions: [
         basicSetup,
         // ixora,
-        h(),
         // markdown({ codeLanguages: languages }),
+        h(),
+        keymap.of([
+          {
+            key: "Tab",
+            run: expandAbbreviation,
+          },
+        ]),
         updateListenerExtension,
       ],
     });
