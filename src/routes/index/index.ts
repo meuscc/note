@@ -12,6 +12,12 @@ export default class extends LitElement {
   }
 
   override render() {
-    return html` <div class="container">是的冯绍峰水电费水电费水电费</div> `;
+    return html`
+      <div class="container">
+        <a href="/type">分类管理</a>
+        <a href="/tag">标签管理</a>
+        <a href="/item">文章管理</a>
+      </div>
+    `;
   }
 }

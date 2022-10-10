@@ -1,6 +1,6 @@
 import path from "node:path";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+
 import Unocss from "unocss/vite";
 
 export default defineConfig({
@@ -16,13 +16,17 @@ export default defineConfig({
       "~/": `${path.resolve(__dirname, "src")}/`,
     },
   },
-  plugins: [react(), Unocss()],
+  plugins: [
+    Unocss({
+      mode: "shadow-dom",
+    }),
+  ],
   build: {
-    target: ["es2020"],
+    target: ["es2022"],
   },
   optimizeDeps: {
     esbuildOptions: {
-      target: ["es2020"],
+      target: ["es2022"],
     },
   },
 });

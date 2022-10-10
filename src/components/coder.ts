@@ -1,99 +1,127 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
+import { debounce } from "lodash";
 
-import { EditorState } from "@codemirror/state";
-
-import { defaultKeymap } from "@codemirror/commands";
-import { javascript } from "@codemirror/lang-javascript";
-import { html as h } from "@codemirror/lang-html";
 import { basicSetup, EditorView } from "codemirror";
-// import { markdown } from "@codemirror/lang-markdown";
-// import { languages } from "@codemirror/language-data";
-import { contentStore } from "~/components/contentStore";
-import { expandAbbreviation } from "@emmetio/codemirror6-plugin";
+import { EditorState } from "@codemirror/state";
 import { keymap } from "@codemirror/view";
+import { html as langHtml } from "@codemirror/lang-html";
+import { expandAbbreviation } from "@emmetio/codemirror6-plugin";
 
-declare var Prism: any;
+import { contentStore } from "~/components/contentStore";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
-console.log(contentStore.get());
+const initialContent = `<m-b>f(x) = x^{23''""''''''}</m-b>
 
-contentStore.subscribe((a) => console.log(a));
+<div>apbcasdf sff</div>
+fsdf
 
-export const debounce = <TArgs extends any[]>(
-  { delay }: { delay: number },
-  func: (...args: TArgs) => any
-): ((...args: TArgs) => void) => {
-  let timer: any = null;
+<hr />
 
-  console.log(func);
-  const debounced = (...args: TArgs) => {
-    clearTimeout(timer);
+<m-b>f(x) = x^2</m-b>
 
-    timer = setTimeout(() => func(...args), delay);
-  };
-  return debounced as unknown as (...args: TArgs) => void;
-};
+<!-- prettier-ignore -->
+<m-b>
+  \\begin{matrix}
+  a & b \\\\
+  c & d
+  \\end{matrix}
+</m-b>
 
-/**
- * Given an interval and a function returns a new function
- * that will only call the source function if interval milliseconds
- * have passed since the last invocation
- */
-export const throttle = <TArgs extends any[]>(
-  { interval }: { interval: number },
-  func: (...args: TArgs) => any
-): ((...args: TArgs) => any) => {
-  let ready = true;
-  const throttled = (...args: TArgs) => {
-    if (!ready) return;
-    func(...args);
-    ready = false;
-    setTimeout(() => {
-      ready = true;
-    }, interval);
-  };
-  return throttled as unknown as (...args: TArgs) => any;
-};
+<!-- prettier-ignore -->
+<c-b l="rust">
+  let a: i8 = 124
+</c-b>
 
+      `;
+
+// noinspection CssInvalidAtRule
 @customElement("c-e")
 export class CodeEditor extends LitElement {
   static styles = [
     // language=css
     css`
+      @unocss-placeholder;
       :host {
         display: block;
-        width: 50vw;
-        background-color: antiquewhite;
+      }
+      .coder-ctn {
+        display: flex;
+        gap: 16px;
+      }
+
+      .editor-render {
+        width: 100%;
+        font-size: 14px;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 8px;
+        flex: 1;
+      }
+      .code-result {
+        width: 100%;
+        font-size: 14px;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 12px;
+        flex: 1;
+        max-height: 80vh;
+        overflow: auto;
+      }
+
+      .cm-editor {
+        border-radius: 8px !important;
+        max-height: 80vh;
+      }
+      .cm-editor.cm-focused {
+        outline: none !important;
+        /*border: 2px solid red;*/
+      }
+      .cm-editor .cm-content {
+        font-family: "JetBrains Mono", monospace, Monaco, Consolas, sans-serif;
+        font-weight: 400;
+      }
+
+      .cm-gutters {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+
+      .ͼ1 .cm-content {
+        padding: 8px 0;
+      }
+      .ͼ1 .cm-content .ͼi,
+      .ͼ1 .cm-content .ͼe {
+        font-weight: 600;
+      }
+      .ͼ1 .cm-content .ͼe {
+        color: #3399ff;
       }
     `,
   ];
 
-  constructor() {
-    super();
-  }
+  static properties = {};
 
-  connectedCallback() {
-    super.connectedCallback();
+  @state()
+  content = initialContent;
 
-    const d = debounce({ delay: 200 }, (update: any) =>
-      contentStore.set(update.state.toJSON().doc)
+  firstUpdated() {
+    const debounced = debounce(
+      (update: any) => (this.content = update.state.toJSON().doc),
+      400
     );
 
-    let updateListenerExtension = EditorView.updateListener.of((update) => {
+    const updateListenerExtension = EditorView.updateListener.of((update) => {
       if (update.docChanged) {
-        // contentStore.set(update.state.toJSON().doc);
-
-        d(update);
+        debounced(update);
       }
     });
 
-    let startState = EditorState.create({
-      doc: "# Hello\n\n```javascript\nlet x = 'y'\n```",
+    const startState = EditorState.create({
+      doc: this.content,
       extensions: [
         basicSetup,
-        // ixora,
-        // markdown({ codeLanguages: languages }),
-        h(),
+        langHtml(),
         keymap.of([
           {
             key: "Tab",
@@ -105,12 +133,19 @@ export class CodeEditor extends LitElement {
     });
 
     (window as any).view = new EditorView({
-      parent: this.shadowRoot!,
+      parent: this.shadowRoot!.querySelector(".editor-render")!,
       state: startState,
     });
   }
 
-  static properties = {};
+  render() {
+    return html`
+      <div class="coder-ctn">
+        <div class="editor-render"></div>
+        <div class="code-result">${unsafeHTML(this.content)}</div>
+      </div>
+    `;
+  }
 }
 
 declare global {

@@ -14,12 +14,28 @@ export default class PageIndex extends LitElement {
       render: ({ id }) => html`<page-home></page-home>`,
     },
     {
-      path: "math/axiom-of-choice",
+      path: "type",
       enter: async () => {
-        await import("./index/math/axiom-of-choice/axiom-of-choice");
+        await import("./index/type/type");
         return true;
       },
-      render: ({ id }) => html`<page-math-axiom-of-choice></page-math-axiom-of-choice>`,
+      render: ({ id }) => html`<page-type></page-type>`,
+    },
+    {
+      path: "tag",
+      enter: async () => {
+        await import("./index/tag/tag");
+        return true;
+      },
+      render: ({ id }) => html`<page-tag></page-tag>`,
+    },
+    {
+      path: "item",
+      enter: async () => {
+        await import("./index/item/item");
+        return true;
+      },
+      render: ({ id }) => html`<page-item></page-item>`,
     },
     {
       path: "auth/login",
