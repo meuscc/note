@@ -1,6 +1,13 @@
 <template>
-  <NuxtPage />
+  <main>
+    <Header></Header>
+    <Footer></Footer>
+    <router-view />
+  </main>
 </template>
+
 <script setup lang="ts">
-import "/src/styles/index.scss";
+import Header from "~/section/header/Header.vue";
+import Footer from "~/section/footer/Footer.vue";
 </script>
+<style scoped></style>

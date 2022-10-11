@@ -1,11 +1,3 @@
-@import "3rdparties/modern-normalize.css";
-@import "@/themes/css-themes";
-@import "mixins/responsive";
-@import "font";
-@import "scale";
-@import "utils";
+@import "bootstrap/scss/bootstrap-reboot.scss";
+@import "bootstrap/scss/bootstrap-grid.scss";
 @import "reboot";
-@import "flex";
-@import "layout";
-@import "typography";
-@import "button";
