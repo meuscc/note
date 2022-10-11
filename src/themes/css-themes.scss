@@ -1,0 +1,28 @@
+:root {
+  --s-primary-dark: #005140;
+  --s-primary-main: #006853;
+  --s-primary-light: #30856e;
+  --s-secondary-dark: #909191;
+  --s-secondary-main: #b9b9b9;
+  --s-secondary-light: #c6c6c6;
+  --s-tertiary-dark: #cb5000;
+  --s-tertiary-main: #e7641c;
+  --s-tertiary-light: #ff8c56;
+  --v-breakpoints-xs: 0px;
+  --v-breakpoints-md: 834px;
+  --v-breakpoints-lg: 1200px;
+  --v-layout-header-height-xs: 48px;
+  --v-layout-header-height-md: 80px;
+  --v-layout-header-height-lg: 80px;
+}
+.dark {
+  --s-primary-dark: #005140;
+  --s-primary-main: #006853;
+  --s-primary-light: #30856e;
+  --s-secondary-dark: #464747;
+  --s-secondary-main: #5d5e5f;
+  --s-secondary-light: #767777;
+  --s-tertiary-dark: #cb5000;
+  --s-tertiary-main: #e7641c;
+  --s-tertiary-light: #ff8c56;
+}

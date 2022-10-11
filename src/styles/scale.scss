@@ -1,0 +1,17 @@
+@import "mixins/responsive";
+
+html {
+  font-size: 5px;
+}
+
+@include devices("tablet") {
+  html {
+    font-size: 7px;
+  }
+}
+
+@include devices("desktop") {
+  html {
+    font-size: 10px;
+  }
+}

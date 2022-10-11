@@ -1,4 +1,10 @@
-import Markdown from "vite-plugin-md";
+import { resolve } from "node:path";
+
+import {
+  transformerDirectives,
+  transformerVariantGroup,
+  transformerCompileClass,
+} from "unocss";
 
 export default defineNuxtConfig({
   app: {
@@ -7,30 +13,8 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
       script: [
-        { src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js" },
         {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-c.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-cpp.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-go.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-python.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-julia.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-rust.min.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-dart.min.js",
-        },
-        {
-          src: "https://unpkg.com/shiki",
+          src: "https://cdn.jsdelivr.net/npm/blurhash@2.0.2/dist/index.js",
         },
       ],
       link: [
@@ -40,13 +24,63 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css",
+          href: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,600,700,800&display=swap",
         },
       ],
     },
   },
-  vite: {
-    plugins: [Markdown()],
+  srcDir: "src",
+  alias: {
+    "/src": resolve(__dirname, "./src"),
   },
-  buildModules: ["@pinia/nuxt"],
+  vite: {},
+  buildModules: ["@pinia/nuxt", "@unocss/nuxt"],
+  unocss: {
+    // presets
+    uno: true,
+    icons: true,
+    attributify: true,
+
+    // core options
+    shortcuts: [],
+    rules: [],
+    transformers: [
+      transformerCompileClass(),
+      transformerDirectives(),
+      transformerVariantGroup(),
+    ],
+    theme: {
+      breakpoints: {
+        sm: "0px",
+        md: "834px",
+        lg: "1200px",
+      },
+      fontFamily: {
+        sans: ["Open Sans", "sans-serif"],
+        roboto: ["roboto", "serif"],
+      },
+      colors: {
+        primary: {
+          DEFAULT: "var(--s-primary-main)",
+          dark: "var(--s-primary-dark)",
+          light: "var(--s-primary-light)",
+        },
+        tertiary: {
+          DEFAULT: "var(--s-tertiary-main)",
+          dark: "var(--s-tertiary-dark)",
+          light: "var(--s-tertiary-light)",
+        },
+        t: {
+          DEFAULT: "var(--s-text-main)",
+          p5y: "var(--s-text-main)",
+          middle: "var(--s-text-middle)",
+          light: "var(--s-text-light)",
+        },
+      },
+    },
+  },
 });

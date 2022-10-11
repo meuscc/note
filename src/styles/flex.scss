@@ -1,0 +1,70 @@
+@import "mixins/responsive";
+
+.f {
+  display: flex;
+}
+.fdr {
+  display: flex;
+  flex-direction: row;
+}
+.fdc {
+  display: flex;
+  flex-direction: column;
+}
+.fww {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fwn {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.fjs {
+  display: flex;
+  justify-content: flex-start;
+}
+.fjc {
+  display: flex;
+  justify-content: center;
+}
+.fje {
+  display: flex;
+  justify-content: flex-end;
+}
+.fja {
+  display: flex;
+  justify-content: space-around;
+}
+.fjb {
+  display: flex;
+  justify-content: space-between;
+}
+.fas {
+  display: flex;
+  align-items: flex-start;
+}
+.fac {
+  display: flex;
+  align-items: center;
+}
+.fae {
+  display: flex;
+  align-items: flex-end;
+}
+.faq {
+  display: flex;
+  align-items: stretch;
+}
+.fab {
+  display: flex;
+  align-items: baseline;
+}
+.fcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f1 {
+  flex: 1;
+}

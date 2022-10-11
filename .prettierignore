@@ -1,0 +1,6 @@
+dist
+public
+.vscode
+.idea
+package-lock.json
+.nuxt
