@@ -280,3 +280,11 @@ img {
   background-color: #ffede7;
 }
 </style>
+<style lang="scss">
+body {
+  padding-top: 48px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 80px;
+  }
+}
+</style>

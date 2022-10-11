@@ -75,7 +75,7 @@
         <div>
           <div class="footer-friend-links">
             <a href="/UNE" target="_blank">
-              <img class="une" src="./UNE.png" alt="" />
+              <img class="une" src="@/section/footer/UNE.png" alt="" />
             </a>
             <a>
               <img class="cnbv" src="./cnbv.png" alt="" />
