@@ -6,3 +6,7 @@ package-lock.json
 .nuxt
 auto-imports.d.ts
 components.d.ts
+.editorconfig
+.prettierignore
+.gitignore
+.DS_store

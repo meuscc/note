@@ -158,19 +158,11 @@ export class Tree extends LitElement {
         ${when(
           this.level > 0,
           () => html`
-            <div
-              @click="${this.handleClick}"
-              class="item-control level-${this.level}"
-            >
+            <div @click="${this.handleClick}" class="item-control level-${this.level}">
               <div class="item-label">
                 ${when(
                   this.data.icon,
-                  () =>
-                    html`<img
-                      class="item-icon"
-                      src="${this.data.icon}"
-                      alt=""
-                    />`,
+                  () => html`<img class="item-icon" src="${this.data.icon}" alt="" />`,
                   () =>
                     html`<y-icon
                       name="${this.data.children ? "list" : "bookmark-start"}"
@@ -195,11 +187,7 @@ export class Tree extends LitElement {
             () =>
               html`${map(
                 this.data.children,
-                (child) =>
-                  html`<y-tree
-                    level="${Number(this.level) + 1}"
-                    .data="${child}"
-                  />`
+                (child) => html`<y-tree level="${Number(this.level) + 1}" .data="${child}" />`
               )}`
           )}
         </div>

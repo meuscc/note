@@ -7,9 +7,7 @@ export default function createSchemes() {
   return css`
     :root {
       ${unsafeCSS(createCssVariables(themes.schemes.light))}
-      ${unsafeCSS(
-        createCssVariables(themes.variables, "--var", (v) => v + "px")
-      )}
+      ${unsafeCSS(createCssVariables(themes.variables, "--var", (v) => v + "px"))}
     }
     .dark {
       ${unsafeCSS(createCssVariables(themes.schemes.dark))}

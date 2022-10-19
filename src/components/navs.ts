@@ -267,8 +267,7 @@ const navs: TreeData = {
                 {
                   name: "Rust Data Structures book",
                   link: "https://github.com/QMHTMY/RustBook",
-                  description:
-                    "A book about Rust Data Structures and Algorithms.",
+                  description: "A book about Rust Data Structures and Algorithms.",
                 },
               ],
             },
@@ -289,8 +288,7 @@ const navs: TreeData = {
                 {
                   name: "Polars",
                   link: "https://www.pola.rs/",
-                  description:
-                    "Lightning-fast DataFrame library for Rust and Python",
+                  description: "Lightning-fast DataFrame library for Rust and Python",
                   icon: "https://fleet.rs/assets/fire.d8a79711.svg",
                 },
               ],
@@ -342,8 +340,7 @@ const navs: TreeData = {
                 {
                   name: "现代 c++ 特性",
                   link: "https://github.com/AnthonyCalandra/modern-cpp-features",
-                  description:
-                    "A cheatsheet of modern C++ language and library features.",
+                  description: "A cheatsheet of modern C++ language and library features.",
                   icon: "",
                 },
                 {
@@ -433,8 +430,7 @@ const navs: TreeData = {
                 {
                   name: "Moose Framework",
                   link: "https://mooseframework.inl.gov/",
-                  description:
-                    "An open-source, parallel finite element framework",
+                  description: "An open-source, parallel finite element framework",
                   icon: "https://mooseframework.inl.gov/media/moose.ico",
                 },
                 {
@@ -445,8 +441,7 @@ const navs: TreeData = {
                 {
                   name: "Filament",
                   link: "https://github.com/google/filament",
-                  description:
-                    "Filament is a real-time physically based rendering engine",
+                  description: "Filament is a real-time physically based rendering engine",
                 },
                 {
                   name: "Tink",
@@ -636,8 +631,7 @@ const navs: TreeData = {
                 {
                   name: "冴羽博客",
                   link: "https://github.com/mqyqingfeng/Blog",
-                  description:
-                    "JavaScript深入系列、JavaScript专题系列、ES6系列、React系列。",
+                  description: "JavaScript深入系列、JavaScript专题系列、ES6系列、React系列。",
                 },
               ],
             },
@@ -796,8 +790,7 @@ const navs: TreeData = {
                 {
                   name: "Lib phonenumber",
                   link: "https://github.com/google/libphonenumber",
-                  description:
-                    "Formatting, and validating international phone numbers.",
+                  description: "Formatting, and validating international phone numbers.",
                 },
                 {
                   name: "Driver JS",
@@ -807,8 +800,7 @@ const navs: TreeData = {
                 {
                   name: "Intro JS",
                   link: "https://github.com/usablica/intro.js",
-                  description:
-                    "Lightweight, user-friendly onboarding tour library",
+                  description: "Lightweight, user-friendly onboarding tour library",
                 },
                 {
                   name: "Headlessui",
@@ -866,8 +858,7 @@ const navs: TreeData = {
                 {
                   name: "程序厨算法基础",
                   link: "https://www.chengxuchu.com/",
-                  description:
-                    "一位酷爱做饭的程序员，立志用动画将算法说的通俗易懂",
+                  description: "一位酷爱做饭的程序员，立志用动画将算法说的通俗易懂",
                 },
                 {
                   name: "代码随想录",
@@ -882,8 +873,7 @@ const navs: TreeData = {
                 {
                   name: "Path Planning",
                   link: "https://github.com/zhm-real/PathPlanning",
-                  description:
-                    "Common used path planning algorithms with animations.",
+                  description: "Common used path planning algorithms with animations.",
                 },
                 {
                   name: "高频 Leetcode",
@@ -977,8 +967,7 @@ const navs: TreeData = {
                 {
                   name: "Pion",
                   link: "https://pion.ly/",
-                  description:
-                    "The Modern Stack for Web Real-Time Communication.",
+                  description: "The Modern Stack for Web Real-Time Communication.",
                   icon: "https://pion.ly/img/pion-logo.svg",
                 },
                 {
@@ -1021,8 +1010,7 @@ const navs: TreeData = {
                 {
                   name: "Shardingsphere",
                   link: "https://github.com/apache/shardingsphere",
-                  description:
-                    "Transform any database into a distributed database system",
+                  description: "Transform any database into a distributed database system",
                 },
                 {
                   name: "vitess",
@@ -1039,15 +1027,13 @@ const navs: TreeData = {
                 {
                   name: "Databend",
                   link: "https://databend.rs/",
-                  description:
-                    "A modern Elasticity and Performance cloud data warehouse",
+                  description: "A modern Elasticity and Performance cloud data warehouse",
                   icon: "https://databend.rs/zh-CN/img/logo/logo-no-text.svg",
                 },
                 {
                   name: "ClickHouse",
                   link: "https://clickhouse.com/",
-                  description:
-                    "ClickHouse® is a free analytics DBMS for big data",
+                  description: "ClickHouse® is a free analytics DBMS for big data",
                   icon: "https://clickhouse.com/favicon.ico",
                 },
                 {
@@ -1060,8 +1046,7 @@ const navs: TreeData = {
                 {
                   name: "Cockroach",
                   link: "https://www.cockroachlabs.com/",
-                  description:
-                    "The open source, cloud-native distributed SQL database.",
+                  description: "The open source, cloud-native distributed SQL database.",
                   icon: "https://crl2020.imgix.net/img/crl-32x32.png",
                 },
                 {
@@ -1080,8 +1065,7 @@ const navs: TreeData = {
                 {
                   name: "Influx",
                   link: "https://www.influxdata.com/",
-                  description:
-                    "InfluxDB is an open source time series platform",
+                  description: "InfluxDB is an open source time series platform",
                   icon: "https://www.influxdata.com/wp-content/uploads/cubo.svg",
                 },
                 {
@@ -1137,8 +1121,7 @@ const navs: TreeData = {
                 {
                   name: "Gorse",
                   link: "https://gorse.io/",
-                  description:
-                    "Gorse is an open source recommendation system written in Go.",
+                  description: "Gorse is an open source recommendation system written in Go.",
                 },
                 {
                   name: "CeresDB",
@@ -1241,8 +1224,7 @@ const navs: TreeData = {
             {
               name: "Authelia",
               link: "https://www.authelia.com/",
-              description:
-                "The Single Sign-On Multi-Factor portal for web apps",
+              description: "The Single Sign-On Multi-Factor portal for web apps",
               icon: "https://www.authelia.com/favicon.ico",
             },
             {
@@ -1302,8 +1284,7 @@ const navs: TreeData = {
             {
               name: "Meilisearch ",
               link: "https://www.meilisearch.com/",
-              description:
-                "An open-source, lightning-fast, and hyper-relevant search engine",
+              description: "An open-source, lightning-fast, and hyper-relevant search engine",
               icon: "https://www.meilisearch.com/favicon-32x32.png",
             },
             {
@@ -1373,8 +1354,7 @@ const navs: TreeData = {
             {
               name: "Autohotkey",
               link: "https://www.autohotkey.com/",
-              description:
-                "The ultimate automation scripting language for Windows.",
+              description: "The ultimate automation scripting language for Windows.",
             },
             {
               name: "Pine",
@@ -1572,8 +1552,7 @@ const navs: TreeData = {
             {
               name: "Cascadeur",
               link: "https://cascadeur.com/",
-              description:
-                "3D animation software for physics-based character animation",
+              description: "3D animation software for physics-based character animation",
               icon: "https://cascadeur.com/favicon/favicon_32.png",
             },
             {
@@ -1925,8 +1904,7 @@ const navs: TreeData = {
                 {
                   name: "MMEditing",
                   link: "https://github.com/open-mmlab/mmediting",
-                  description:
-                    "MMEditing 是基于 PyTorch 的图像&视频编辑开源工具箱。",
+                  description: "MMEditing 是基于 PyTorch 的图像&视频编辑开源工具箱。",
                   icon: "",
                 },
                 {
@@ -1973,14 +1951,12 @@ const navs: TreeData = {
                 {
                   name: "Noise Torch",
                   link: "https://github.com/noisetorch/NoiseTorch",
-                  description:
-                    "Real-time microphone noise suppression on Linux.",
+                  description: "Real-time microphone noise suppression on Linux.",
                 },
                 {
                   name: "NUWA",
                   link: "https://github.com/microsoft/NUWA",
-                  description:
-                    "A unified 3D Transformer Pipeline for visual synthesis",
+                  description: "A unified 3D Transformer Pipeline for visual synthesis",
                 },
                 {
                   name: "Mediapipe",
@@ -2047,8 +2023,7 @@ const navs: TreeData = {
                 {
                   name: "Paddle Detection",
                   link: "https://github.com/PaddlePaddle/PaddleDetection",
-                  description:
-                    "Object Detection toolkit based on PaddlePaddle. ",
+                  description: "Object Detection toolkit based on PaddlePaddle. ",
                 },
                 {
                   name: "Airtest",
@@ -2103,8 +2078,7 @@ const navs: TreeData = {
             {
               name: "Carla",
               link: "http://carla.org/",
-              description:
-                "Open-source simulator for autonomous driving research",
+              description: "Open-source simulator for autonomous driving research",
               icon: "http://carla.org/img/logo/favicon.png",
             },
             {
@@ -2172,8 +2146,7 @@ const navs: TreeData = {
             {
               name: "Lean",
               link: "https://www.lean.io",
-              description:
-                "Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",
+              description: "Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",
               icon: "https://www.lean.io/lean-header-icon.ico",
             },
           ],
@@ -2213,8 +2186,7 @@ const navs: TreeData = {
             {
               name: "Sonic pi",
               link: "https://sonic-pi.net/",
-              description:
-                "Sonic Pi is a code-based music creation and performance tool.",
+              description: "Sonic Pi is a code-based music creation and performance tool.",
               icon: "",
             },
             {
@@ -2252,8 +2224,7 @@ const navs: TreeData = {
             {
               name: "QGIS",
               link: "https://qgis.org/",
-              description:
-                "A Free and Open Source Geographic Information System",
+              description: "A Free and Open Source Geographic Information System",
             },
             {
               name: "Warp Terminal",
@@ -2403,8 +2374,7 @@ const navs: TreeData = {
             {
               name: "Croc",
               link: "https://github.com/schollz/croc",
-              description:
-                "Easily and securely send things from one computer to another",
+              description: "Easily and securely send things from one computer to another",
               icon: "",
             },
             {
@@ -2422,15 +2392,13 @@ const navs: TreeData = {
             {
               name: "k6",
               link: "https://k6.io/",
-              description:
-                "A modern load testing tool, using Go and JavaScript ",
+              description: "A modern load testing tool, using Go and JavaScript ",
               icon: "https://k6.io/favicon-32x32.png?v=b39a6f3e0dc925c8ec4f77e0a65490e9",
             },
             {
               name: "Mitmproxy HTTPS proxy.",
               link: "https://mitmproxy.org/",
-              description:
-                "Mitmproxy is a free and open source interactive HTTPS proxy.",
+              description: "Mitmproxy is a free and open source interactive HTTPS proxy.",
               icon: "https://mitmproxy.org/favicon.ico",
             },
             {
@@ -2475,20 +2443,17 @@ const navs: TreeData = {
             {
               name: "Trojan-gfw",
               link: "https://github.com/trojan-gfw/trojan",
-              description:
-                "An unidentifiable mechanism that helps you bypass GFW",
+              description: "An unidentifiable mechanism that helps you bypass GFW",
             },
             {
               name: "Bore",
               link: "https://github.com/ekzhang/bore",
-              description:
-                "Bore is a simple CLI tool for making tunnels to localhost",
+              description: "Bore is a simple CLI tool for making tunnels to localhost",
             },
             {
               name: "Ngrok",
               link: "https://ngrok.com/",
-              description:
-                "Bore is a simple CLI tool for making tunnels to localhost",
+              description: "Bore is a simple CLI tool for making tunnels to localhost",
             },
             {
               name: "Zeek",

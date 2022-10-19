@@ -8,11 +8,7 @@ export function createCssVariables(
   let output = "";
   Object.keys(themeObj).forEach((key) => {
     if (typeof themeObj[key] === "object") {
-      output += createCssVariables(
-        themeObj[key],
-        `${prefix}-${key}`,
-        transform
-      );
+      output += createCssVariables(themeObj[key], `${prefix}-${key}`, transform);
     } else {
       output += `${prefix}-${key}:${transform(themeObj[key])};\n`;
     }

@@ -212,9 +212,9 @@ export class Button extends LitElement {
 
   render() {
     return html` <button
-      class="${`radius-${this.radius} size-${this.size} type-${
-        this.type
-      } color-${this.color} ${this.disabled ? "disabled" : ""}`}"
+      class="${`radius-${this.radius} size-${this.size} type-${this.type} color-${
+        this.color
+      } ${this.disabled ? "disabled" : ""}`}"
     >
       <slot class="start-icon" name="start-icon"></slot>
       <slot></slot>
